@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFAReader", "CFAReader\CFAReader.csproj", "{099535B6-0927-4DAB-B311-AF9D7448897E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VicFireReader", "VicFireReader\VicFireReader.csproj", "{099535B6-0927-4DAB-B311-AF9D7448897E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFAReader.Tests", "CFAReader\Tests\CFAReader.Tests.csproj", "{4A6BECAE-462D-4AB5-8658-1EE8A05EC7ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VicFireReader.Tests", "VicFireReader\Tests\VicFireReader.Tests.csproj", "{4A6BECAE-462D-4AB5-8658-1EE8A05EC7ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8ACB66FE-BC71-4BE1-AB5A-43B155E7DD81}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,7 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFA", "CFA\CFA.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFA.Tests", "CFA\Tests\CFA.Tests.csproj", "{1AACBA7F-57A8-4634-99EF-5121E8F79F28}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CfaReaderSetup", "CfaReaderSetup\CfaReaderSetup.vdproj", "{1A7CC7CB-824B-410D-8382-CFF36A71CF13}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VicFireReaderSetup", "VicFireReaderSetup\VicFireReaderSetup.vdproj", "{1A7CC7CB-824B-410D-8382-CFF36A71CF13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.BuildInfo", "NoeticTools.BuildInfo\NoeticTools.BuildInfo.csproj", "{C687CD12-08C6-43E7-A231-AD956836C360}"
 EndProject

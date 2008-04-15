@@ -55,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CFAReader.csproj">
+    <ProjectReference Include="..\VicFireReader.csproj">
       <Project>{099535B6-0927-4DAB-B311-AF9D7448897E}</Project>
       <Name>CFAReader</Name>
     </ProjectReference>
