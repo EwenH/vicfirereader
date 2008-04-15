@@ -1,0 +1,173 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{099535B6-0927-4DAB-B311-AF9D7448897E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dooral</RootNamespace>
+    <AssemblyName>Dooral</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject.Core, Version=0.3.2790.38972, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Ninject.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.2706.19617, Culture=neutral, PublicKeyToken=d481317c817cec47, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DockPanelSuite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="DooralSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>DooralSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuildFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BuildFilterControl.Designer.cs">
+      <DependentUpon>BuildFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ComboBoxWithLabelAbove.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ComboBoxWithLabelAbove.Designer.cs">
+      <DependentUpon>ComboBoxWithLabelAbove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ControlWithLabelAbove.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ControlWithLabelAbove.Designer.cs">
+      <DependentUpon>ControlWithLabelAbove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyInjection\Bindings.cs" />
+    <Compile Include="DependencyInjection\SimulationHttpWebRequestFactory.cs" />
+    <Compile Include="Simulation\SimulatedWebResponse.cs" />
+    <Compile Include="Simulation\SimulationHttpWebRequest.cs" />
+    <Compile Include="UI\FilterRulesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FilterRulesView.Designer.cs">
+      <DependentUpon>FilterRulesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MDIParent.Designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\BuildFilterControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BuildFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ComboBoxWithLabelAbove.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComboBoxWithLabelAbove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ControlWithLabelAbove.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ControlWithLabelAbove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FilterRulesView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FilterRulesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MDIParent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TextBoxWithLabelAbove.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextBoxWithLabelAbove.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="DooralSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>DooralSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\DataSources\MDIParent.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\TextBoxWithLabelAbove.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TextBoxWithLabelAbove.Designer.cs">
+      <DependentUpon>TextBoxWithLabelAbove.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CFA\CFA.csproj">
+      <Project>{AE286244-33E2-4C10-B6A0-85E7A27E79F0}</Project>
+      <Name>CFA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNetWrappers\DotNetWrappers.csproj">
+      <Project>{C3508E69-CC5F-49E3-AAC4-E907DE04EC49}</Project>
+      <Name>DotNetWrappers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoogleMaps\GoogleMaps.csproj">
+      <Project>{99E84516-6A45-4C04-A7C3-E7958D99ED26}</Project>
+      <Name>GoogleMaps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSSReader\RSS.csproj">
+      <Project>{651022FD-65D6-42A9-94A0-CB2FD16DEB63}</Project>
+      <Name>RSS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

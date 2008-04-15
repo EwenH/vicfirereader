@@ -1,0 +1,114 @@
+  <div id="generatedCode" style="display:none;">
+            Copy and paste the following where you want your map search control
+            to appear. Do not place it within
+            the <code>&lt;head&gt; ... &lt;/head&gt;</code> section of your
+            page unless you plan on relocating the <code>&lt;div id="mapsearch"&gt;Loading...&lt;/div&gt;</code>
+
+            element out of this chunk of code.
+
+            <pre class="code" id="gHeadCode" style="width:700px;overflow-x:scroll">
+&lt;!-- ++Begin Map Search Control Wizard Generated Code++ --&gt;
+  &lt;!--
+  // Created with a Google AJAX Search Wizard
+  // http://code.google.com/apis/ajaxsearch/wizards.html
+  --&gt;
+
+  &lt;!--
+  // The Following div element will end up holding the map search control.
+  // You can place this anywhere on your page
+  --&gt;
+  &lt;div id="mapsearch"&gt;
+    &lt;span style="color:#676767;font-size:11px;margin:10px;padding:4px;"&gt;Loading...&lt;/span&gt;
+
+  &lt;/div&gt;
+
+  &lt;!-- Maps Api, Ajax Search Api and Stylesheet
+  // Note: If you are already using the Maps API then do not include it again
+  //       If you are already using the AJAX Search API, then do not include it
+  //       or its stylesheet again
+  //
+  // The Key Embedded in the following script tags is designed to work with
+  // the following site:
+  // <span id=gsiteUrl></span>
+  --&gt;
+  &lt;script src="http://maps.google.com/maps?file=api&v=2&key=<span id=gkey1></span>"
+    type="text/javascript"&gt;&lt;/script&gt;
+
+  &lt;script src="http://www.google.com/uds/api?file=uds.js&v=1.0&source=uds-msw&key=<span id=gkey2></span>"
+    type="text/javascript"&gt;&lt;/script&gt;
+  &lt;style type="text/css"&gt;
+    @import url("http://www.google.com/uds/css/gsearch.css");
+  &lt;/style&gt;
+
+  &lt;!-- Map Search Control and Stylesheet --&gt;
+
+  &lt;script type="text/javascript"&gt;
+    window._uds_msw_donotrepair = true;
+  &lt;/script&gt;
+  &lt;script src="http://www.google.com/uds/solutions/mapsearch/gsmapsearch.js?mode=new"
+    type="text/javascript"&gt;&lt;/script&gt;
+  &lt;style type="text/css"&gt;
+    @import url("http://www.google.com/uds/solutions/mapsearch/gsmapsearch.css");
+  &lt;/style&gt;
+
+  &lt;style type="text/css"&gt;
+    .gsmsc-mapDiv {
+      height : <span id=gh1></span>px;
+    }
+
+    .gsmsc-idleMapDiv {
+      height : <span id=gh2></span>px;
+    }
+
+    #mapsearch {
+      width : <span id="gw"></span>px;
+      margin: 10px;
+      padding: 4px;
+    }
+  &lt;/style&gt;
+  &lt;script type="text/javascript"&gt;
+    function LoadMapSearchControl() {
+
+      var options = {
+            zoomControl : GSmapSearchControl.ZOOM_CONTROL_ENABLE_ALL,
+            title : "<span id="gtitle"></span>",
+            url : "<span id="gurl"></span>",
+            idleMapZoom : <span id="zm1"></span>,
+            activeMapZoom : <span id="zm2"></span>
+
+            }
+
+      new GSmapSearchControl(
+            document.getElementById("mapsearch"),
+            "<span id="gcenter"></span>",
+            options
+            );
+
+    }
+    // arrange for this function to be called during body.onload
+    // event processing
+    GSearch.setOnLoadCallback(LoadMapSearchControl);
+  &lt;/script&gt;
+&lt;!-- ++End Map Search Control Wizard Generated Code++ --&gt;
+            </pre>
+
+            <h3>More about Map Search</h3>
+
+            <p>
+            If you're curious about what else you can do with the Map Search Control, check
+            out the <a href="http://www.google.com/uds/solutions/mapsearch/index.html">GSmapSearchControl
+            documentation</a>. With a little more programming, you can set up a custom
+            center icon, include links to recommended places near your location, customize
+            the buttons and more.
+            </p>
+
+            <h3>Getting Help</h3>
+
+            <p>
+            If you have questions or problems, please check out our  <a href="http://groups-beta.google.com/group/Google-AJAX-Search-API">AJAX
+            Search API discussion group</a> to see if anyone has had the same problem you're
+            wrestling with. The Google AJAX Search API team also participates in the group
+            and answers questions.
+            </p>
+
+          </div>

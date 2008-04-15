@@ -1,0 +1,90 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E507145B-7B3F-49AE-BEC7-37F89746E33E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFAReader.Images</RootNamespace>
+    <AssemblyName>CFAReader.Images</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IImageResources.cs" />
+    <Compile Include="ImageResources.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AudioHS.png" />
+    <EmbeddedResource Include="BreakpointHS.png" />
+    <EmbeddedResource Include="Brushed Window.tiff" />
+    <EmbeddedResource Include="Config.png" />
+    <EmbeddedResource Include="DeleteHS.png" />
+    <EmbeddedResource Include="exclaim_mc.gif" />
+    <EmbeddedResource Include="fdi extreme.jpg" />
+    <EmbeddedResource Include="fdi high.jpg" />
+    <EmbeddedResource Include="fdi low.jpg" />
+    <EmbeddedResource Include="fdi mod.jpg" />
+    <EmbeddedResource Include="fdi toban.jpg" />
+    <EmbeddedResource Include="fdi vhigh.jpg" />
+    <EmbeddedResource Include="Filter2HS.png" />
+    <EmbeddedResource Include="General Preferences.tiff" />
+    <EmbeddedResource Include="Get Info.tiff" />
+    <EmbeddedResource Include="GoToNextHS.png" />
+    <EmbeddedResource Include="GoToPrevious.png" />
+    <EmbeddedResource Include="Help.tiff" />
+    <EmbeddedResource Include="NavBack.png" />
+    <EmbeddedResource Include="NavForward.png" />
+    <EmbeddedResource Include="NewDocumentHS.png" />
+    <EmbeddedResource Include="page_refresh.gif" />
+    <EmbeddedResource Include="PropertiesHS.png" />
+    <EmbeddedResource Include="PushpinHS.png" />
+    <EmbeddedResource Include="RefreshDocViewHS.png" />
+    <EmbeddedResource Include="reload.gif" />
+    <EmbeddedResource Include="reload.tiff" />
+    <EmbeddedResource Include="RepeatHS.png" />
+    <EmbeddedResource Include="saveHS.png" />
+    <EmbeddedResource Include="Sticky.tiff" />
+    <EmbeddedResource Include="SychronizeListHS.png" />
+    <EmbeddedResource Include="Symbol-Refresh.ico" />
+    <EmbeddedResource Include="WarningHS.png" />
+    <EmbeddedResource Include="ZoomHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpirationHS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

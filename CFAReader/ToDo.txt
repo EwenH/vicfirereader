@@ -1,0 +1,5 @@
+TODO: Plug-in device notification
+TODO: Plug-in- Email notification
+TODO: Plug-in- X10
+TODO: Plug-in- Lights
+TODO: Plug-in- Pop-up dialog

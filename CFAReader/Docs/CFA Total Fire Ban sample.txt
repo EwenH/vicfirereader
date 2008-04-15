@@ -1,0 +1,122 @@
+﻿<html xmlns:feed="http://www.w3.org/2005/Atom">
+
+<head>
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>CFA - Total Fire Ban</title>
+  <link rel="stylesheet" href="atom.css">
+  
+<style>
+
+body {
+ font-family: verdana, tahoma;
+ font-size: 0.7em;
+ line-height: 1.3em;
+ padding: 0;
+ margin: 0;
+}
+
+
+a, a:link, a:active, a:visited {
+ text-decoration: none;
+ color: #0088ff;
+}
+
+div.entry {
+ padding: 0 20px 20px 25px;
+ border-bottom: 1px solid #ddd;
+}
+
+div.content img {
+}
+
+div.active {
+ background-color: #f1f5fa;;
+}
+
+.read .title a {
+ color: #aaa;
+}
+
+.read .content {
+ color: #555;
+}
+
+div.entry .read .title a {
+ color: gray;
+}
+
+.header {
+ padding-top: 20px;
+ margin: 0 0 0.2em 0;
+}
+
+.title {
+ font-size: 1.6em;
+ font-family: arial, verdana, tahoma;
+ font-weight: bold;
+ letter-spacing: -1px;
+ line-height: 1.1em;
+}
+
+div.details {
+ color: gray;
+ margin-bottom: 0.5em;
+}
+div.clear {
+ clear:both;
+ height: 1px;
+ width: 1px;
+ font-size: 1px;
+ line-height: 1px;
+}
+span.modified, span.author, span.category {
+}
+
+.starred a {
+ display:block;
+ line-height: 0;
+ font-size: 0;
+ width: 12px; 
+ height: 12px;
+ background-repeat: no-repeat;
+}
+
+.unstarred a {
+ display:block;
+ line-height: 0;
+ font-size: 0;
+ width: 12px; 
+ height: 12px;
+ background-repeat: no-repeat;
+}
+
+.status a {
+ display:block;
+ line-height: 0;
+ font-size: 0;
+ width: 8px; 
+ height: 8px;
+ margin-top: -1.5em;
+ background-repeat: no-repeat;
+}
+
+</style>
+
+  <base href="http://cfaonline.cfa.vic.gov.au/mycfa/Show?pageId=publicTotalFireBans/">
+</head>
+
+<body>
+  <div class="header">
+    <span class="title"><a href="http://cfaonline.cfa.vic.gov.au/mycfa/Show?pageId=publicTotalFireBans">Tomorrow Mon, 10 Mar 2008 has been declared a Day of Total Fire Ban in the North Western, South Western and Central Total Fire Ban district(s) of Victoria.</a></span>
+    <span class="status" style="float:right;"><a id="togglelink1055" href="fr:toggleread/1055" onclick="this.blur();"></a></span>
+  </div>
+  <div class="details">
+    <span id="star1055" class="unstarred" style="float:left;"><a id="togglestar1055" href="fr:togglestar/1055" onclick="this.blur();"></a></span>
+    <span class="updated">08:00 2/02/2008, </span>
+    <span class="source">CFA - Total Fire Ban  </span>
+  </div>
+  <div class="content"><img src="images/tfb_maps/tfb_13.gif" width="406" height="294" border="0" alt="Total Fire Ban Districts"></div>
+  <div class="clear"></div>
+</body>
+
+</html>

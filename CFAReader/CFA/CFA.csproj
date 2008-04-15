@@ -1,0 +1,281 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE286244-33E2-4C10-B6A0-85E7A27E79F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFAReader.CFA</RootNamespace>
+    <AssemblyName>CFAReader.CFA</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NDependencyInjection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NDependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.DotNetWrappers, Version=1.0.0.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.DotNetWrappers.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.GoogleMaps, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.GoogleMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.Html, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.PlugIns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.PlugIns.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.RSS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.RSS.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.Utilities, Version=1.0.0.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="NoeticTools.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NoeticTools.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="NXmlSerializer, Version=2.0.0.204, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NXmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.2706.19617, Culture=neutral, PublicKeyToken=d481317c817cec47, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DockPanelSuite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="CommandLineParser.cs" />
+    <Compile Include="FireDangerIndex\RSS\FireDangerForecastRSSReaderPlugin.cs" />
+    <Compile Include="FireDangerIndex\View\FireDangerForecastViewPlugin.cs" />
+    <Compile Include="ICommandLineParser.cs" />
+    <Compile Include="Incidents\RSS\IIncident.cs" />
+    <Compile Include="Incidents\RSS\IIncidentFactory.cs" />
+    <Compile Include="Incidents\RSS\IncidentFactory.cs" />
+    <Compile Include="Regions\CfaRegion.cs" />
+    <Compile Include="Regions\CfaRegions.cs" />
+    <Compile Include="Data\CFADataSet.cs">
+      <DependentUpon>CFADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CFADataSet.Designer.cs">
+      <DependentUpon>CFADataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\DataSetPlugIn.cs" />
+    <Compile Include="Data\ICFADataSet.cs" />
+    <Compile Include="Regions\ICfaRegions.cs" />
+    <Compile Include="Regions\ICfaRegionsChangedListener.cs" />
+    <Compile Include="IncidentLocation.cs" />
+    <Compile Include="Incidents\RSS\IIncidentsListener.cs" />
+    <Compile Include="Incidents\RSS\IIncidentsRSSReader.cs" />
+    <Compile Include="Incidents\RSS\IIncidentsRSSReaderOptions.cs" />
+    <Compile Include="Incidents\RSS\IncidentsRSSReader.cs">
+    </Compile>
+    <Compile Include="Incidents\RSS\IncidentsRssReaderBuilder.cs" />
+    <Compile Include="Incidents\RSS\IncidentsRSSReaderOptions.cs" />
+    <Compile Include="Incidents\RSS\IncidentsRSSReaderPlugIn.cs" />
+    <Compile Include="Incidents\View\IFormatterListener.cs" />
+    <Compile Include="Incidents\View\IFormClosedListener.cs" />
+    <Compile Include="Incidents\View\IIncidentGridViewCellFormatter.cs" />
+    <Compile Include="Incidents\View\IIncidentsGridView.cs" />
+    <Compile Include="Incidents\View\IIncidentsGridViewController.cs" />
+    <Compile Include="Incidents\View\IIncidentsGridViewListener.cs" />
+    <Compile Include="Incidents\View\IIncidentsViewFactory.cs" />
+    <Compile Include="Incidents\View\IIncidentsViewListener.cs" />
+    <Compile Include="Incidents\View\IncidentGridViewCellFormatter.cs" />
+    <Compile Include="Incidents\View\IncidentsGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incidents\View\IncidentsGridView.Designer.cs">
+      <DependentUpon>IncidentsGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Incidents\View\IncidentsGridViewController.cs" />
+    <Compile Include="Incidents\View\IncidentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incidents\View\IncidentsView.Designer.cs">
+      <DependentUpon>IncidentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Incidents\RSS\Incident.cs" />
+    <Compile Include="Incidents\View\IncidentsViewBuilder.cs" />
+    <Compile Include="Incidents\View\IncidentsViewFactory.cs" />
+    <Compile Include="Incidents\View\IncidentsViewPlugIn.cs" />
+    <Compile Include="Incidents\View\IncidentsViewPluginBuilder.cs" />
+    <Compile Include="Incidents\View\IncidentsViewPlugInConfig.cs" />
+    <Compile Include="Options\OptionsViewPlugIn.cs" />
+    <Compile Include="Regions\RegionsPlugin.cs" />
+    <Compile Include="Regions\RegionsPluginBuilder.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalFireBans\ITotalFireBanOptions.cs" />
+    <Compile Include="TotalFireBans\ITotalFireBanRssOptions.cs" />
+    <Compile Include="TotalFireBans\TotalFireBanOptions.cs" />
+    <Compile Include="TotalFireBans\TotalFireBanRSSReaderOptions.cs" />
+    <Compile Include="TotalFireBans\TotalFireBanViewPlugIn.cs" />
+    <Compile Include="TotalFireBans\FireBanItem.cs" />
+    <Compile Include="TotalFireBans\TotalFireBanViewController.cs" />
+    <Compile Include="TotalFireBans\TotalFireBanViewPlugInBuilder.cs" />
+    <Compile Include="UI\ContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ContentForm.Designer.cs">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HeaderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HeaderPanel.Designer.cs">
+      <DependentUpon>HeaderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IErrorIndicator.cs" />
+    <Compile Include="UI\IncidentTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\IncidentTypeControl.Designer.cs">
+      <DependentUpon>IncidentTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IRegionSelectionControl.cs" />
+    <Compile Include="UI\IToolBarRegionSelectionController.cs" />
+    <Compile Include="UI\RegionSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RegionSelectionControl.Designer.cs">
+      <DependentUpon>RegionSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regions\ToolBarRegionSelectionController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\CFADataSet.xsc">
+      <DependentUpon>CFADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\CFADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CFADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\CFADataSet.xss">
+      <DependentUpon>CFADataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Incidents\View\IncidentsGridView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IncidentsGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incidents\View\IncidentsView.resx">
+      <DependentUpon>IncidentsView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IncidentTypeControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IncidentTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionSelectionControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RegionSelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\exclaim_mc.gif" />
+    <EmbeddedResource Include="UI\ContentForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HeaderPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HeaderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_refresh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol-Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.tiff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+    <None Include="Resources\fdi toban.jpg" />
+    <None Include="Resources\fdi mod.jpg" />
+    <None Include="Resources\fdi low.jpg" />
+    <None Include="Resources\fdi high.jpg" />
+    <None Include="Resources\fdi extreme.jpg" />
+    <None Include="Resources\fdi vhigh.jpg" />
+    <None Include="Resources\Config.png" />
+    <None Include="Resources\Brushed Window.tiff" />
+    <None Include="Resources\Get Info.tiff" />
+    <None Include="Resources\Help.tiff" />
+    <None Include="Resources\Sticky.tiff" />
+    <None Include="Resources\General Preferences.tiff" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Images\Images.csproj">
+      <Project>{E507145B-7B3F-49AE-BEC7-37F89746E33E}</Project>
+      <Name>Images</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{13ABDCBB-C2C4-43F8-B87E-D9B6A1B9A3A4}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
