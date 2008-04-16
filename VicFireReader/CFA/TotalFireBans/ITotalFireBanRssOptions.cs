@@ -24,7 +24,7 @@ using NoeticTools.PlugIns.Options;
 using NoeticTools.RSS;
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public interface ITotalFireBanRssOptions : IRSSReaderOptions, IOptions
 	{

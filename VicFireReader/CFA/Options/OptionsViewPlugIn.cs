@@ -23,14 +23,14 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using CFAReader.Images;
+using VicFireReader.Images;
 using NoeticTools.DotNetWrappers;
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Options;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace CFAReader.CFA.Options
+namespace VicFireReader.CFA.Options
 {
 	public class OptionsViewPlugin : IPlugin, IOptionsView
 	{

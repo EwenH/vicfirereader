@@ -23,7 +23,7 @@
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	public interface IConnectionView : IDockContent
 	{

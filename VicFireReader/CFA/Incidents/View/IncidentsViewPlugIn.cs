@@ -27,7 +27,7 @@ using NoeticTools.PlugIns.Persistence;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentsViewPlugIn : IPlugin, IOnOpenListener, IViewController
 	{

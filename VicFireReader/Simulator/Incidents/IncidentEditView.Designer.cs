@@ -1,7 +1,7 @@
-using IncidentEditPanel=CFAReader.Simulator.Incidents.IncidentEditPanel;
+using IncidentEditPanel=VicFireReader.Simulator.Incidents.IncidentEditPanel;
 
 
-namespace CFAReader.Simulator.Incidents
+namespace VicFireReader.Simulator.Incidents
 {
 	partial class IncidentEditView
 	{

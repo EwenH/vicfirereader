@@ -22,12 +22,12 @@
 
 using System;
 using System.Windows.Forms;
-using CFAReader.CFA.Incidents.RSS;
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.Incidents.RSS;
+using VicFireReader.CFA.UI;
 using NDependencyInjection;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public partial class IncidentsView : ContentForm, IIncidentsListener
 	{

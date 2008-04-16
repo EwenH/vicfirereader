@@ -20,10 +20,10 @@
 
 #endregion
 
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.UI;
 
 
-namespace CFAReader.Simulator.Incidents
+namespace VicFireReader.Simulator.Incidents
 {
 	public partial class IncidentEditView : ContentForm
 	{

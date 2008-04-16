@@ -22,10 +22,10 @@
 
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
-using CFAReader.Interfaces;
+using VicFireReader.Interfaces;
 
 
-namespace CFAReader.Interfaces
+namespace VicFireReader.Interfaces
 {
 	public class PluginBuilder<T> : IPluginBuilder
 		where T : IPlugin

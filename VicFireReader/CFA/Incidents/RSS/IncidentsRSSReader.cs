@@ -23,11 +23,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Xml;
-using CFAReader.CFA.Data;
+using VicFireReader.CFA.Data;
 using NoeticTools.RSS;
 
 
-namespace CFAReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSS
 {
 	public class IncidentsRSSReader : IIncidentsRSSReader, IRSSReaderListener, IRSSOptionsChangedListener
 	{

@@ -25,7 +25,7 @@ using System.Text;
 using NoeticTools.DotNetWrappers;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class IncidentsRSSSimulatedWebResponse : ISimulatedWebResponse
 	{

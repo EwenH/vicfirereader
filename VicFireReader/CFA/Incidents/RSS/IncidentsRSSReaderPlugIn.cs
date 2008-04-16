@@ -23,10 +23,10 @@
 using System;
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Persistence;
-using CFAReader.Images;
+using VicFireReader.Images;
 
 
-namespace CFAReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSS
 {
 	public class IncidentsRSSReaderPlugin : IPlugin, IOnOpenListener
 	{

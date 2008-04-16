@@ -22,10 +22,10 @@
 
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
-using CFAReader.CFA.Regions;
+using VicFireReader.CFA.Regions;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentsViewPluginBuilder : ISubsystemBuilder
 	{

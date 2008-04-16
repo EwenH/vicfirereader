@@ -23,12 +23,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using CFAReader.CFA.Regions;
+using VicFireReader.CFA.Regions;
 using NoeticTools.PlugIns.Persistence;
 using NXmlSerializer.XML;
 
 
-namespace CFAReader.CFA.Regions
+namespace VicFireReader.CFA.Regions
 {
 	public class CfaRegions : ICfaRegions
 	{

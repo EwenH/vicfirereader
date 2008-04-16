@@ -21,21 +21,21 @@
 #endregion
 
 using System.Collections.Generic;
-using CFAReader.CFA;
-using CFAReader.CFA.Data;
-using CFAReader.CFA.FireDangerIndex.RSS;
-using CFAReader.CFA.FireDangerIndex.View;
-using CFAReader.CFA.Incidents.RSS;
-using CFAReader.CFA.Incidents.View;
-using CFAReader.CFA.Regions;
-using CFAReader.CFA.TotalFireBans;
-using CFAReader.Interfaces;
+using VicFireReader.CFA;
+using VicFireReader.CFA.Data;
+using VicFireReader.CFA.FireDangerIndex.RSS;
+using VicFireReader.CFA.FireDangerIndex.View;
+using VicFireReader.CFA.Incidents.RSS;
+using VicFireReader.CFA.Incidents.View;
+using VicFireReader.CFA.Regions;
+using VicFireReader.CFA.TotalFireBans;
+using VicFireReader.Interfaces;
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Persistence;
 
 
-namespace CFAReader
+namespace VicFireReader
 {
 	public class PluginsBuilder : ISubsystemBuilder
 	{

@@ -21,14 +21,14 @@
 #endregion
 
 using System.Collections.Generic;
-using CFAReader.Interfaces;
-using CFAReader.Simulator.General;
+using VicFireReader.Interfaces;
+using VicFireReader.Simulator.General;
 using NDependencyInjection.interfaces;
 using NoeticTools.DotNetWrappers;
 using NoeticTools.Utilities;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class SimulatorBuilder : ISubsystemBuilder
 	{

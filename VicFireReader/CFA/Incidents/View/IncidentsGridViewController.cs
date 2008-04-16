@@ -20,11 +20,11 @@
 
 #endregion //Copyright
 
-using CFAReader.CFA.Data;
+using VicFireReader.CFA.Data;
 using NoeticTools.GoogleMaps;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentsGridViewController : IIncidentsGridViewListener, IIncidentsGridViewController, IFormatterListener
 	{

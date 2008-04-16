@@ -22,11 +22,11 @@
 
 using System.Data;
 using System.Windows.Forms;
-using CFAReader.CFA.Data;
+using VicFireReader.CFA.Data;
 using NDependencyInjection;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public partial class IncidentsGridView : UserControl, IIncidentsGridView
 	{

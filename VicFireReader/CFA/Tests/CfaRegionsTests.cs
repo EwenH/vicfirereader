@@ -20,14 +20,14 @@
 
 #endregion //Copyright
 
-using CFAReader.CFA.Regions;
+using VicFireReader.CFA.Regions;
 using NoeticTools.PlugIns.Persistence;
 using NUnit.Extensions;
 using NUnit.Framework;
 using NMock2;
 
 
-namespace CFAReader.CFA.Tests
+namespace VicFireReader.CFA.Tests
 {
 	[TestFixture]
 	public class CfaRegionsTests : MockingTestFixture

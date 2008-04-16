@@ -24,7 +24,7 @@ using System;
 using System.Windows.Forms;
 
 
-namespace CFAReader
+namespace VicFireReader
 {
 	public partial class HelpAboutForm : Form
 	{

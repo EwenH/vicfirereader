@@ -24,7 +24,7 @@ using NoeticTools.RSS;
 using NoeticTools.PlugIns.Options;
 
 
-namespace CFAReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSS
 {
 	public interface IIncidentsRSSReaderOptions : IRSSReaderOptions, IOptions
 	{

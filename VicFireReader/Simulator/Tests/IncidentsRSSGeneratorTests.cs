@@ -21,13 +21,13 @@
 #endregion
 
 using System.Xml;
-using CFAReader.Simulator.Incidents;
+using VicFireReader.Simulator.Incidents;
 using NMock2;
 using NUnit.Framework;
 using NUnit.Extensions;
 
 
-namespace CFAReader.Simulator.Tests
+namespace VicFireReader.Simulator.Tests
 {
 	[TestFixture]
 	public class IncidentsRSSGeneratorTests : MockingTestFixture

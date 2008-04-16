@@ -24,7 +24,7 @@ using System;
 using NoeticTools.Utilities;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class SimulatedClock : IClock, ISimulatedClock
 	{

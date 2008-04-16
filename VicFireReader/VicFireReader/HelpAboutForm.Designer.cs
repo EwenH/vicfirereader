@@ -1,4 +1,4 @@
-namespace CFAReader
+namespace VicFireReader
 {
 	partial class HelpAboutForm
 	{
@@ -70,7 +70,7 @@ namespace CFAReader
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "HelpAboutForm";
-			this.Text = "About CFAReader";
+			this.Text = "About VicFireReader";
 			this.ResumeLayout(false);
 
 		}

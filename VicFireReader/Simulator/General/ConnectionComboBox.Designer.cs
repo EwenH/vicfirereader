@@ -1,4 +1,4 @@
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	partial class ConnectionComboBox
 	{

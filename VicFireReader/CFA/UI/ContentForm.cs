@@ -25,7 +25,7 @@ using NoeticTools.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace CFAReader.CFA.UI
+namespace VicFireReader.CFA.UI
 {
 	public partial class ContentForm : DockContent
 	{

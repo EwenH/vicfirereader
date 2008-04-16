@@ -21,7 +21,7 @@
 #endregion //Copyright
 
 
-namespace CFAReader.CFA.Regions
+namespace VicFireReader.CFA.Regions
 {
 	public interface ICfaRegionsChangedListener
 	{

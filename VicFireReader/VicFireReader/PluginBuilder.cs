@@ -24,7 +24,7 @@ using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader
+namespace VicFireReader
 {
 	public class PluginBuilder<T> : ISubsystemBuilder
 		where T : IPlugin

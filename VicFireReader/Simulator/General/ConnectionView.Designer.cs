@@ -1,4 +1,4 @@
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	partial class ConnectionView : IConnectionView
 	{
@@ -30,7 +30,7 @@ namespace CFAReader.Simulator.General
 		{
 			System.Windows.Forms.Label connectionLabel;
 			this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-			this.connectionComboBox1 = new CFAReader.Simulator.General.ConnectionComboBox();
+			this.connectionComboBox1 = new VicFireReader.Simulator.General.ConnectionComboBox();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			connectionLabel = new System.Windows.Forms.Label();
 			this.tableLayoutPanel.SuspendLayout();

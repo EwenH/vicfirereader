@@ -24,7 +24,7 @@ using System.Drawing;
 using System.IO;
 
 
-namespace CFAReader.Images
+namespace VicFireReader.Images
 {
 	public class ImageResources : IImageResources
 	{

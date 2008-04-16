@@ -7,8 +7,8 @@
     <ProjectGuid>{E507145B-7B3F-49AE-BEC7-37F89746E33E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CFAReader.Images</RootNamespace>
-    <AssemblyName>CFAReader.Images</AssemblyName>
+    <RootNamespace>VicFireReader.Images</RootNamespace>
+    <AssemblyName>VicFireReader.Images</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

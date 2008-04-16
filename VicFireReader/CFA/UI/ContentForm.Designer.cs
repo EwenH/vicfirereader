@@ -1,4 +1,4 @@
-namespace CFAReader.CFA.UI
+namespace VicFireReader.CFA.UI
 {
 	partial class ContentForm
 	{
@@ -28,7 +28,7 @@ namespace CFAReader.CFA.UI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.headerPanel = new CFAReader.CFA.UI.HeaderPanel();
+			this.headerPanel = new VicFireReader.CFA.UI.HeaderPanel();
 			this.placeHolderControl = new NoeticTools.Windows.Forms.PlaceHolderControl();
 			this.SuspendLayout();
 			// 

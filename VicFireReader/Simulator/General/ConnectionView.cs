@@ -20,12 +20,12 @@
 
 #endregion
 
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.UI;
 using NDependencyInjection;
 using NoeticTools.DotNetWrappers;
 
 
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	public partial class ConnectionView : ContentForm
 	{

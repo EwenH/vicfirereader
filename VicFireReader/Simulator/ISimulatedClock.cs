@@ -23,7 +23,7 @@
 using System;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public interface ISimulatedClock
 	{

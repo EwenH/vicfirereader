@@ -23,7 +23,7 @@
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader.CFA.FireDangerIndex.RSS
+namespace VicFireReader.CFA.FireDangerIndex.RSS
 {
 	public class FireDangerForecastRSSReaderPlugin : IPlugin
 	{

@@ -20,11 +20,11 @@
 
 #endregion
 
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.UI;
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public interface IIncidentsViewFactory
 	{

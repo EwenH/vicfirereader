@@ -24,7 +24,7 @@ using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader.CFA.Regions
+namespace VicFireReader.CFA.Regions
 {
 	public class RegionsPluginBuilder : ISubsystemBuilder
 	{

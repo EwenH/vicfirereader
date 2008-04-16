@@ -28,7 +28,7 @@ using NUnit.Extensions;
 using NUnit.Framework;
 
 
-namespace CFAReader.Utilities.Tests
+namespace VicFireReader.Utilities.Tests
 {
 	[TestFixture]
 	public class SchedulerTests : MockingTestFixture

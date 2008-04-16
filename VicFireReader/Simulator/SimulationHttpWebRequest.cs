@@ -23,7 +23,7 @@
 using NoeticTools.DotNetWrappers;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class SimulationHttpWebRequest : IHttpWebRequest
 	{

@@ -21,7 +21,7 @@
 #endregion //Copyright
 
 
-namespace CFAReader.CFA.Data
+namespace VicFireReader.CFA.Data
 {
 	partial class CFADataSet : ICFADataSet
 	{

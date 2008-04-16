@@ -25,7 +25,7 @@ using NoeticTools.Html.UI;
 using NoeticTools.RSS;
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public class TotalFireBanViewController : IRSSReaderListener
 	{

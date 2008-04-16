@@ -24,7 +24,7 @@ using NDependencyInjection.interfaces;
 using NoeticTools.RSS;
 
 
-namespace CFAReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSS
 {
 	public class IncidentsRssReaderBuilder : ISubsystemBuilder
 	{

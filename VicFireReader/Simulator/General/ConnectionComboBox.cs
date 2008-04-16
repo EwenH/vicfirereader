@@ -24,7 +24,7 @@ using System.Windows.Forms;
 using NDependencyInjection;
 
 
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	public partial class ConnectionComboBox : ComboBox, IConnectionComboBox
 	{

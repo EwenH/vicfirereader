@@ -24,7 +24,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public class FireBanItem
 	{

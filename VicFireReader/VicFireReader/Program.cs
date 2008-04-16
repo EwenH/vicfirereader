@@ -21,10 +21,11 @@
 #endregion
 
 using System;
-using CFAReader.CFA;
+using VicFireReader.CFA;
+using VicFireReader;
 
 
-namespace CFAReader
+namespace VicFireReader
 {
 	internal static class Program
 	{

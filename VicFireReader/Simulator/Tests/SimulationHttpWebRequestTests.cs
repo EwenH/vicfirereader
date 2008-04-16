@@ -24,7 +24,7 @@ using NUnit.Framework;
 using NUnit.Extensions;
 
 
-namespace CFAReader.Simulator.Tests
+namespace VicFireReader.Simulator.Tests
 {
 	[TestFixture]
 	public class SimulationHttpWebRequestTests : MockingTestFixture

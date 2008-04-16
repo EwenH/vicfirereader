@@ -20,10 +20,10 @@
 
 #endregion //Copyright
 
-using CFAReader.CFA.Data;
+using VicFireReader.CFA.Data;
 
 
-namespace CFAReader.CFA.Data
+namespace VicFireReader.CFA.Data
 {
 	public interface ICFADataSet
 	{

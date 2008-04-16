@@ -24,7 +24,7 @@ using NoeticTools.PlugIns;
 using NoeticTools.DotNetWrappers;
 
 
-namespace CFAReader.CFA.Regions
+namespace VicFireReader.CFA.Regions
 {
 	public class RegionsPlugin : IPlugin
 	{

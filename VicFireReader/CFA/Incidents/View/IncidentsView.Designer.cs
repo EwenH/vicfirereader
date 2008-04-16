@@ -1,10 +1,10 @@
-using CFAReader;
-using CFAReader.CFA.UI;
+using VicFireReader;
+using VicFireReader.CFA.UI;
 using NoeticTools.Windows.Forms;
-using CFADataSet=CFAReader.CFA.Data.CFADataSet;
+using CFADataSet=VicFireReader.CFA.Data.CFADataSet;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	partial class IncidentsView
 	{
@@ -36,7 +36,7 @@ namespace CFAReader.CFA.Incidents.View
 		{
 			this.components = new System.ComponentModel.Container();
 			this.cFADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.cFADataSet = new CFAReader.CFA.Data.CFADataSet();
+			this.cFADataSet = new VicFireReader.CFA.Data.CFADataSet();
 			this.incidentsGridViewPlaceHolder = new NoeticTools.Windows.Forms.PlaceHolderControl();
 			((System.ComponentModel.ISupportInitialize)(this.cFADataSetBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cFADataSet)).BeginInit();

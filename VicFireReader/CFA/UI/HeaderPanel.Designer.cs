@@ -1,4 +1,4 @@
-namespace CFAReader.CFA.UI
+namespace VicFireReader.CFA.UI
 {
 	partial class HeaderPanel
 	{

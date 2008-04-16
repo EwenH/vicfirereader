@@ -23,7 +23,7 @@
 using System.Drawing;
 
 
-namespace CFAReader.Images
+namespace VicFireReader.Images
 {
 	public interface IImageResources
 	{

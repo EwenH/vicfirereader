@@ -21,7 +21,7 @@
 #endregion //Copyright
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public interface IFormatterListener
 	{

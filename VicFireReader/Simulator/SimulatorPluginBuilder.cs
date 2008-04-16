@@ -20,13 +20,13 @@
 
 #endregion
 
-using CFAReader.Interfaces;
-using CFAReader.Simulator.General;
+using VicFireReader.Interfaces;
+using VicFireReader.Simulator.General;
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class SimulatorPluginBuilder : IPluginBuilder
 	{

@@ -1,4 +1,4 @@
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	partial class IncidentsGridView
 	{
@@ -33,7 +33,7 @@ namespace CFAReader.CFA.Incidents.View
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.incidentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cFADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.cFADataSet = new CFAReader.CFA.Data.CFADataSet();
+			this.cFADataSet = new VicFireReader.CFA.Data.CFADataSet();
 			this.UpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -216,7 +216,7 @@ namespace CFAReader.CFA.Incidents.View
 
 		private System.Windows.Forms.DataGridView dataGridView;
 		private System.Windows.Forms.BindingSource cFADataSetBindingSource;
-		private CFAReader.CFA.Data.CFADataSet cFADataSet;
+		private VicFireReader.CFA.Data.CFADataSet cFADataSet;
 		private System.Windows.Forms.BindingSource incidentsBindingSource;
 		private System.Windows.Forms.DataGridViewTextBoxColumn UpdateTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

@@ -21,12 +21,12 @@
 #endregion
 
 using System;
-using CFAReader.Simulator.Incidents;
+using VicFireReader.Simulator.Incidents;
 using NUnit.Framework;
 using NUnit.Extensions;
 
 
-namespace CFAReader.Simulator.Tests
+namespace VicFireReader.Simulator.Tests
 {
 	[TestFixture]
 	public class IncidentRSSItemTests : MockingTestFixture

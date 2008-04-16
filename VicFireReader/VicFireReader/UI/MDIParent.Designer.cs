@@ -1,8 +1,8 @@
-using CFAReader;
-using CFAReader.CFA;
+using VicFireReader;
+using VicFireReader.CFA;
 
 
-namespace CFAReader.UI
+namespace VicFireReader.UI
 {
 	partial class MDIParent
 	{
@@ -88,13 +88,13 @@ namespace CFAReader.UI
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator5.Size = new System.Drawing.Size(111, 6);
 			this.toolStripSeparator5.Visible = false;
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
 			// 
@@ -250,9 +250,9 @@ namespace CFAReader.UI
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MDIParent";
 			this.ShowInTaskbar = false;
-			this.Text = "CFAReader";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDIParent_FormClosing);
+			this.Text = "VicFireReader";
 			this.Load += new System.EventHandler(this.MDIParent_Load);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDIParent_FormClosing);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.statusStrip.ResumeLayout(false);

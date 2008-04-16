@@ -21,7 +21,7 @@
 #endregion
 
 using System.Windows.Forms;
-using CFAReader.CFA.Options;
+using VicFireReader.CFA.Options;
 using NDependencyInjection.interfaces;
 using NoeticTools.DotNetWrappers;
 using NoeticTools.PlugIns;
@@ -31,7 +31,7 @@ using StatusStrip = NoeticTools.DotNetWrappers.StatusStrip;
 using ToolStrip=NoeticTools.DotNetWrappers.ToolStrip;
 
 
-namespace CFAReader.UI
+namespace VicFireReader.UI
 {
 	public class MainFormBuilder : ISubsystemBuilder
 	{

@@ -24,7 +24,7 @@ using System.Drawing;
 using NUnit.Framework;
 
 
-namespace CFAReader.Images.Tests
+namespace VicFireReader.Images.Tests
 {
 	[TestFixture]
 	public class ImagesTests

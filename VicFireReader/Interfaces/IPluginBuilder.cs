@@ -23,7 +23,7 @@
 using NDependencyInjection.interfaces;
 
 
-namespace CFAReader.Interfaces
+namespace VicFireReader.Interfaces
 {
 	public interface IPluginBuilder : ISubsystemBuilder
 	{

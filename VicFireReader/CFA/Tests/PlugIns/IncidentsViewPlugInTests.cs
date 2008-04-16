@@ -20,14 +20,14 @@
 
 #endregion //Copyright
 
-using CFAReader.CFA.Incidents.View;
+using VicFireReader.CFA.Incidents.View;
 using NMock2;
 using NoeticTools.PlugIns;
 using NUnit.Extensions;
 using NUnit.Framework;
 
 
-namespace CFAReader.CFA.Tests.PlugIns
+namespace VicFireReader.CFA.Tests.PlugIns
 {
 	[TestFixture]
 	public class IncidentsViewPluginTests : MockingTestFixture

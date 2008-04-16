@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.Simulator.Incidents
+namespace VicFireReader.Simulator.Incidents
 {
 	public interface IIncidentRSSItem
 	{

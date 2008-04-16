@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public interface ITotalFireBanOptions
 	{

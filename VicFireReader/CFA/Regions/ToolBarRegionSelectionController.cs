@@ -21,11 +21,11 @@
 #endregion
 
 using System.Windows.Forms;
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.UI;
 using NoeticTools.DotNetWrappers;
 
 
-namespace CFAReader.CFA.Regions
+namespace VicFireReader.CFA.Regions
 {
 	public class ToolBarRegionSelectionController : IToolBarRegionSelectionController
 	{

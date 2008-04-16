@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.CFA.Tests.Regions
+namespace VicFireReader.CFA.Tests.Regions
 {
 	class RegionsPluginTests
 	{

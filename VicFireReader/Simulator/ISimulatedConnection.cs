@@ -1,4 +1,4 @@
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public interface ISimulatedConnection
 	{

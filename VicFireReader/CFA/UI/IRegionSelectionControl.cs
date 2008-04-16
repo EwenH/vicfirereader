@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.CFA.UI
+namespace VicFireReader.CFA.UI
 {
 	public interface IRegionSelectionControl
 	{

@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class SimulatedConnection : ISimulatedConnection
 	{

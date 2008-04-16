@@ -23,11 +23,11 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Xml;
-using CFAReader.CFA.Data;
+using VicFireReader.CFA.Data;
 using NoeticTools.Utilities;
 
 
-namespace CFAReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSS
 {
 	public class Incident : IIncident
 	{

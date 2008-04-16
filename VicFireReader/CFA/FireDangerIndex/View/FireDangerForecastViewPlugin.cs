@@ -23,7 +23,7 @@
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader.CFA.FireDangerIndex.View
+namespace VicFireReader.CFA.FireDangerIndex.View
 {
 	public class FireDangerForecastViewPlugin : IPlugin
 	{

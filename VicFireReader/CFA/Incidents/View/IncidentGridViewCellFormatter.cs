@@ -23,11 +23,11 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CFAReader.CFA.Regions;
+using VicFireReader.CFA.Regions;
 using NoeticTools.Utilities;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentGridViewCellFormatter : IIncidentGridViewCellFormatter, ICfaRegionsChangedListener, IFormClosedListener
 	{

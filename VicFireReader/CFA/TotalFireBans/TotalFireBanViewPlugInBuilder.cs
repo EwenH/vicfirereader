@@ -25,7 +25,7 @@ using NoeticTools.PlugIns;
 using NoeticTools.RSS;
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public class TotalFireBanViewPluginBuilder : ISubsystemBuilder
 	{

@@ -24,7 +24,7 @@ using NUnit.Framework;
 using NUnit.Extensions;
 
 
-namespace CFAReader.CFA.Tests
+namespace VicFireReader.CFA.Tests
 {
 	[TestFixture]
 	public class CommandLineParserTests : MockingTestFixture

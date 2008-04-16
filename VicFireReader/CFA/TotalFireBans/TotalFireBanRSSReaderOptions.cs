@@ -25,7 +25,7 @@ using System.ComponentModel;
 using NoeticTools.RSS;
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public class TotalFireBanRSSReaderOptions : ITotalFireBanRssOptions
 	{

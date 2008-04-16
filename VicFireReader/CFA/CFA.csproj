@@ -7,8 +7,8 @@
     <ProjectGuid>{AE286244-33E2-4C10-B6A0-85E7A27E79F0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CFAReader.CFA</RootNamespace>
-    <AssemblyName>CFAReader.CFA</AssemblyName>
+    <RootNamespace>VicFireReader.CFA</RootNamespace>
+    <AssemblyName>VicFireReader.CFA</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +91,7 @@
     <Compile Include="Regions\CfaRegions.cs" />
     <Compile Include="Data\CFADataSet.cs">
       <DependentUpon>CFADataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\CFADataSet.Designer.cs">
       <DependentUpon>CFADataSet.xsd</DependentUpon>

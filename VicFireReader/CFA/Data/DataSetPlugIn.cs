@@ -23,7 +23,7 @@
 using NoeticTools.PlugIns;
 
 
-namespace CFAReader.CFA.Data
+namespace VicFireReader.CFA.Data
 {
 	public class DataSetPlugIn : IPlugin
 	{

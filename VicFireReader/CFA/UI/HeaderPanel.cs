@@ -27,7 +27,7 @@ using System.Windows.Forms;
 using NoeticTools.Windows.Forms;
 
 
-namespace CFAReader.CFA.UI
+namespace VicFireReader.CFA.UI
 {
 	public partial class HeaderPanel : UserControl, IErrorIndicator
 	{
@@ -63,7 +63,8 @@ namespace CFAReader.CFA.UI
 		{
 			get { return base.ForeColor; }
 			set { base.ForeColor = value; }
-		}
+		}
+
 		private void HeaderPanel_Load(object sender, EventArgs e)
 		{
 		}

@@ -7,8 +7,8 @@
     <ProjectGuid>{099535B6-0927-4DAB-B311-AF9D7448897E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CFAReader</RootNamespace>
-    <AssemblyName>CFAReader</AssemblyName>
+    <RootNamespace>VicFireReader</RootNamespace>
+    <AssemblyName>VicFireReader</AssemblyName>
     <ApplicationIcon>Dring2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

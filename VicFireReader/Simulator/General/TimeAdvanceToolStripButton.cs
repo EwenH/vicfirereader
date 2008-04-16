@@ -22,12 +22,12 @@
 
 using System;
 using System.Windows.Forms;
-using CFAReader.Images;
+using VicFireReader.Images;
 using NDependencyInjection;
 using ToolStripButton = NoeticTools.DotNetWrappers.ToolStripButton;
 
 
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	public partial class TimeAdvanceToolStripButton : ToolStripButton, ITimeAdvanceToolStripButton
 	{

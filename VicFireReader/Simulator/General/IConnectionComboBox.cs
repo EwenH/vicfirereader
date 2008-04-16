@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	public interface IConnectionComboBox
 	{

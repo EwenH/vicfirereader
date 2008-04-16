@@ -26,7 +26,7 @@ using NUnit.Framework;
 using System;
 
 
-namespace CFAReader.Utilities.Tests
+namespace VicFireReader.Utilities.Tests
 {
 	[TestFixture]
 	public class OrderedListTests : MockingTestFixture

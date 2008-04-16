@@ -20,10 +20,10 @@
 
 #endregion
 
-using CFAReader.CFA.Data;
-using CFAReader.CFA.Incidents.RSS;
-using CFAReader.CFA.Regions;
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents.RSS;
+using VicFireReader.CFA.Regions;
+using VicFireReader.CFA.UI;
 using NDependencyInjection;
 using NDependencyInjection.interfaces;
 using NoeticTools.GoogleMaps;
@@ -31,7 +31,7 @@ using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Persistence;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentsViewFactory : IIncidentsViewFactory
 	{

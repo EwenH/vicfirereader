@@ -23,15 +23,15 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Windows.Forms;
-using CFAReader.CFA;
-using CFAReader.CFA.Data;
-using CFAReader.CFA.Options;
-using CFAReader.CFA.Regions;
-using CFAReader.Images;
-using CFAReader.Interfaces;
-using CFAReader.Simulator;
-using CFAReader.Simulator.General;
-using CFAReader.UI;
+using VicFireReader;
+using VicFireReader.CFA;
+using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Options;
+using VicFireReader.CFA.Regions;
+using VicFireReader.Images;
+using VicFireReader.Interfaces;
+using VicFireReader.Simulator;
+using VicFireReader.UI;
 using NDependencyInjection;
 using NDependencyInjection.interfaces;
 using NoeticTools.DotNetWrappers;
@@ -45,7 +45,7 @@ using Timer=NoeticTools.DotNetWrappers.Timer;
 using ITimer = NoeticTools.DotNetWrappers.ITimer;
 
 
-namespace CFAReader
+namespace VicFireReader
 {
 	public class CFAReaderApplication
 	{
@@ -77,7 +77,7 @@ namespace CFAReader
 					.Provides<IClock>();
 				system.HasSingleton<HttpWebRequestFactory>()
 					.Provides<IHttpWebRequestFactory>();
-				title = "CFAReader";
+				title = "VicFireReader";
 			}
 			else
 			{
@@ -86,7 +86,7 @@ namespace CFAReader
 					.Provides<IClock>()
 					.Provides<IHttpWebRequestFactory>();
 
-				title = "CFAReader == SIMULATED ==";
+				title = "VicFireReader == SIMULATED ==";
 			}
 
 			system.HasSingleton<CFAReaderSettings>()

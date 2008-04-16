@@ -23,7 +23,7 @@
 using System.Text.RegularExpressions;
 
 
-namespace CFAReader.CFA
+namespace VicFireReader.CFA
 {
 	public class IncidentLocation
 	{

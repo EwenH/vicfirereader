@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.CFA
+namespace VicFireReader.CFA
 {
 	public class CommandLineParser : IApplicationOptions
 	{

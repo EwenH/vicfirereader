@@ -24,11 +24,12 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using VicFireReader;
 using WeifenLuo.WinFormsUI.Docking;
 using NDependencyInjection;
 
 
-namespace CFAReader.UI
+namespace VicFireReader.UI
 {
 	public partial class MDIParent : Form
 	{
@@ -118,7 +119,7 @@ namespace CFAReader.UI
 		private static string GetPanelsConfigFilePath()
 		{
 			string applicationFolder = Path.Combine(
-				Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CFAReader");
+				Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "VicFireReader");
 			if (!Directory.Exists(applicationFolder))
 			{
 				Directory.CreateDirectory(applicationFolder);

@@ -21,7 +21,7 @@
 #endregion
 
 
-namespace CFAReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSS
 {
 	public interface IIncidentsListener
 	{

@@ -29,7 +29,7 @@ using NoeticTools.RSS;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace CFAReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans
 {
 	public class TotalFireBanViewPlugin : IPlugin, IOnOpenListener, IViewController
 	{

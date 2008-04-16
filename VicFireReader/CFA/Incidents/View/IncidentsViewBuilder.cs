@@ -20,12 +20,12 @@
 
 #endregion
 
-using CFAReader.CFA.Regions;
-using CFAReader.CFA.UI;
+using VicFireReader.CFA.Regions;
+using VicFireReader.CFA.UI;
 using NDependencyInjection.interfaces;
 
 
-namespace CFAReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentsViewBuilder : ISubsystemBuilder
 	{

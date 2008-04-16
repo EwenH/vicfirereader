@@ -22,10 +22,10 @@
 
 using System;
 using System.Text;
-using CFAReader.Simulator.Incidents;
+using VicFireReader.Simulator.Incidents;
 
 
-namespace CFAReader.Simulator.Incidents
+namespace VicFireReader.Simulator.Incidents
 {
 	public class IncidentRSSItem : IIncidentRSSItem
 	{

@@ -23,7 +23,7 @@
 using System.Windows.Forms;
 
 
-namespace CFAReader.Simulator.Incidents
+namespace VicFireReader.Simulator.Incidents
 {
 	public partial class IncidentEditPanel : UserControl
 	{

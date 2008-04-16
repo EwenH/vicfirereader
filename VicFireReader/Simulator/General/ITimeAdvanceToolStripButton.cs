@@ -23,7 +23,7 @@
 using NoeticTools.DotNetWrappers;
 
 
-namespace CFAReader.Simulator.General
+namespace VicFireReader.Simulator.General
 {
 	public interface ITimeAdvanceToolStripButton : IToolStripButton
 	{

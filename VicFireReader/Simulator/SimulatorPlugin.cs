@@ -20,12 +20,12 @@
 
 #endregion
 
-using CFAReader.Simulator.General;
+using VicFireReader.Simulator.General;
 using NoeticTools.PlugIns;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace CFAReader.Simulator
+namespace VicFireReader.Simulator
 {
 	public class SimulatorPlugin : IPlugin, IOnOpenListener
 	{

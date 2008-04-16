@@ -1,4 +1,4 @@
-namespace CFAReader.Simulator.Incidents
+namespace VicFireReader.Simulator.Incidents
 {
 	partial class IncidentEditPanel
 	{
@@ -235,7 +235,7 @@ namespace CFAReader.Simulator.Incidents
 			// prevToolStripButton
 			// 
 			this.prevToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.prevToolStripButton.Image = global::CFAReader.Simulator.Resource.GoToPrevious;
+			this.prevToolStripButton.Image = global::VicFireReader.Simulator.Resource.GoToPrevious;
 			this.prevToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.prevToolStripButton.Name = "prevToolStripButton";
 			this.prevToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -245,7 +245,7 @@ namespace CFAReader.Simulator.Incidents
 			// nextToolStripButton
 			// 
 			this.nextToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.nextToolStripButton.Image = global::CFAReader.Simulator.Resource.GoToNextHS;
+			this.nextToolStripButton.Image = global::VicFireReader.Simulator.Resource.GoToNextHS;
 			this.nextToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.nextToolStripButton.Name = "nextToolStripButton";
 			this.nextToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -255,7 +255,7 @@ namespace CFAReader.Simulator.Incidents
 			// toolStripButton3
 			// 
 			this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton3.Image = global::CFAReader.Simulator.Resource.NewDocumentHS;
+			this.toolStripButton3.Image = global::VicFireReader.Simulator.Resource.NewDocumentHS;
 			this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton3.Name = "toolStripButton3";
 			this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
@@ -265,7 +265,7 @@ namespace CFAReader.Simulator.Incidents
 			// toolStripButton1
 			// 
 			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton1.Image = global::CFAReader.Simulator.Resource.DeleteHS;
+			this.toolStripButton1.Image = global::VicFireReader.Simulator.Resource.DeleteHS;
 			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton1.Name = "toolStripButton1";
 			this.toolStripButton1.Size = new System.Drawing.Size(23, 22);

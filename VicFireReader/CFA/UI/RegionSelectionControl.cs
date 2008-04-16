@@ -22,11 +22,11 @@
 
 using System;
 using System.Windows.Forms;
-using CFAReader.CFA.Regions;
+using VicFireReader.CFA.Regions;
 using NDependencyInjection;
 
 
-namespace CFAReader.CFA.UI
+namespace VicFireReader.CFA.UI
 {
 	public partial class RegionSelectionControl : UserControl, IRegionSelectionControl
 	{

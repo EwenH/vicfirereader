@@ -22,10 +22,10 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using CFAReader.CFA.Regions;
+using VicFireReader.CFA.Regions;
 
 
-namespace CFAReader.CFA.Regions
+namespace VicFireReader.CFA.Regions
 {
 	public interface ICfaRegions : IList, ICollection<ICfaRegion>
 	{

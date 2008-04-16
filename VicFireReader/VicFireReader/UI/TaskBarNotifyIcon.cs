@@ -25,7 +25,7 @@ using System.Windows.Forms;
 using System;
 
 
-namespace CFAReader.UI
+namespace VicFireReader.UI
 {
 	public class TaskBarNotifyIcon
 	{
@@ -37,7 +37,7 @@ namespace CFAReader.UI
 		{
 			notifyIcon = new NotifyIcon(components);
 			notifyIcon.Icon = form.Icon;
-			notifyIcon.Text = "CFAReader";
+			notifyIcon.Text = "VicFireReader";
 			notifyIcon.Visible = true;
 			ContextMenu contextMenu = new ContextMenu(
 				new MenuItem[]
