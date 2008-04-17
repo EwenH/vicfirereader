@@ -1,6 +1,6 @@
 namespace VicFireReader.Simulator.Incidents
 {
-	partial class IncidentEditPanel
+	partial class IncidentEditPanel : IIncidentEditPanel
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -44,9 +44,9 @@ namespace VicFireReader.Simulator.Incidents
 			this.regionNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.vehiclesNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.prevToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.nextToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -216,21 +216,16 @@ namespace VicFireReader.Simulator.Incidents
 			// toolStrip1
 			// 
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			                                                                        	this.prevToolStripButton,
-			                                                                        	this.nextToolStripButton,
-			                                                                        	this.toolStripSeparator1,
-			                                                                        	this.toolStripButton3,
-			                                                                        	this.toolStripButton1});
+            this.prevToolStripButton,
+            this.nextToolStripButton,
+            this.toolStripSeparator1,
+            this.toolStripButton3,
+            this.toolStripButton1});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(220, 25);
 			this.toolStrip1.TabIndex = 3;
 			this.toolStrip1.Text = "toolStrip1";
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
 			// prevToolStripButton
 			// 
@@ -251,6 +246,11 @@ namespace VicFireReader.Simulator.Incidents
 			this.nextToolStripButton.Size = new System.Drawing.Size(23, 22);
 			this.nextToolStripButton.Text = "toolStripButton2";
 			this.nextToolStripButton.ToolTipText = "Next incident";
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
 			// toolStripButton3
 			// 

@@ -81,6 +81,8 @@
     <Compile Include="General\TimeAdvanceToolStripButton.Designer.cs">
       <DependentUpon>TimeAdvanceToolStripButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Incidents\IIncidentEditPanel.cs" />
+    <Compile Include="Incidents\IIncidentEditView.cs" />
     <Compile Include="Incidents\IIncidentRSSItem.cs" />
     <Compile Include="Incidents\IncidentRSSItem.cs" />
     <Compile Include="Incidents\IncidentsRSSGenerator.cs" />

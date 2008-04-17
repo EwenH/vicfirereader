@@ -22,6 +22,7 @@
 
 using VicFireReader.Simulator.General;
 using NoeticTools.PlugIns;
+using VicFireReader.Simulator.Incidents;
 using WeifenLuo.WinFormsUI.Docking;
 
 
@@ -30,11 +31,13 @@ namespace VicFireReader.Simulator
 	public class SimulatorPlugin : IPlugin, IOnOpenListener
 	{
 		private readonly ConnectionView generalView;
+		private readonly IIncidentEditView incidentEditView;
 		private IPluginHostServices hostServices;
 
-		public SimulatorPlugin(ConnectionView generalView)
+		public SimulatorPlugin(ConnectionView generalView, IIncidentEditView incidentEditView)
 		{
 			this.generalView = generalView;
+			this.incidentEditView = incidentEditView;
 		}
 
 		void IPlugin.Accept(IPluginHostServices services)
@@ -47,7 +50,7 @@ namespace VicFireReader.Simulator
 			hostServices = services;
 			
 			hostServices.Show(generalView, DockState.DockRight);
-//			hostServices.Show(new IncidentEditView(), DockState.DockRightAutoHide);
+			hostServices.Show((DockContent)incidentEditView, DockState.DockRight);
 
 			generalView.Activate();
 		}

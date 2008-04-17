@@ -21,13 +21,20 @@
 #endregion
 
 using System.Windows.Forms;
+using NDependencyInjection;
+using VicFireReader.CFA.Data;
 
 
 namespace VicFireReader.Simulator.Incidents
 {
 	public partial class IncidentEditPanel : UserControl
 	{
-		public IncidentEditPanel()
+		public IncidentEditPanel() : this(null)
+		{
+		}
+
+		[InjectionConstructor]
+		public IncidentEditPanel(ICFADataSet dataSet)
 		{
 			InitializeComponent();
 		}

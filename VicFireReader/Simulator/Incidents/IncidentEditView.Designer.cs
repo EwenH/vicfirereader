@@ -1,9 +1,9 @@
-using IncidentEditPanel=VicFireReader.Simulator.Incidents.IncidentEditPanel;
+using IncidentEditPanel=VicFireReader.Simulator.Incidents.IIncidentEditPanel;
 
 
 namespace VicFireReader.Simulator.Incidents
 {
-	partial class IncidentEditView
+	partial class IncidentEditView : IIncidentEditView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -31,17 +31,7 @@ namespace VicFireReader.Simulator.Incidents
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.incidentView = new IncidentEditPanel();
 			this.SuspendLayout();
-			// 
-			// incidentView
-			// 
-			this.incidentView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.incidentView.Location = new System.Drawing.Point(0, 45);
-			this.incidentView.MinimumSize = new System.Drawing.Size(100, 260);
-			this.incidentView.Name = "incidentView";
-			this.incidentView.Size = new System.Drawing.Size(229, 284);
-			this.incidentView.TabIndex = 2;
 			// 
 			// IncidentEditView
 			// 
@@ -52,20 +42,17 @@ namespace VicFireReader.Simulator.Incidents
 			this.ClientSize = new System.Drawing.Size(229, 329);
 			this.CloseButton = false;
 			this.ControlBox = false;
-			this.Controls.Add(this.incidentView);
 			this.HeaderText = "Incidents Simulator";
 			this.MinimumSize = new System.Drawing.Size(200, 200);
 			this.Name = "IncidentEditView";
 			this.TabText = "Incidents Simulator";
 			this.Text = "Incidents Simulator";
-			this.Controls.SetChildIndex(this.incidentView, 0);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private IncidentEditPanel incidentView;
 
 	}
 }

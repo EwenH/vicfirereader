@@ -24,6 +24,7 @@ using VicFireReader.Interfaces;
 using VicFireReader.Simulator.General;
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
+using VicFireReader.Simulator.Incidents;
 
 
 namespace VicFireReader.Simulator
@@ -34,6 +35,9 @@ namespace VicFireReader.Simulator
 		{
 			system.HasSingleton<TimeAdvanceToolStripButton>().Provides<ITimeAdvanceToolStripButton>();
 			system.HasSingleton<ConnectionView>().Provides<ConnectionView>();
+
+			system.HasSingleton<IncidentEditPanel>().Provides<IIncidentEditPanel>();
+			system.HasSingleton<IncidentEditView>().Provides<IIncidentEditView>();
 
 			system.HasSingleton<SimulatorPlugin>().Provides<IPlugin>();
 		}

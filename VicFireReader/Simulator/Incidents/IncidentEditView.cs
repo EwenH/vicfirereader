@@ -20,6 +20,8 @@
 
 #endregion
 
+using System.Windows.Forms;
+using NDependencyInjection;
 using VicFireReader.CFA.UI;
 
 
@@ -27,9 +29,16 @@ namespace VicFireReader.Simulator.Incidents
 {
 	public partial class IncidentEditView : ContentForm
 	{
-		public IncidentEditView()
+		public IncidentEditView() : this(new IncidentEditPanel(null))
 		{
 			InitializeComponent();
+		}
+
+		[InjectionConstructor]
+		public IncidentEditView(IIncidentEditPanel editPanel)
+		{
+			InitializeComponent();
+			ContentPlaceHolder.AddControl((Control)editPanel);
 		}
 	}
 }
