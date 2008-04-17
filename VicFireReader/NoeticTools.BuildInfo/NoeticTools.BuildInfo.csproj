@@ -46,7 +46,7 @@
     </SvnVersion>
   </Target>
   <Target Name="GenerateAssemblyInfo" DependsOnTargets="GetSubversionRevisionNumber">
-    <AssemblyInfo CodeLanguage="CS" OutputFile="$(MSBuildProjectDirectory)\Properties\AssemblyInfo.cs" AssemblyTitle="CFAReader" AssemblyDescription="CFA RSS feed reader" AssemblyConfiguration="" AssemblyCompany="" AssemblyProduct="RSSReader" AssemblyCopyright="Copyright (c) Robert Smyth, 2008" AssemblyTrademark="RSSReader, NoeticTools" ComVisible="false" CLSCompliant="false" Guid="3ba34754-d15f-431f-42ce-89424b1b3591" AssemblyVersion="1.0.0.$(Revision)" AssemblyFileVersion="1.0.0.$(Revision)" />
+    <AssemblyInfo CodeLanguage="CS" OutputFile="$(MSBuildProjectDirectory)\Properties\AssemblyInfo.cs" AssemblyTitle="VicFireReader" AssemblyDescription="CFA RSS feed reader" AssemblyConfiguration="" AssemblyCompany="" AssemblyProduct="RSSReader" AssemblyCopyright="Copyright (c) Robert Smyth, 2008" AssemblyTrademark="RSSReader, NoeticTools" ComVisible="false" CLSCompliant="false" Guid="3ba34754-d15f-431f-42ce-89424b1b3591" AssemblyVersion="1.0.0.$(Revision)" AssemblyFileVersion="1.0.0.$(Revision)" />
   </Target>
   <Target Name="BeforeBuild" DependsOnTargets="GenerateAssemblyInfo">
   </Target>

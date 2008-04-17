@@ -48,7 +48,7 @@ namespace VicFireReader.CFA.Options
 
 			ImageResources imageResources = new ImageResources();
 
-			hostServices.ToolStrip.AddButton("Options", imageResources.GetImage("PropertiesHS.png"/*"General Preferences.tiff"*/), onOptionsButtonClick, "Options");
+			hostServices.ToolStrip.AddButton("Options", imageResources.GetImage("PropertiesHS.png"), onOptionsButtonClick, "Options");
 		}
 
 		private void onOptionsButtonClick(object sender, EventArgs e)

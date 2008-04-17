@@ -53,8 +53,11 @@ namespace VicFireReader.CFA.TotalFireBans
 			get { return updatePeriod; }
 			set
 			{
-				updatePeriod = value;
-				OptionsChangedNotification();
+				if (value >= TimeSpan.FromSeconds(15))
+				{
+					updatePeriod = value;
+					OptionsChangedNotification();
+				}
 			}
 		}
 
