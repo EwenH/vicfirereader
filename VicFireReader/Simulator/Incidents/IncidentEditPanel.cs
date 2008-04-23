@@ -20,23 +20,86 @@
 
 #endregion
 
+using System;
 using System.Windows.Forms;
 using NDependencyInjection;
-using VicFireReader.CFA.Data;
 
 
 namespace VicFireReader.Simulator.Incidents
 {
 	public partial class IncidentEditPanel : UserControl
 	{
+		private readonly IIncidentEditPanelController controller;
+
 		public IncidentEditPanel() : this(null)
 		{
 		}
 
 		[InjectionConstructor]
-		public IncidentEditPanel(ICFADataSet dataSet)
+		public IncidentEditPanel(IIncidentEditPanelController controller)
 		{
+			this.controller = controller;
 			InitializeComponent();
+		}
+
+		private void nextToolStripButton_Click(object sender, System.EventArgs e)
+		{
+			controller.OnNextButtonClick();
+		}
+
+		public void SetGuid(string guid)
+		{
+			guidTextBox.Text = guid;
+		}
+
+		public void SetName(string name)
+		{
+			nameTextBox.Text = name;
+		}
+
+		public void SetLocation(string location)
+		{
+			locationTextBox.Text = location;
+		}
+
+		public void SetType(string type)
+		{
+			typeTextBox.Text = type;
+		}
+
+		public void SetStatus(string status)
+		{
+			statusTextBox.Text = status;
+		}
+
+		public void SetSize(string size)
+		{
+			sizeTextBox.Text = size;
+		}
+
+		public void SetPublicationTime(DateTime time)
+		{
+			pubDateDateTimePicker.Value = time;
+		}
+
+		public void SetUpdateTime(DateTime time)
+		{
+			updateDateTimePicker.Value = time;
+		}
+
+		public void SetRegion(short region)
+		{
+			regionNumericUpDown.Value = region;
+		}
+
+		public void SetVehicles(short appliances)
+		{
+			vehiclesNumericUpDown.Value = appliances;
+		}
+
+		private void IncidentEditPanel_Load(object sender, EventArgs e)
+		{
+			controller.Start();
 		}
 	}
 }

@@ -20,28 +20,12 @@
 
 #endregion
 
-using VicFireReader.Interfaces;
-using VicFireReader.Simulator.General;
-using NDependencyInjection.interfaces;
-using NoeticTools.PlugIns;
-using VicFireReader.Simulator.Incidents;
 
-
-namespace VicFireReader.Simulator
+namespace VicFireReader.Simulator.Incidents
 {
-	public class SimulatorPluginBuilder : IPluginBuilder
-	{
-		public void Build(ISystemDefinition system)
-		{
-			system.HasSingleton<TimeAdvanceToolStripButton>().Provides<ITimeAdvanceToolStripButton>();
-			system.HasSingleton<ConnectionView>().Provides<ConnectionView>();
-
-			system.HasSingleton<IncidentEditPanel>().Provides<IIncidentEditPanel>();
-			system.HasSingleton<IncidentEditPanelController>().Provides<IIncidentEditPanelController>();
-
-			system.HasSingleton<IncidentEditView>().Provides<IIncidentEditView>();
-
-			system.HasSingleton<SimulatorPlugin>().Provides<IPlugin>();
-		}
+	public interface IIncidentEditPanelController
+	{	
+		void OnNextButtonClick();
+		void Start();
 	}
 }

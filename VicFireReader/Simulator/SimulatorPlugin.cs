@@ -48,11 +48,9 @@ namespace VicFireReader.Simulator
 		void IOnOpenListener.OnOpen(IPluginHostServices services)
 		{
 			hostServices = services;
-			
+
 			hostServices.Show(generalView, DockState.DockRight);
 			hostServices.Show((DockContent)incidentEditView, DockState.DockRight);
-
-			generalView.Activate();
 		}
 
 		void IOnOpenListener.OnClosing()
