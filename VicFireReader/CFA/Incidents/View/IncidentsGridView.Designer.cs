@@ -137,7 +137,9 @@ namespace VicFireReader.CFA.Incidents.View
 			// 
 			this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
+			this.dataGridViewTextBoxColumn3.FillWeight = 110F;
 			this.dataGridViewTextBoxColumn3.HeaderText = "Name";
+			this.dataGridViewTextBoxColumn3.MinimumWidth = 75;
 			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
 			this.dataGridViewTextBoxColumn3.ReadOnly = true;
 			// 
