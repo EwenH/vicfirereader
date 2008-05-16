@@ -347,6 +347,7 @@ namespace VicFireReader.Simulator.Incidents
 			this.prevToolStripButton.Size = new System.Drawing.Size(23, 22);
 			this.prevToolStripButton.Text = "pevToolStripButton";
 			this.prevToolStripButton.ToolTipText = "Previous incident";
+			this.prevToolStripButton.Click += new System.EventHandler(this.prevToolStripButton_Click);
 			// 
 			// nextToolStripButton
 			// 

@@ -39,14 +39,25 @@ namespace VicFireReader.Simulator.Incidents
 
 		public void OnNextButtonClick()
 		{
-			if (currentIndicentIndex == incidents.Rows.Count)
+			SelectIncident(currentIndicentIndex + 1);
+		}
+
+		public void OnPrevButtonClick()
+		{
+			SelectIncident(currentIndicentIndex - 1);
+		}
+
+		private void SelectIncident(int incidentIndex)
+		{
+			if (incidentIndex < 0)
 			{
-				currentIndicentIndex = 0;
+				incidentIndex = incidents.Rows.Count - 1;
 			}
-			else
+			else if (incidentIndex >= incidents.Rows.Count)
 			{
-				currentIndicentIndex++;
+				incidentIndex = 0;
 			}
+			currentIndicentIndex = incidentIndex;
 
 			UpdatePanel();
 		}

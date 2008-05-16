@@ -24,8 +24,9 @@
 namespace VicFireReader.Simulator.Incidents
 {
 	public interface IIncidentEditPanelController
-	{	
-		void OnNextButtonClick();
+	{
 		void Start();
+		void OnNextButtonClick();
+		void OnPrevButtonClick();
 	}
 }

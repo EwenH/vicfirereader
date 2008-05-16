@@ -42,9 +42,14 @@ namespace VicFireReader.Simulator.Incidents
 			InitializeComponent();
 		}
 
-		private void nextToolStripButton_Click(object sender, System.EventArgs e)
+		private void nextToolStripButton_Click(object sender, EventArgs e)
 		{
 			controller.OnNextButtonClick();
+		}
+
+		private void prevToolStripButton_Click(object sender, EventArgs e)
+		{
+			controller.OnPrevButtonClick();
 		}
 
 		public void SetGuid(string guid)
