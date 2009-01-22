@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>CFAReader Copyright (C) Robert Smyth 2008.
+    <value>VicFireReader Copyright (C) Robert Smyth 2008.
 
-http://code.google.com/p/cfareader/
+http://code.google.com/p/vicfirereader/
 http://robsmyth.com
 
 The software is subject to the Mozilla Public License

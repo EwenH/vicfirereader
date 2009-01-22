@@ -65,7 +65,7 @@ namespace VicFireReader.UI
 
 		private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
 		{
-			CFAReaderApplication.Exit();
+			VicFireReaderApplication.Exit();
 		}
 
 		private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)

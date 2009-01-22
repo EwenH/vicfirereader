@@ -67,14 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\NoeticTools.BuildInfo\Properties\AssemblyInfo.cs">
+    <Compile Include="..\AssemblyInfo\Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Application.cs" />
-    <Compile Include="CFAReaderSettings.Designer.cs">
+    <Compile Include="VicFireReaderSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>CFAReaderSettings.settings</DependentUpon>
+      <DependentUpon>VicFireReaderSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="HelpAboutForm.cs">
       <SubType>Form</SubType>
@@ -111,9 +111,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="CFAReaderSettings.settings">
+    <None Include="VicFireReaderSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>CFAReaderSettings.Designer.cs</LastGenOutput>
+      <LastGenOutput>VicFireReaderSettings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Properties\DataSources\MDIParent.datasource" />
     <None Include="Properties\Settings.settings">

@@ -49,6 +49,7 @@ namespace VicFireReader.UI
 			system.HasSingleton<OptionsViewPlugin>()
 				.Provides<OptionsViewPlugin>()
 				.Provides<IOptionsView>();
+
 			system.HasSingleton<PlugInHost>()
 				.Provides<IPluginHost>();
 			system.HasSingleton<PlugInHostServices>()
@@ -56,6 +57,7 @@ namespace VicFireReader.UI
 
 			system.HasSingleton<DockPanel>()
 				.Provides<DockPanel>();
+
 			system.HasSingleton<MDIParent>()
 				.Provides<Form>();
 

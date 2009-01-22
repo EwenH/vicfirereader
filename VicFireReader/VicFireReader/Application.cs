@@ -47,12 +47,12 @@ using ITimer = NoeticTools.DotNetWrappers.ITimer;
 
 namespace VicFireReader
 {
-	public class CFAReaderApplication
+	public class VicFireReaderApplication
 	{
 		private readonly IApplicationOptions applicationOptions;
 		private readonly string[] toolBarOdering = new string[] { "Refresh", "Options" };
 
-		public CFAReaderApplication(IApplicationOptions applicationOptions)
+		public VicFireReaderApplication(IApplicationOptions applicationOptions)
 		{
 			this.applicationOptions = applicationOptions;
 			Application.EnableVisualStyles();
@@ -89,8 +89,8 @@ namespace VicFireReader
 				title = "VicFireReader == SIMULATED ==";
 			}
 
-			system.HasSingleton<CFAReaderSettings>()
-				.Provides<CFAReaderSettings>();
+			system.HasSingleton<VicFireReaderSettings>()
+				.Provides<VicFireReaderSettings>();
 
 			system.HasSingleton<CFADataSet>()
 				.Provides<ICFADataSet>();
@@ -100,7 +100,6 @@ namespace VicFireReader
 
 			system.HasInstance(GetType().Assembly)
 				.Provides<Assembly>();
-
 
 			system.HasSingleton<PersistenceService>()
 				.Provides<IPersistenceService>();

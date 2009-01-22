@@ -34,8 +34,8 @@ namespace VicFireReader
 		{
 			CommandLineParser parser = new CommandLineParser();
 			parser.Parse(Environment.GetCommandLineArgs());
-			CFAReaderApplication cfaReaderApplication = new CFAReaderApplication(parser);
-			cfaReaderApplication.Run();
+			VicFireReaderApplication vicFireReaderApplication = new VicFireReaderApplication(parser);
+			vicFireReaderApplication.Run();
 		}
 	}
 }

@@ -2,13 +2,22 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VicFireReader", "VicFireReader\VicFireReader.csproj", "{099535B6-0927-4DAB-B311-AF9D7448897E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VicFireReader.Tests", "VicFireReader\Tests\VicFireReader.Tests.csproj", "{4A6BECAE-462D-4AB5-8658-1EE8A05EC7ED}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{8ACB66FE-BC71-4BE1-AB5A-43B155E7DD81}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 	ProjectSection(SolutionItems) = preProject
 		bom.txt = bom.txt
 		TextFile1.txt = TextFile1.txt
@@ -16,29 +25,70 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFA", "CFA\CFA.csproj", "{AE286244-33E2-4C10-B6A0-85E7A27E79F0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{C687CD12-08C6-43E7-A231-AD956836C360} = {C687CD12-08C6-43E7-A231-AD956836C360}
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFA.Tests", "CFA\Tests\CFA.Tests.csproj", "{1AACBA7F-57A8-4634-99EF-5121E8F79F28}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CfaReaderSetup", "VicFireReaderSetup\VicFireReaderSetup.vdproj", "{1A7CC7CB-824B-410D-8382-CFF36A71CF13}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeticTools.BuildInfo", "NoeticTools.BuildInfo\NoeticTools.BuildInfo.csproj", "{C687CD12-08C6-43E7-A231-AD956836C360}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator", "Simulator\Simulator.csproj", "{9D029618-AD51-44D7-AA88-E4D8246D246D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator.Tests", "Simulator\Tests\Simulator.Tests.csproj", "{8F5EF62B-0CD2-401A-96DF-BECBF3C0C815}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images", "Images\Images.csproj", "{E507145B-7B3F-49AE-BEC7-37F89746E33E}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images.Tests", "Images\Tests\Images.Tests.csproj", "{8AB53FA7-8C8E-41B8-B351-4C4BF9D60D77}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{9A02A10E-883A-49FA-BC71-7090BEECA171}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{13ABDCBB-C2C4-43F8-B87E-D9B6A1B9A3A4}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Tests", "Utilities\Tests\Utilities.Tests.csproj", "{52DDC65F-EEBE-4D24-92AE-AEFEA305E4AD}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyInfo", "AssemblyInfo\AssemblyInfo.csproj", "{2CDA318B-AFF2-460B-9B78-67A027917DA0}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,10 +114,6 @@ Global
 		{1AACBA7F-57A8-4634-99EF-5121E8F79F28}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A7CC7CB-824B-410D-8382-CFF36A71CF13}.Debug|Any CPU.ActiveCfg = Debug
 		{1A7CC7CB-824B-410D-8382-CFF36A71CF13}.Release|Any CPU.ActiveCfg = Release
-		{C687CD12-08C6-43E7-A231-AD956836C360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C687CD12-08C6-43E7-A231-AD956836C360}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C687CD12-08C6-43E7-A231-AD956836C360}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C687CD12-08C6-43E7-A231-AD956836C360}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D029618-AD51-44D7-AA88-E4D8246D246D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D029618-AD51-44D7-AA88-E4D8246D246D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D029618-AD51-44D7-AA88-E4D8246D246D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -96,6 +142,10 @@ Global
 		{52DDC65F-EEBE-4D24-92AE-AEFEA305E4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DDC65F-EEBE-4D24-92AE-AEFEA305E4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DDC65F-EEBE-4D24-92AE-AEFEA305E4AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CDA318B-AFF2-460B-9B78-67A027917DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CDA318B-AFF2-460B-9B78-67A027917DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CDA318B-AFF2-460B-9B78-67A027917DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDA318B-AFF2-460B-9B78-67A027917DA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
