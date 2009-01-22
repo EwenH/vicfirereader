@@ -30,7 +30,6 @@ namespace VicFireReader.CFA.Regions
 	public class RegionsPlugin : IPlugin, IOnOpenListener
 	{
 		private readonly ICfaRegions regions;
-	    private IToolBarRegionSelectionController controller;
 
 	    public RegionsPlugin(ICfaRegions regions)
 		{
@@ -40,14 +39,13 @@ namespace VicFireReader.CFA.Regions
 		public void Accept(IPluginHostServices hostServices)
 		{
 			hostServices.ToolStrip.AddSeparator("RegionsSeparator");
-			IToolStripComboBox combobox = hostServices.ToolStrip.AddComboBox("Regions");
-			controller = new ToolBarRegionSelectionController(combobox, regions);
-
             hostServices.AddOnOpenListener(this);
 		}
 
 	    void IOnOpenListener.OnOpen(IPluginHostServices hostServices)
 	    {
+            IToolStripComboBox combobox = hostServices.ToolStrip.AddComboBox("Regions");
+            IToolBarRegionSelectionController controller = new ToolBarRegionSelectionController(combobox, regions);
             controller.Start();
         }
 
