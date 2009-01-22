@@ -24,6 +24,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using NoeticTools.PlugIns.Persistence;
 using VicFireReader;
 using WeifenLuo.WinFormsUI.Docking;
 using NDependencyInjection;
@@ -34,7 +35,8 @@ namespace VicFireReader.UI
 	public partial class MDIParent : Form
 	{
 		private readonly DockPanel dockPanel;
-		private int childFormNumber = 0;
+	    private readonly IPersistenceService persistenceService;
+	    private int childFormNumber = 0;
 
 		public MDIParent()
 		{
@@ -42,11 +44,12 @@ namespace VicFireReader.UI
 		}
 
 		[InjectionConstructor]
-		public MDIParent(DockPanel dockPanel, string title)
+		public MDIParent(DockPanel dockPanel, string title, IPersistenceService persistenceService)
 		{
 			this.dockPanel = dockPanel;
+		    this.persistenceService = persistenceService;
 
-			InitializeComponent();
+		    InitializeComponent();
 
 			CreateDockPanel();
 			Controls.Add(dockPanel);
@@ -114,6 +117,7 @@ namespace VicFireReader.UI
 		{
 			string panelsConfigFile = GetPanelsConfigFilePath();
 			dockPanel.SaveAsXml(panelsConfigFile);
+            persistenceService.UpdateAndSave();
 		}
 
 		private static string GetPanelsConfigFilePath()

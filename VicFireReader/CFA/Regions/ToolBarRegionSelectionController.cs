@@ -41,14 +41,17 @@ namespace VicFireReader.CFA.Regions
 			comboBox.Sorted = false;
 			comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 			comboBox.ComboBox.DataSource = regions;
-
-			comboBox.SelectedItem = regions.SelectedRegion;
-			comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
 		}
 
 		void comboBox_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			regions.SelectedRegion = comboBox.SelectedItem as ICfaRegion;
 		}
+
+	    public void Start()
+	    {
+            comboBox.SelectedItem = regions.SelectedRegion;
+            comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
+        }
 	}
 }

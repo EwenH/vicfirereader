@@ -22,15 +22,17 @@
 
 using NoeticTools.PlugIns;
 using NoeticTools.DotNetWrappers;
+using VicFireReader.CFA.UI;
 
 
 namespace VicFireReader.CFA.Regions
 {
-	public class RegionsPlugin : IPlugin
+	public class RegionsPlugin : IPlugin, IOnOpenListener
 	{
 		private readonly ICfaRegions regions;
+	    private IToolBarRegionSelectionController controller;
 
-		public RegionsPlugin(ICfaRegions regions)
+	    public RegionsPlugin(ICfaRegions regions)
 		{
 			this.regions = regions;
 		}
@@ -39,7 +41,18 @@ namespace VicFireReader.CFA.Regions
 		{
 			hostServices.ToolStrip.AddSeparator("RegionsSeparator");
 			IToolStripComboBox combobox = hostServices.ToolStrip.AddComboBox("Regions");
-			ToolBarRegionSelectionController controller = new ToolBarRegionSelectionController(combobox, regions);
+			controller = new ToolBarRegionSelectionController(combobox, regions);
+
+            hostServices.AddOnOpenListener(this);
 		}
+
+	    void IOnOpenListener.OnOpen(IPluginHostServices hostServices)
+	    {
+            controller.Start();
+        }
+
+	    void IOnOpenListener.OnClosing()
+	    {
+	    }
 	}
 }

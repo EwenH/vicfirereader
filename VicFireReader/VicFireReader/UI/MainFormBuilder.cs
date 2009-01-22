@@ -52,6 +52,7 @@ namespace VicFireReader.UI
 
 			system.HasSingleton<PlugInHost>()
 				.Provides<IPluginHost>();
+
 			system.HasSingleton<PlugInHostServices>()
 				.Provides<IPluginHostServices>();
 
@@ -63,6 +64,7 @@ namespace VicFireReader.UI
 
 			system.HasInstance(system.Get<Form>().Controls["menuStrip"])
 				.Provides<System.Windows.Forms.MenuStrip>();
+
 			system.HasSingleton<MenuStrip>()
 				.Provides<IMenuStrip>();
 
