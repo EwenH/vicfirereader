@@ -18,7 +18,6 @@
 
 #endregion
 
-using System.Windows.Forms;
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Menus;
 using NoeticTools.PlugIns.Persistence;
@@ -32,7 +31,6 @@ namespace VicFireReader.CFA.Incidents.View
         private IncidentsViewPlugInConfig config;
         private IIncidentsViewController controller;
         private IPluginHostServices hostServices;
-        private IFormClosedListener formClosedListener;
 
         public IncidentsViewPlugIn(IIncidentsViewFactory factory)
         {
@@ -64,8 +62,6 @@ namespace VicFireReader.CFA.Incidents.View
 
         void IViewController.Show(IFormClosedListener listener)
         {
-            formClosedListener = listener;
-
             controller = factory.Create(hostServices);
             controller.Show(hostServices);
         }

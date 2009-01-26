@@ -1,22 +1,20 @@
 #region Copyright
 
-/*---------------------------------------------------------------------------
- * The contents of this file are subject to the Mozilla Public License
- * Version 1.1 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- * 
- * http://www.mozilla.org/MPL/
- * 
- * Software distributed under the License is distributed on an "AS IS"
- * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
- * License for the specific language governing rights and limitations under 
- * the License.
- * 
- * The Initial Developer of the Original Code is Robert Smyth.
- * Portions created by Robert Smyth are Copyright (C) 2008.
- * 
- * All Rights Reserved.
- *---------------------------------------------------------------------------*/
+// The contents of this file are subject to the Mozilla Public License
+//  Version 1.1 (the "License"); you may not use this file except in compliance
+//  with the License. You may obtain a copy of the License at
+//  
+//  http://www.mozilla.org/MPL/
+//  
+//  Software distributed under the License is distributed on an "AS IS"
+//  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+//  License for the specific language governing rights and limitations under 
+//  the License.
+//  
+//  The Initial Developer of the Original Code is Robert Smyth.
+//  Portions created by Robert Smyth are Copyright (C) 2008.
+//  
+//  All Rights Reserved.
 
 #endregion
 
@@ -26,21 +24,21 @@ using NoeticTools.RSS;
 
 namespace VicFireReader.CFA.Incidents.RSS
 {
-	public class IncidentsRssReaderBuilder : ISubsystemBuilder
-	{
-		public void Build(ISystemDefinition system)
-		{
-			system.HasSingleton<IncidentFactory>()
-				.Provides<IIncidentFactory>();
-			system.HasSingleton<RSSReaderFactory>()
-				.Provides<IRSSReaderFactory>();
-			system.HasSingleton<IncidentsRSSReaderOptions>()
-				.Provides<IIncidentsRSSReaderOptions>();
+    public class IncidentsRssReaderBuilder : ISubsystemBuilder
+    {
+        public void Build(ISystemDefinition system)
+        {
+            system.HasSingleton<IncidentFactory>()
+                .Provides<IIncidentFactory>();
+            system.HasSingleton<RSSReaderFactory>()
+                .Provides<IRSSReaderFactory>();
+            system.HasSingleton<IncidentsRSSReaderOptions>()
+                .Provides<IIncidentsRSSReaderOptions>();
 
-			system.HasSingleton<IncidentsRSSReader>()
-				.Provides<IRSSOptionsChangedListener>()
-				.Provides<IIncidentsRSSReader>()
-				.Provides<IRSSReaderListener>();
-		}
-	}
+            system.HasSingleton<IncidentsRSSReader>()
+                .Provides<IRSSOptionsChangedListener>()
+                .Provides<IIncidentsRSSReader>()
+                .Provides<IRSSReaderListener>();
+        }
+    }
 }

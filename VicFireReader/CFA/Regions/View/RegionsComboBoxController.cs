@@ -18,6 +18,7 @@
 
 #endregion
 
+using System;
 using System.Windows.Forms;
 using NoeticTools.DotNetWrappers.Windows.Forms;
 
@@ -26,8 +27,8 @@ namespace VicFireReader.CFA.Regions.View
 {
     public class RegionsComboBoxController : IRegionsComboBoxController
     {
-        private readonly IComboBox comboBox;
         private readonly ICfaRegions cfaRegions;
+        private readonly IComboBox comboBox;
 
         public RegionsComboBoxController(IComboBox comboBox, ICfaRegions cfaRegions)
         {
@@ -40,15 +41,15 @@ namespace VicFireReader.CFA.Regions.View
             comboBox.DataSource = cfaRegions;
         }
 
-        void comboBox_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-            cfaRegions.SelectedRegion = comboBox.SelectedItem as ICfaRegion;
-        }
-
         public void Start()
         {
             comboBox.SelectedItem = cfaRegions.SelectedRegion;
             comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cfaRegions.SelectedRegion = comboBox.SelectedItem as ICfaRegion;
         }
     }
 }

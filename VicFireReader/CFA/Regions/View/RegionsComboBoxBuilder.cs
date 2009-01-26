@@ -20,6 +20,7 @@
 
 using NDependencyInjection.interfaces;
 using NoeticTools.DotNetWrappers.Windows.Forms;
+using ComboBox=System.Windows.Forms.ComboBox;
 
 
 namespace VicFireReader.CFA.Regions.View
@@ -31,10 +32,10 @@ namespace VicFireReader.CFA.Regions.View
             system.HasSingleton<RegionsComboBoxController>()
                 .Provides<IRegionsComboBoxController>();
 
-            system.HasSingleton<System.Windows.Forms.ComboBox>()
-                .Provides<System.Windows.Forms.ComboBox>();
-
             system.HasSingleton<ComboBox>()
+                .Provides<ComboBox>();
+
+            system.HasSingleton<NoeticTools.DotNetWrappers.Windows.Forms.ComboBox>()
                 .Provides<IComboBox>();
         }
     }

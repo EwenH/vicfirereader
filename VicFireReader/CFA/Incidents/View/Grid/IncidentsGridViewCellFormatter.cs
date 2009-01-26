@@ -29,7 +29,7 @@ using VicFireReader.CFA.Regions;
 namespace VicFireReader.CFA.Incidents.View.Grid
 {
     public class IncidentsGridViewCellFormatter : IIncidentGridViewCellFormatter, ICfaRegionsChangedListener,
-                                                 IFormClosedListener
+                                                  IFormClosedListener
     {
         private readonly ICfaRegions cfaRegions;
         private readonly IClock clock;

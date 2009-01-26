@@ -21,13 +21,11 @@
 using System;
 using System.Windows.Forms;
 using NDependencyInjection;
-using NoeticTools.DotNetWrappers;
 using NoeticTools.DotNetWrappers.Windows.Forms;
 using NoeticTools.PlugIns.Menus;
 using VicFireReader.CFA.Incidents.RSS;
 using VicFireReader.CFA.Incidents.View.Grid;
 using VicFireReader.CFA.UI;
-using Control=System.Windows.Forms.Control;
 
 
 namespace VicFireReader.CFA.Incidents.View
@@ -50,7 +48,7 @@ namespace VicFireReader.CFA.Incidents.View
             this.incidentsReader = incidentsReader;
             this.formClosedListener = formClosedListener;
             incidentsGridViewPlaceHolder.AddControl((Control) incidentsGridView);
-            regionPlaceHolder.AddControl((IControl)regionsComboBox);
+            regionPlaceHolder.AddControl(regionsComboBox);
         }
 
         void IIncidentsListener.OnSuccessfullUpdate()

@@ -1,22 +1,20 @@
 #region Copyright
 
-/*---------------------------------------------------------------------------
- * The contents of this file are subject to the Mozilla Public License
- * Version 1.1 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- * 
- * http://www.mozilla.org/MPL/
- * 
- * Software distributed under the License is distributed on an "AS IS"
- * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
- * License for the specific language governing rights and limitations under 
- * the License.
- * 
- * The Initial Developer of the Original Code is Robert Smyth.
- * Portions created by Robert Smyth are Copyright (C) 2008.
- * 
- * All Rights Reserved.
- *---------------------------------------------------------------------------*/
+// The contents of this file are subject to the Mozilla Public License
+//  Version 1.1 (the "License"); you may not use this file except in compliance
+//  with the License. You may obtain a copy of the License at
+//  
+//  http://www.mozilla.org/MPL/
+//  
+//  Software distributed under the License is distributed on an "AS IS"
+//  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+//  License for the specific language governing rights and limitations under 
+//  the License.
+//  
+//  The Initial Developer of the Original Code is Robert Smyth.
+//  Portions created by Robert Smyth are Copyright (C) 2008.
+//  
+//  All Rights Reserved.
 
 #endregion
 
@@ -26,29 +24,29 @@ using System.Xml;
 
 namespace VicFireReader.CFA.TotalFireBans
 {
-	public class FireBanItem
-	{
-		private readonly XmlNode xmlNode;
+    public class FireBanItem
+    {
+        private readonly XmlNode xmlNode;
 
-		public FireBanItem(XmlNode xmlNode)
-		{
-			this.xmlNode = xmlNode;
-		}
+        public FireBanItem(XmlNode xmlNode)
+        {
+            this.xmlNode = xmlNode;
+        }
 
-		public string GetHtmlDocumentText()
-		{
-			string rssItemTitle = xmlNode.SelectSingleNode("title").InnerText;
-			string rssItemDescription = xmlNode.SelectSingleNode("description").InnerText;
+        public string GetHtmlDocumentText()
+        {
+            string rssItemTitle = xmlNode.SelectSingleNode("title").InnerText;
+            string rssItemDescription = xmlNode.SelectSingleNode("description").InnerText;
 
-			Regex regex = new Regex(@"<img.*>");
-			Match match = regex.Match(rssItemDescription);
-			if (match.Success)
-			{
-				rssItemDescription = regex.Match(rssItemDescription).Value;
-			}
+            Regex regex = new Regex(@"<img.*>");
+            Match match = regex.Match(rssItemDescription);
+            if (match.Success)
+            {
+                rssItemDescription = regex.Match(rssItemDescription).Value;
+            }
 
-			string htmlStyleElement =
-				@"
+            string htmlStyleElement =
+                @"
 <style>
 
 body {
@@ -147,8 +145,8 @@ span.modified, span.author, span.category {
 </style>
 ";
 
-			string template =
-				@"<html xmlns:feed='http://www.w3.org/2005/Atom'>
+            string template =
+                @"<html xmlns:feed='http://www.w3.org/2005/Atom'>
 
 <head>
   <META http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -172,9 +170,9 @@ span.modified, span.author, span.category {
 </body>
 
 </html>"
-					.Replace('\'', '"');
+                    .Replace('\'', '"');
 
-			return string.Format(template, rssItemTitle, htmlStyleElement, rssItemDescription);
-		}
-	}
+            return string.Format(template, rssItemTitle, htmlStyleElement, rssItemDescription);
+        }
+    }
 }

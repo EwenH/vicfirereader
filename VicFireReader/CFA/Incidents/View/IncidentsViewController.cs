@@ -28,11 +28,12 @@ namespace VicFireReader.CFA.Incidents.View
 {
     public class IncidentsViewController : IIncidentsViewController
     {
-        private readonly IIncidentsView view;
         private readonly ContentForm contentForm;
         private readonly IRegionsComboBoxController regionSelectionController;
+        private readonly IIncidentsView view;
 
-        public IncidentsViewController(IIncidentsView view, ContentForm contentForm, IRegionsComboBoxController regionSelectionController)
+        public IncidentsViewController(IIncidentsView view, ContentForm contentForm,
+                                       IRegionsComboBoxController regionSelectionController)
         {
             this.view = view;
             this.contentForm = contentForm;
