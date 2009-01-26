@@ -20,30 +20,63 @@
 
 #endregion
 
+using NoeticTools.GoogleMaps;
+using NoeticTools.PlugIns;
+using NoeticTools.PlugIns.Menus;
+using NoeticTools.PlugIns.Persistence;
+using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents.RSS;
+using VicFireReader.CFA.Incidents.View.Grid;
 using VicFireReader.CFA.Regions;
+using VicFireReader.CFA.Regions.View;
 using VicFireReader.CFA.UI;
 using NDependencyInjection.interfaces;
+using NoeticTools.DotNetWrappers.Windows.Forms;
 
 
 namespace VicFireReader.CFA.Incidents.View
 {
 	public class IncidentsViewBuilder : ISubsystemBuilder
 	{
-		public void Build(ISystemDefinition system)
+	    private readonly IPluginHostServices hostServices;
+	    private readonly ICfaRegions cfaRegions;
+
+	    public IncidentsViewBuilder(IPluginHostServices hostServices, ICfaRegions cfaRegions)
+        {
+            this.hostServices = hostServices;
+            this.cfaRegions = cfaRegions;
+        }
+
+	    public void Build(ISystemDefinition system)
 		{
-			system.HasSingleton<IncidentsGridView>().Provides<IIncidentsGridView>();
-			system.HasSingleton<RegionSelectionControl>().Provides<IRegionSelectionControl>();
+            system.Broadcasts<IFormClosedListener>();
 
-			system.HasSingleton<IncidentGridViewCellFormatter>()
-				.Provides<IIncidentGridViewCellFormatter>()
-				.Provides<ICfaRegionsChangedListener>()
-				.Provides<IFormClosedListener>();
+            ICFADataSet cfaDataSet = hostServices.GetService<ICFADataSet>();
+            IPersistenceService persistenceService = hostServices.GetService<IPersistenceService>();
+            IIncidentsRSSReader incidentsRSSReader = hostServices.GetService<IIncidentsRSSReader>();
 
-			system.HasSingleton<IncidentsGridViewController>()
-				.Provides<IFormatterListener>()
-				.Provides<IIncidentsGridViewListener>();
+            system.HasInstance(cfaRegions).Provides<ICfaRegions>();
 
-			system.HasSingleton<IncidentsView>().Provides<ContentForm>();
+            system.HasInstance(incidentsRSSReader).Provides<IIncidentsRSSReader>();
+            system.HasInstance(cfaDataSet).Provides<ICFADataSet>();
+            system.HasInstance(persistenceService).Provides<IPersistenceService>();
+
+            system.HasSingleton<BrowserMapView>().Provides<IMapView>();
+
+		    system.HasSubsystem(new RegionsComboBoxBuilder())
+                .Provides<IRegionsComboBoxController>()
+		        .Provides<IComboBox>();
+
+		    system.HasSubsystem(new IncidentsGridViewBuilder())
+                .ListensTo<IFormClosedListener>()
+		        .Provides<IIncidentsGridView>();
+
+		    system.HasSingleton<IncidentsViewController>()
+		        .Provides<IIncidentsViewController>();
+
+			system.HasSingleton<IncidentsView>()
+                .Provides<IIncidentsView>()
+                .Provides<ContentForm>();
 		}
 	}
 }

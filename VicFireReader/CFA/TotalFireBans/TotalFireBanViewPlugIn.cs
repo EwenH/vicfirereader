@@ -37,8 +37,9 @@ namespace VicFireReader.CFA.TotalFireBans
 		private HtmlView totalFireBansView;
 		private IPluginHostServices hostServices;
 		private readonly ITotalFireBanOptions options;
+	    private IFormClosedListener formClosedListener;
 
-		public TotalFireBanViewPlugin(IRSSReaderFactory rssReaderFactory, ITotalFireBanOptions options)
+	    public TotalFireBanViewPlugin(IRSSReaderFactory rssReaderFactory, ITotalFireBanOptions options)
 		{
 			this.rssReaderFactory = rssReaderFactory;
 			this.options = options;
@@ -66,8 +67,9 @@ namespace VicFireReader.CFA.TotalFireBans
 			hostServices.AddOnOpenListener(this);
 		}
 
-		Form IViewController.Show()
+        void IViewController.Show(IFormClosedListener listener)
 		{
+		    formClosedListener = listener;
 			totalFireBansView = new HtmlView();
 			totalFireBansView.Text = "Total Fire Bans";
 			totalFireBansView.TabText = "Total Fire Bans";
@@ -75,8 +77,6 @@ namespace VicFireReader.CFA.TotalFireBans
 			hostServices.Show(totalFireBansView, DockState.DockLeft);
 
 			totalFireBanViewController.Start(options);
-
-			return totalFireBansView;
 		}
 
 		void IViewController.Close()

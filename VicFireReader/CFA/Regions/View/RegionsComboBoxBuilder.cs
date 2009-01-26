@@ -19,28 +19,23 @@
 #endregion
 
 using NDependencyInjection.interfaces;
-using NoeticTools.PlugIns;
-using VicFireReader.CFA.Regions;
+using NoeticTools.DotNetWrappers.Windows.Forms;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Regions.View
 {
-    public class IncidentsViewFactory : IIncidentsViewFactory
+    public class RegionsComboBoxBuilder : ISubsystemBuilder
     {
-        private readonly ICfaRegions cfaRegions;
-        private readonly ISystemDefinition parentDefinition;
-
-        public IncidentsViewFactory(ICfaRegions cfaRegions, ISystemDefinition parentDefinition)
+        public void Build(ISystemDefinition system)
         {
-            this.cfaRegions = cfaRegions;
-            this.parentDefinition = parentDefinition;
-        }
+            system.HasSingleton<RegionsComboBoxController>()
+                .Provides<IRegionsComboBoxController>();
 
-        public IIncidentsViewController Create(IPluginHostServices hostServices)
-        {
-            ISystemDefinition system =
-                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices, cfaRegions));
-            return system.Get<IIncidentsViewController>();
+            system.HasSingleton<System.Windows.Forms.ComboBox>()
+                .Provides<System.Windows.Forms.ComboBox>();
+
+            system.HasSingleton<ComboBox>()
+                .Provides<IComboBox>();
         }
     }
 }

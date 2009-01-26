@@ -1,73 +1,77 @@
 #region Copyright
 
-/*---------------------------------------------------------------------------
- * The contents of this file are subject to the Mozilla Public License
- * Version 1.1 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- * 
- * http://www.mozilla.org/MPL/
- * 
- * Software distributed under the License is distributed on an "AS IS"
- * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
- * License for the specific language governing rights and limitations under 
- * the License.
- * 
- * The Initial Developer of the Original Code is Robert Smyth.
- * Portions created by Robert Smyth are Copyright (C) 2008.
- * 
- * All Rights Reserved.
- *---------------------------------------------------------------------------*/
+// The contents of this file are subject to the Mozilla Public License
+//  Version 1.1 (the "License"); you may not use this file except in compliance
+//  with the License. You may obtain a copy of the License at
+//  
+//  http://www.mozilla.org/MPL/
+//  
+//  Software distributed under the License is distributed on an "AS IS"
+//  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+//  License for the specific language governing rights and limitations under 
+//  the License.
+//  
+//  The Initial Developer of the Original Code is Robert Smyth.
+//  Portions created by Robert Smyth are Copyright (C) 2008.
+//  
+//  All Rights Reserved.
 
 #endregion
 
 using System;
 using System.Windows.Forms;
-using VicFireReader.CFA.Incidents.RSS;
-using VicFireReader.CFA.UI;
 using NDependencyInjection;
+using NoeticTools.DotNetWrappers;
+using NoeticTools.DotNetWrappers.Windows.Forms;
+using NoeticTools.PlugIns.Menus;
+using VicFireReader.CFA.Incidents.RSS;
+using VicFireReader.CFA.Incidents.View.Grid;
+using VicFireReader.CFA.UI;
+using Control=System.Windows.Forms.Control;
 
 
 namespace VicFireReader.CFA.Incidents.View
 {
-	public partial class IncidentsView : ContentForm, IIncidentsListener
-	{
-		private readonly IFormClosedListener formClosedListener;
-		private readonly IIncidentsRSSReader incidentsReader;
+    public partial class IncidentsView : ContentForm, IIncidentsListener, IIncidentsView
+    {
+        private readonly IFormClosedListener formClosedListener;
+        private readonly IIncidentsRSSReader incidentsReader;
 
-		public IncidentsView()
-		{
-			InitializeComponent();
-		}
+        public IncidentsView()
+        {
+            InitializeComponent();
+        }
 
-		[InjectionConstructor]
-		public IncidentsView(IIncidentsGridView incidentsGridView, IIncidentsRSSReader incidentsReader,
-		                     IFormClosedListener formClosedListener)
-			: this()
-		{
-			this.incidentsReader = incidentsReader;
-			this.formClosedListener = formClosedListener;
-			incidentsGridViewPlaceHolder.AddControl((Control) incidentsGridView);
-		}
+        [InjectionConstructor]
+        public IncidentsView(IIncidentsGridView incidentsGridView, IIncidentsRSSReader incidentsReader,
+                             IFormClosedListener formClosedListener, IComboBox regionsComboBox)
+            : this()
+        {
+            this.incidentsReader = incidentsReader;
+            this.formClosedListener = formClosedListener;
+            incidentsGridViewPlaceHolder.AddControl((Control) incidentsGridView);
+            regionPlaceHolder.AddControl((IControl)regionsComboBox);
+        }
 
-		void IIncidentsListener.OnSuccessfullUpdate()
-		{
-			ClearError();
-		}
+        void IIncidentsListener.OnSuccessfullUpdate()
+        {
+            ClearError();
+        }
 
-		void IIncidentsListener.OnFailure()
-		{
-			SetError("Unable to read incidents.");
-		}
+        void IIncidentsListener.OnFailure()
+        {
+            SetError("Unable to read incidents.");
+        }
 
-		private void IncidentsView_Load(object sender, EventArgs e)
-		{
-			incidentsReader.AddListener(this);
-		}
+        private void IncidentsView_Load(object sender, EventArgs e)
+        {
+            incidentsReader.AddListener(this);
+        }
 
-		private void IncidentsView_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			incidentsReader.RemoveListener(this);
-			formClosedListener.FormClosed();
-		}
-	}
+        private void IncidentsView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            incidentsReader.RemoveListener(this);
+            formClosedListener.FormClosed();
+        }
+    }
 }

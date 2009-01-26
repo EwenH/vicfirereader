@@ -20,7 +20,6 @@
 
 #endregion
 
-using VicFireReader.CFA.UI;
 using NoeticTools.PlugIns;
 
 
@@ -28,6 +27,6 @@ namespace VicFireReader.CFA.Incidents.View
 {
 	public interface IIncidentsViewFactory
 	{
-		ContentForm Create(IPluginHostServices hostServices);
+	    IIncidentsViewController Create(IPluginHostServices hostServices);
 	}
 }

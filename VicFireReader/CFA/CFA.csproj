@@ -87,6 +87,10 @@
     <Compile Include="Incidents\RSS\IIncident.cs" />
     <Compile Include="Incidents\RSS\IIncidentFactory.cs" />
     <Compile Include="Incidents\RSS\IncidentFactory.cs" />
+    <Compile Include="Incidents\View\Grid\IncidentsGridViewBuilder.cs" />
+    <Compile Include="Incidents\View\IIncidentsView.cs" />
+    <Compile Include="Incidents\View\IIncidentsViewController.cs" />
+    <Compile Include="Incidents\View\IncidentsViewController.cs" />
     <Compile Include="Regions\CfaRegion.cs" />
     <Compile Include="Regions\CfaRegions.cs" />
     <Compile Include="Data\CFADataSet.cs">
@@ -112,21 +116,20 @@
     <Compile Include="Incidents\RSS\IncidentsRSSReaderOptions.cs" />
     <Compile Include="Incidents\RSS\IncidentsRSSReaderPlugIn.cs" />
     <Compile Include="Incidents\View\IFormatterListener.cs" />
-    <Compile Include="Incidents\View\IFormClosedListener.cs" />
-    <Compile Include="Incidents\View\IIncidentGridViewCellFormatter.cs" />
-    <Compile Include="Incidents\View\IIncidentsGridView.cs" />
-    <Compile Include="Incidents\View\IIncidentsGridViewController.cs" />
-    <Compile Include="Incidents\View\IIncidentsGridViewListener.cs" />
+    <Compile Include="Incidents\View\Grid\IIncidentGridViewCellFormatter.cs" />
+    <Compile Include="Incidents\View\Grid\IIncidentsGridView.cs" />
+    <Compile Include="Incidents\View\Grid\IIncidentsGridViewController.cs" />
+    <Compile Include="Incidents\View\Grid\IIncidentsGridViewListener.cs" />
     <Compile Include="Incidents\View\IIncidentsViewFactory.cs" />
     <Compile Include="Incidents\View\IIncidentsViewListener.cs" />
-    <Compile Include="Incidents\View\IncidentGridViewCellFormatter.cs" />
-    <Compile Include="Incidents\View\IncidentsGridView.cs">
+    <Compile Include="Incidents\View\Grid\IncidentsGridViewCellFormatter.cs" />
+    <Compile Include="Incidents\View\Grid\IncidentsGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Incidents\View\IncidentsGridView.Designer.cs">
+    <Compile Include="Incidents\View\Grid\IncidentsGridView.Designer.cs">
       <DependentUpon>IncidentsGridView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Incidents\View\IncidentsGridViewController.cs" />
+    <Compile Include="Incidents\View\Grid\IncidentsGridViewController.cs" />
     <Compile Include="Incidents\View\IncidentsView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,8 +143,9 @@
     <Compile Include="Incidents\View\IncidentsViewPluginBuilder.cs" />
     <Compile Include="Incidents\View\IncidentsViewPlugInConfig.cs" />
     <Compile Include="Options\OptionsViewPlugIn.cs" />
-    <Compile Include="Regions\RegionsPlugin.cs" />
-    <Compile Include="Regions\RegionsPluginBuilder.cs" />
+    <Compile Include="Regions\View\IRegionsComboBoxController.cs" />
+    <Compile Include="Regions\View\RegionsComboBoxBuilder.cs" />
+    <Compile Include="Regions\View\RegionsComboBoxController.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,14 +178,7 @@
     <Compile Include="UI\IncidentTypeControl.Designer.cs">
       <DependentUpon>IncidentTypeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\IRegionSelectionControl.cs" />
     <Compile Include="UI\IToolBarRegionSelectionController.cs" />
-    <Compile Include="UI\RegionSelectionControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\RegionSelectionControl.Designer.cs">
-      <DependentUpon>RegionSelectionControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Regions\ToolBarRegionSelectionController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +195,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Incidents\View\IncidentsGridView.resx">
+    <EmbeddedResource Include="Incidents\View\Grid\IncidentsGridView.resx">
       <SubType>Designer</SubType>
       <DependentUpon>IncidentsGridView.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,10 +211,6 @@
     <EmbeddedResource Include="UI\IncidentTypeControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>IncidentTypeControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\RegionSelectionControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>RegionSelectionControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

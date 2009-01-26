@@ -19,28 +19,27 @@
 #endregion
 
 using NDependencyInjection.interfaces;
-using NoeticTools.PlugIns;
+using NoeticTools.PlugIns.Menus;
 using VicFireReader.CFA.Regions;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.Incidents.View.Grid
 {
-    public class IncidentsViewFactory : IIncidentsViewFactory
+    public class IncidentsGridViewBuilder : ISubsystemBuilder
     {
-        private readonly ICfaRegions cfaRegions;
-        private readonly ISystemDefinition parentDefinition;
-
-        public IncidentsViewFactory(ICfaRegions cfaRegions, ISystemDefinition parentDefinition)
+        public void Build(ISystemDefinition system)
         {
-            this.cfaRegions = cfaRegions;
-            this.parentDefinition = parentDefinition;
-        }
+            system.HasSingleton<IncidentsGridView>()
+                .Provides<IIncidentsGridView>();
 
-        public IIncidentsViewController Create(IPluginHostServices hostServices)
-        {
-            ISystemDefinition system =
-                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices, cfaRegions));
-            return system.Get<IIncidentsViewController>();
+            system.HasSingleton<IncidentsGridViewCellFormatter>()
+                .Provides<IIncidentGridViewCellFormatter>()
+                .Provides<ICfaRegionsChangedListener>()
+                .Provides<IFormClosedListener>();
+
+            system.HasSingleton<IncidentsGridViewController>()
+                .Provides<IFormatterListener>()
+                .Provides<IIncidentsGridViewListener>();
         }
     }
 }
