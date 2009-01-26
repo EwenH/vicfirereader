@@ -1,22 +1,20 @@
 #region Copyright
 
-/*---------------------------------------------------------------------------
- * The contents of this file are subject to the Mozilla Public License
- * Version 1.1 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- * 
- * http://www.mozilla.org/MPL/
- * 
- * Software distributed under the License is distributed on an "AS IS"
- * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
- * License for the specific language governing rights and limitations under 
- * the License.
- * 
- * The Initial Developer of the Original Code is Robert Smyth.
- * Portions created by Robert Smyth are Copyright (C) 2008.
- * 
- * All Rights Reserved.
- *---------------------------------------------------------------------------*/
+// The contents of this file are subject to the Mozilla Public License
+//  Version 1.1 (the "License"); you may not use this file except in compliance
+//  with the License. You may obtain a copy of the License at
+//  
+//  http://www.mozilla.org/MPL/
+//  
+//  Software distributed under the License is distributed on an "AS IS"
+//  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+//  License for the specific language governing rights and limitations under 
+//  the License.
+//  
+//  The Initial Developer of the Original Code is Robert Smyth.
+//  Portions created by Robert Smyth are Copyright (C) 2008.
+//  
+//  All Rights Reserved.
 
 #endregion
 
@@ -27,10 +25,10 @@ using NoeticTools.DotNetWrappers;
 
 namespace VicFireReader.Simulator
 {
-	public class FireBanRSSSimulatedWebResponse : ISimulatedWebResponse
-	{
-		private readonly string sampleRSS =
-@"<?xml version='1.0' encoding='UTF-8'?>
+    public class FireBanRSSSimulatedWebResponse : ISimulatedWebResponse
+    {
+        private readonly string sampleRSS =
+            @"<?xml version='1.0' encoding='UTF-8'?>
 <rss xmlns:taxo='http://purl.org/rss/1.0/modules/taxonomy/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:dc='http://purl.org/dc/elements/1.1/' version='2.0'>
   <channel>
     <title>Country Fire Authority - Victoria, Australia - Declaration of Total Fire Ban</title>
@@ -44,16 +42,17 @@ namespace VicFireReader.Simulator
     </item>
   </channel>
 </rss>
-".Replace('\'', '"');
+"
+                .Replace('\'', '"');
 
-		Stream IWebResponse.GetResponseStream()
-		{
-			return new MemoryStream(Encoding.ASCII.GetBytes(sampleRSS));
-		}
+        Stream IWebResponse.GetResponseStream()
+        {
+            return new MemoryStream(Encoding.ASCII.GetBytes(sampleRSS));
+        }
 
-		public bool CanHandle(string url)
-		{
-			return url == @"http://www.cfa.vic.gov.au/incidents/tfb_rss.xml";
-		}
-	}
+        public bool CanHandle(string url)
+        {
+            return url == @"http://www.cfa.vic.gov.au/incidents/tfb_rss.xml";
+        }
+    }
 }

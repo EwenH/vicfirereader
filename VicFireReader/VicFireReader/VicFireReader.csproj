@@ -144,10 +144,6 @@
       <Project>{9D029618-AD51-44D7-AA88-E4D8246D246D}</Project>
       <Name>Simulator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{13ABDCBB-C2C4-43F8-B87E-D9B6A1B9A3A4}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dring2.ico" />

@@ -131,10 +131,6 @@
       <Project>{9A02A10E-883A-49FA-BC71-7090BEECA171}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{13ABDCBB-C2C4-43F8-B87E-D9B6A1B9A3A4}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="General\ConnectionView.resx">
