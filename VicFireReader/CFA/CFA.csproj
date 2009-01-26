@@ -179,7 +179,6 @@
       <DependentUpon>IncidentTypeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\IToolBarRegionSelectionController.cs" />
-    <Compile Include="Regions\ToolBarRegionSelectionController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\CFADataSet.xsc">
