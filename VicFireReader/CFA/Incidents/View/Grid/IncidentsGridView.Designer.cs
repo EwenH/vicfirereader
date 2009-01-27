@@ -62,20 +62,21 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                                                                                                 this.UpdateTime,
-                                                                                                 this.dataGridViewTextBoxColumn1,
-                                                                                                 this.dataGridViewTextBoxColumn2,
-                                                                                                 this.dataGridViewTextBoxColumn3,
-                                                                                                 this.dataGridViewTextBoxColumn4,
-                                                                                                 this.dataGridViewTextBoxColumn5,
-                                                                                                 this.dataGridViewTextBoxColumn6,
-                                                                                                 this.dataGridViewTextBoxColumn7,
-                                                                                                 this.dataGridViewTextBoxColumn8,
-                                                                                                 this.gUIDDataGridViewTextBoxColumn,
-                                                                                                 this.updateTimeDataGridViewTextBoxColumn});
+            this.UpdateTime,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.gUIDDataGridViewTextBoxColumn,
+            this.updateTimeDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.incidentsBindingSource;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -83,7 +84,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.dataGridView.RowHeadersWidth = 30;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(590, 324);
+            this.dataGridView.Size = new System.Drawing.Size(442, 263);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
@@ -115,7 +116,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.UpdateTime.MinimumWidth = 10;
             this.UpdateTime.Name = "UpdateTime";
             this.UpdateTime.ReadOnly = true;
-            this.UpdateTime.Width = 87;
+            this.UpdateTime.Width = 73;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -124,14 +125,17 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.dataGridViewTextBoxColumn1.HeaderText = "Region";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 78;
+            this.dataGridViewTextBoxColumn1.Width = 66;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Location";
+            this.dataGridViewTextBoxColumn2.FillWeight = 125F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Location";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 73;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -172,7 +176,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.dataGridViewTextBoxColumn7.HeaderText = "Size";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 60;
+            this.dataGridViewTextBoxColumn7.Width = 52;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -181,7 +185,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.dataGridViewTextBoxColumn8.HeaderText = "Appliances";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 102;
+            this.dataGridViewTextBoxColumn8.Width = 84;
             // 
             // gUIDDataGridViewTextBoxColumn
             // 
@@ -201,11 +205,12 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             // 
             // IncidentsGridView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "IncidentsGridView";
-            this.Size = new System.Drawing.Size(590, 324);
+            this.Size = new System.Drawing.Size(442, 263);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cFADataSetBindingSource)).EndInit();
