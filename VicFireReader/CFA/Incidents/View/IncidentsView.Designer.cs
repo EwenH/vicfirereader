@@ -35,6 +35,7 @@ namespace VicFireReader.CFA.Incidents.View
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncidentsView));
             this.cFADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cFADataSet = new VicFireReader.CFA.Data.CFADataSet();
             this.incidentsGridViewPlaceHolder = new NoeticTools.Windows.Forms.PlaceHolderControl();
@@ -83,8 +84,10 @@ namespace VicFireReader.CFA.Incidents.View
             this.Controls.Add(this.incidentsGridViewPlaceHolder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.HeaderText = "Incidents";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(454, 34);
             this.Name = "IncidentsView";
+            this.ShowIcon = true;
             this.TabText = "Incidents";
             this.Text = "Incidents";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
