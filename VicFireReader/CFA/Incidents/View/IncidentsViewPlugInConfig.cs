@@ -20,14 +20,7 @@
 
 namespace VicFireReader.CFA.Incidents.View
 {
-    internal class IncidentsViewPlugInConfig
+    public class IncidentsViewPlugInConfig
     {
-        private bool firstLoad = true;
-
-        public bool FirstLoad
-        {
-            get { return firstLoad; }
-            set { firstLoad = value; }
-        }
     }
 }
