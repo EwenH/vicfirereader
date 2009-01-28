@@ -29,9 +29,14 @@ namespace VicFireReader.CFA.Incidents.View
     {
         public void Build(ISystemDefinition system)
         {
+            system.HasSingleton<CfaRegions>()
+                .Provides<ICfaRegions>();
+
             system.HasInstance(new IncidentsViewFactory(system.Get<ICfaRegions>(), system)).Provides
                 <IIncidentsViewFactory>();
-            system.HasSingleton<IncidentsViewPlugIn>().Provides<IPlugin>();
+
+            system.HasSingleton<IncidentsViewPlugIn>()
+                .Provides<IPlugin>();
         }
     }
 }

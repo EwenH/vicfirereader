@@ -45,7 +45,7 @@ namespace VicFireReader.CFA.TotalFireBans
         void IOnOpenListener.OnOpen(IPluginHostServices services)
         {
             hostServices = services;
-            IViewFormMenuItem menuItem = new ViewFormMenuItem("Fire &Bans", hostServices, this);
+            IViewFormMenuItem menuItem = new ViewFormMenuItem("&View|Fire &Bans", hostServices, this);
             menuItem.ToggleViewShown();
         }
 

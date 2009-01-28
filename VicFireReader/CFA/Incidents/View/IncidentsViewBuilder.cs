@@ -36,13 +36,11 @@ namespace VicFireReader.CFA.Incidents.View
 {
     public class IncidentsViewBuilder : ISubsystemBuilder
     {
-        private readonly ICfaRegions cfaRegions;
         private readonly IPluginHostServices hostServices;
 
-        public IncidentsViewBuilder(IPluginHostServices hostServices, ICfaRegions cfaRegions)
+        public IncidentsViewBuilder(IPluginHostServices hostServices)
         {
             this.hostServices = hostServices;
-            this.cfaRegions = cfaRegions;
         }
 
         public void Build(ISystemDefinition system)
@@ -53,7 +51,8 @@ namespace VicFireReader.CFA.Incidents.View
             IPersistenceService persistenceService = hostServices.GetService<IPersistenceService>();
             IIncidentsRSSReader incidentsRSSReader = hostServices.GetService<IIncidentsRSSReader>();
 
-            system.HasInstance(cfaRegions).Provides<ICfaRegions>();
+            system.HasSingleton<CfaRegions>()
+                .Provides<ICfaRegions>();
 
             system.HasInstance(incidentsRSSReader).Provides<IIncidentsRSSReader>();
             system.HasInstance(cfaDataSet).Provides<ICFADataSet>();

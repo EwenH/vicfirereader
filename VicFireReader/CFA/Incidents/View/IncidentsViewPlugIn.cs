@@ -21,15 +21,15 @@
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Menus;
 using NoeticTools.PlugIns.Persistence;
+using NoeticTools.DotNetWrappers;
 
 
 namespace VicFireReader.CFA.Incidents.View
 {
-    public class IncidentsViewPlugIn : IPlugin, IOnOpenListener, IViewController
+    public class IncidentsViewPlugIn : IPlugin, IOnOpenListener
     {
         private readonly IIncidentsViewFactory factory;
         private IncidentsViewPlugInConfig config;
-        private IIncidentsViewController controller;
         private IPluginHostServices hostServices;
 
         public IncidentsViewPlugIn(IIncidentsViewFactory factory)
@@ -46,8 +46,21 @@ namespace VicFireReader.CFA.Incidents.View
             config = persistenceService.RegisterScope("IncidentsViewPlugIn", UpdateConfig,
                                                       new IncidentsViewPlugInConfig());
 
-            IViewFormMenuItem menuItem = new ViewFormMenuItem("&Incidents", hostServices, this);
-            menuItem.ToggleViewShown();
+            IToolStripMenuItem menuItem = hostServices.MenuBar.AddMenuItem("&Incidents|Add &View");
+            menuItem.Click += addIncidentsViewMenuItem_Click;
+
+            NewIncidentsView();
+        }
+
+        private void addIncidentsViewMenuItem_Click(object sender, System.EventArgs e)
+        {
+            NewIncidentsView();
+        }
+
+        private void NewIncidentsView()
+        {
+            IIncidentsViewController controller = factory.Create(hostServices);
+            controller.Show(hostServices);
         }
 
         void IOnOpenListener.OnClosing()
@@ -58,18 +71,6 @@ namespace VicFireReader.CFA.Incidents.View
         {
             hostServices = services;
             hostServices.AddOnOpenListener(this);
-        }
-
-        void IViewController.Show(IFormClosedListener listener)
-        {
-            controller = factory.Create(hostServices);
-            controller.Show(hostServices);
-        }
-
-        void IViewController.Close()
-        {
-            controller.Close();
-            controller = null;
         }
 
         private object UpdateConfig()

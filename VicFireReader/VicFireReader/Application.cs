@@ -91,9 +91,6 @@ namespace VicFireReader
             system.HasSingleton<CFADataSet>()
                 .Provides<ICFADataSet>();
 
-            system.HasSingleton<CfaRegions>()
-                .Provides<ICfaRegions>();
-
             system.HasInstance(GetType().Assembly)
                 .Provides<Assembly>();
 

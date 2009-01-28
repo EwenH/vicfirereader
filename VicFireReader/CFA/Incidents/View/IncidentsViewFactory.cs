@@ -39,7 +39,7 @@ namespace VicFireReader.CFA.Incidents.View
         public IIncidentsViewController Create(IPluginHostServices hostServices)
         {
             ISystemDefinition system =
-                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices, cfaRegions));
+                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices));
             return system.Get<IIncidentsViewController>();
         }
     }
