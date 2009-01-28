@@ -42,7 +42,7 @@ namespace VicFireReader.CFA.Incidents.View
 
         [InjectionConstructor]
         public IncidentsView(IIncidentsGridView incidentsGridView, IIncidentsRSSReader incidentsReader,
-                             IFormClosedListener formClosedListener, IComboBox regionsComboBox)
+                             IFormClosedListener formClosedListener, IComboBox regionsComboBox, int viewID)
             : this()
         {
             this.incidentsReader = incidentsReader;

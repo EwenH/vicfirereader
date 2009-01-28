@@ -31,6 +31,7 @@ namespace VicFireReader.CFA.Incidents.View
         private readonly IIncidentsViewFactory factory;
         private IncidentsViewPlugInConfig config;
         private IPluginHostServices hostServices;
+        private int nextIncidentsViewID = 0;
 
         public IncidentsViewPlugIn(IIncidentsViewFactory factory)
         {
@@ -59,7 +60,7 @@ namespace VicFireReader.CFA.Incidents.View
 
         private void NewIncidentsView()
         {
-            IIncidentsViewController controller = factory.Create(hostServices);
+            IIncidentsViewController controller = factory.Create(hostServices, ++nextIncidentsViewID);
             controller.Show(hostServices);
         }
 

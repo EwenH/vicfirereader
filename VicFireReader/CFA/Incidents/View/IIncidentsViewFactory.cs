@@ -25,6 +25,6 @@ namespace VicFireReader.CFA.Incidents.View
 {
     public interface IIncidentsViewFactory
     {
-        IIncidentsViewController Create(IPluginHostServices hostServices);
+        IIncidentsViewController Create(IPluginHostServices hostServices, int incidentsViewID);
     }
 }

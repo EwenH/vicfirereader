@@ -36,10 +36,10 @@ namespace VicFireReader.CFA.Incidents.View
             this.parentDefinition = parentDefinition;
         }
 
-        public IIncidentsViewController Create(IPluginHostServices hostServices)
+        public IIncidentsViewController Create(IPluginHostServices hostServices, int incidentsViewID)
         {
             ISystemDefinition system =
-                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices));
+                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices, incidentsViewID));
             return system.Get<IIncidentsViewController>();
         }
     }
