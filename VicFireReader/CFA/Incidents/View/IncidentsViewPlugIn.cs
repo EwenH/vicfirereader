@@ -19,7 +19,6 @@
 #endregion
 
 using NoeticTools.PlugIns;
-using NoeticTools.PlugIns.Menus;
 using NoeticTools.PlugIns.Persistence;
 using NoeticTools.DotNetWrappers;
 

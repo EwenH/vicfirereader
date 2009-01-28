@@ -18,9 +18,18 @@
 
 #endregion
 
+
 namespace VicFireReader.CFA.Incidents.View
 {
     public class IncidentsViewPlugInConfig
     {
+        private int viewCount;
+
+        public int ViewsCount
+        {
+            get { return viewCount; }
+
+            internal set { viewCount = value; }
+        }
     }
 }

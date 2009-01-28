@@ -27,12 +27,10 @@ namespace VicFireReader.CFA.Incidents.View
 {
     public class IncidentsViewFactory : IIncidentsViewFactory
     {
-        private readonly ICfaRegions cfaRegions;
         private readonly ISystemDefinition parentDefinition;
 
-        public IncidentsViewFactory(ICfaRegions cfaRegions, ISystemDefinition parentDefinition)
+        public IncidentsViewFactory(ISystemDefinition parentDefinition)
         {
-            this.cfaRegions = cfaRegions;
             this.parentDefinition = parentDefinition;
         }
 

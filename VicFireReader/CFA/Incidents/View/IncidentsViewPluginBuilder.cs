@@ -32,7 +32,7 @@ namespace VicFireReader.CFA.Incidents.View
             system.HasSingleton<CfaRegions>()
                 .Provides<ICfaRegions>();
 
-            system.HasInstance(new IncidentsViewFactory(system.Get<ICfaRegions>(), system)).Provides
+            system.HasInstance(new IncidentsViewFactory(system)).Provides
                 <IIncidentsViewFactory>();
 
             system.HasSingleton<IncidentsViewPlugIn>()
