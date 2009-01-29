@@ -21,11 +21,7 @@
 using NDependencyInjection.interfaces;
 using NoeticTools.DotNetWrappers.Windows.Forms;
 using NoeticTools.GoogleMaps;
-using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Menus;
-using NoeticTools.PlugIns.Persistence;
-using VicFireReader.CFA.Data;
-using VicFireReader.CFA.Incidents.RSS;
 using VicFireReader.CFA.Incidents.View.Grid;
 using VicFireReader.CFA.Regions;
 using VicFireReader.CFA.Regions.View;
@@ -36,12 +32,10 @@ namespace VicFireReader.CFA.Incidents.View
 {
     public class IncidentsViewBuilder : ISubsystemBuilder
     {
-        private readonly IPluginHostServices hostServices;
         private readonly int viewID;
 
-        public IncidentsViewBuilder(IPluginHostServices hostServices, int viewID)
+        public IncidentsViewBuilder(int viewID)
         {
-            this.hostServices = hostServices;
             this.viewID = viewID;
         }
 
@@ -49,26 +43,14 @@ namespace VicFireReader.CFA.Incidents.View
         {
             system.Broadcasts<IFormClosedListener>();
 
-            ICFADataSet cfaDataSet = hostServices.GetService<ICFADataSet>();
-            IPersistenceService persistenceService = hostServices.GetService<IPersistenceService>();
-            IIncidentsRSSReader incidentsRSSReader = hostServices.GetService<IIncidentsRSSReader>();
-
             system.HasSingleton<CfaRegions>()
                 .Provides<ICfaRegions>();
 
             system.HasInstance(viewID)
                 .Provides<int>();
 
-            system.HasInstance(incidentsRSSReader)
-                .Provides<IIncidentsRSSReader>();
-
-            system.HasInstance(cfaDataSet)
-                .Provides<ICFADataSet>();
-
-            system.HasInstance(persistenceService)
-                .Provides<IPersistenceService>();
-
-            system.HasSingleton<BrowserMapView>().Provides<IMapView>();
+            system.HasSingleton<BrowserMapView>()
+                .Provides<IMapView>();
 
             system.HasSubsystem(new RegionsComboBoxBuilder())
                 .Provides<IRegionsComboBoxController>()

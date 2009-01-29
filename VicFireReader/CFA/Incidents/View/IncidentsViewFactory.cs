@@ -20,7 +20,6 @@
 
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns;
-using VicFireReader.CFA.Regions;
 
 
 namespace VicFireReader.CFA.Incidents.View
@@ -37,7 +36,7 @@ namespace VicFireReader.CFA.Incidents.View
         public IIncidentsViewController Create(IPluginHostServices hostServices, int incidentsViewID)
         {
             ISystemDefinition system =
-                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(hostServices, incidentsViewID));
+                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(incidentsViewID));
             return system.Get<IIncidentsViewController>();
         }
     }
