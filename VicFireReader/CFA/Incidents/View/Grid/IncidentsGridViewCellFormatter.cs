@@ -55,13 +55,13 @@ namespace VicFireReader.CFA.Incidents.View.Grid
 
         void IIncidentGridViewCellFormatter.Format(DataGridViewCellFormattingEventArgs e, DataGridViewRow viewRow)
         {
-            short regionNumber = (short) viewRow.Cells[1].Value;
+            short regionNumber = (short)viewRow.Cells["Region"].Value;
 
             bool isRegion = cfaRegions.IsSelectedRegion(regionNumber);
 
-            string status = (string) viewRow.Cells[6].Value;
-            string incidentType = (string) viewRow.Cells[5].Value;
-            string size = (string) viewRow.Cells[7].Value;
+            string status = (string) viewRow.Cells["Status"].Value;
+            string incidentType = (string) viewRow.Cells["Type"].Value;
+            string size = (string) viewRow.Cells["Size"].Value;
 
             if (status == "SAFE")
             {
@@ -99,7 +99,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
                         GetIntensity(baseColor.B, endColor.B, intensity));
                 }
 
-                if (e.ColumnIndex == 0) // Update time
+                if (e.Value is DateTime) // Update time
                 {
                     DateTime time = (DateTime) e.Value;
                     TimeSpan expiredTime = clock.Now - time;

@@ -30,7 +30,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
         private readonly IMapView mapView;
         private readonly IIncidentsGridView view;
 
-        public IncidentsGridViewController(IIncidentsGridView incidentsGirdView, IMapView mapViewer)
+        public IncidentsGridViewController(IIncidentsGridView incidentsGirdView, IMapView mapViewer, ICFADataSet cfaDataSet)
         {
             view = incidentsGirdView;
             mapView = mapViewer;
