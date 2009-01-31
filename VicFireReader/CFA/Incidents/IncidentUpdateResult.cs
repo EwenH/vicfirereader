@@ -20,8 +20,9 @@
 
 namespace VicFireReader.CFA.Incidents
 {
-    public interface IIncident
+    public enum IncidentUpdateResult
     {
-        IncidentUpdateResult Update(IIncident incident);
+        NoChanges,
+        Changed
     }
 }

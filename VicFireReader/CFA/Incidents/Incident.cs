@@ -19,18 +19,85 @@
 #endregion
 
 using System;
+using NoeticTools.Utilities;
 
 
 namespace VicFireReader.CFA.Incidents
 {
     public class Incident : IIncident
     {
-        public Incident(string incidentID, int region, string location, DateTime time, string name, string type, string status, string size, short appliances)
+        private short appliances;
+        private readonly IClock clock;
+        private readonly string incidentID;
+        private string location;
+        private string name;
+        private readonly int region;
+        private string size;
+        private string status;
+        private readonly DateTime time;
+        private string type;
+        private DateTime lastUpdatedTime;
+
+        public Incident(IClock clock, string incidentID, int region, string location, DateTime time, string name,
+                        string type, string status, string size, short appliances)
         {
+            this.clock = clock;
+            this.incidentID = incidentID;
+            this.region = region;
+            this.location = location;
+            this.time = time;
+            this.name = name;
+            this.type = type;
+            this.status = status;
+            this.size = size;
+            this.appliances = appliances;
         }
 
-        public void Update(IIncident incident)
+        public IncidentUpdateResult Update(IIncident incident)
         {
+            return Update((Incident) incident);
+        }
+
+        private IncidentUpdateResult Update(Incident incident)
+        {
+            if (incidentID != incident.incidentID)
+            {
+                throw new InvalidOperationException(
+                    "Attempted to update an incident from an incident with a different incident ID.");
+            }
+
+            if (region != incident.region)
+            {
+                throw new InvalidOperationException(
+                    "Attempted to update an incident from an incident from a different region. Possible CFA operator error.");
+            }
+
+            IncidentUpdateResult result;
+
+            if (incident.name != name ||
+                incident.type != type ||
+                incident.status != status ||
+                incident.size != size ||
+                incident.appliances != appliances ||
+                incident.location != location)
+            {
+                lastUpdatedTime = incident.lastUpdatedTime = clock.Now;
+
+                name = incident.name;
+                type = incident.type;
+                status = incident.status;
+                size = incident.size;
+                appliances = incident.appliances;
+                location = incident.location;
+
+                result = IncidentUpdateResult.Changed;
+            }
+            else
+            {
+                result = IncidentUpdateResult.NoChanges;
+            }
+
+            return result;
         }
     }
 }

@@ -20,18 +20,25 @@
 
 using System;
 using System.Collections.Generic;
+using NoeticTools.Utilities;
 
 
 namespace VicFireReader.CFA.Incidents
 {
     public class IncidentsCollection : IIncidents
     {
+        private readonly IClock clock;
         private readonly List<IIncident> incidents = new List<IIncident>();
+
+        public IncidentsCollection(IClock clock)
+        {
+            this.clock = clock;
+        }
 
         public void OnIncidentRead(string incidentID, int region, string location, DateTime time, string name, string type,
                                    string status, string size, short appliances)
         {
-            IIncident readIncident = new Incident(incidentID, region, location, time, name, type, status, size, appliances);
+            IIncident readIncident = new Incident(clock, incidentID, region, location, time, name, type, status, size, appliances);
 
             int incidentIndex = incidents.IndexOf(readIncident);
             if (incidentIndex >= 0)
