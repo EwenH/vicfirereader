@@ -86,6 +86,7 @@
     <Compile Include="FireDangerIndex\RSS\FireDangerForecastRSSReaderPlugin.cs" />
     <Compile Include="FireDangerIndex\View\FireDangerForecastViewPlugin.cs" />
     <Compile Include="ICommandLineParser.cs" />
+    <Compile Include="Incidents\IncidentsBuilder.cs" />
     <Compile Include="Incidents\IncidentsCollection.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItem.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItemFactory.cs" />
