@@ -18,9 +18,13 @@
 
 #endregion
 
-namespace VicFireReader.CFA.Incidents.View
+using System.Windows.Forms;
+
+
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
-    public interface IIncidentsView
+    public interface IIncidentGridViewCellFormatter
     {
+        void Format(DataGridViewCellFormattingEventArgs e, DataGridViewRow viewRow);
     }
 }

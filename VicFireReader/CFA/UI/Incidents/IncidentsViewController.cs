@@ -20,11 +20,10 @@
 
 using NoeticTools.PlugIns;
 using VicFireReader.CFA.Regions.View;
-using VicFireReader.CFA.UI;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents
 {
     public class IncidentsViewController : IIncidentsViewController
     {

@@ -18,25 +18,9 @@
 
 #endregion
 
-using NDependencyInjection.interfaces;
-using NoeticTools.PlugIns;
-using VicFireReader.CFA.Regions;
-
-
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
-    public class IncidentsViewPluginBuilder : ISubsystemBuilder
+    public interface IIncidentsGridViewController
     {
-        public void Build(ISystemDefinition system)
-        {
-            system.HasSingleton<CfaRegions>()
-                .Provides<ICfaRegions>();
-
-            system.HasInstance(new IncidentsViewFactory(system)).Provides
-                <IIncidentsViewFactory>();
-
-            system.HasSingleton<IncidentsViewPlugIn>()
-                .Provides<IPlugin>();
-        }
     }
 }

@@ -23,12 +23,11 @@ using System.Windows.Forms;
 using NDependencyInjection;
 using NoeticTools.DotNetWrappers.Windows.Forms;
 using NoeticTools.PlugIns.Menus;
-using VicFireReader.CFA.Incidents.View.Grid;
 using VicFireReader.CFA.RSSReaders.CurrentIncidents;
-using VicFireReader.CFA.UI;
+using VicFireReader.CFA.UI.Incidents.Grid;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents
 {
     public partial class IncidentsView : ContentForm, IIncidentsRSSReaderListener, IIncidentsView
     {

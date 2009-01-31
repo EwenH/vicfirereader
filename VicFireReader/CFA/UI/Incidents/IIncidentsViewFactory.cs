@@ -18,13 +18,13 @@
 
 #endregion
 
-using System.Windows.Forms;
+using NoeticTools.PlugIns;
 
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents
 {
-    public interface IIncidentGridViewCellFormatter
+    public interface IIncidentsViewFactory
     {
-        void Format(DataGridViewCellFormattingEventArgs e, DataGridViewRow viewRow);
+        IIncidentsViewController Create(IPluginHostServices hostServices, int incidentsViewID);
     }
 }

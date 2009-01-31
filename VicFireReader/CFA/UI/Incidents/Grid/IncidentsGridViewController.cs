@@ -20,9 +20,10 @@
 
 using NoeticTools.GoogleMaps;
 using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents;
 
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public class IncidentsGridViewController : IIncidentsGridViewListener, IIncidentsGridViewController,
                                                IFormatterListener, IIncidentsListener

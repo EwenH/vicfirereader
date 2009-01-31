@@ -18,13 +18,26 @@
 
 #endregion
 
-using VicFireReader.CFA.Data;
+using NDependencyInjection.interfaces;
+using NoeticTools.PlugIns;
 
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents
 {
-    public interface IIncidentsGridViewListener
+    public class IncidentsViewFactory : IIncidentsViewFactory
     {
-        void OnDoubleClick(CFADataSet.IncidentsRow row);
+        private readonly ISystemDefinition parentDefinition;
+
+        public IncidentsViewFactory(ISystemDefinition parentDefinition)
+        {
+            this.parentDefinition = parentDefinition;
+        }
+
+        public IIncidentsViewController Create(IPluginHostServices hostServices, int incidentsViewID)
+        {
+            ISystemDefinition system =
+                parentDefinition.CreateSubsystem(new IncidentsViewBuilder(incidentsViewID));
+            return system.Get<IIncidentsViewController>();
+        }
     }
 }

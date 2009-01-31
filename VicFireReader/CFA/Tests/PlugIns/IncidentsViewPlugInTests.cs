@@ -20,11 +20,11 @@
 
 #endregion //Copyright
 
-using VicFireReader.CFA.Incidents.View;
 using NMock2;
 using NoeticTools.PlugIns;
 using NUnit.Extensions;
 using NUnit.Framework;
+using VicFireReader.CFA.UI.Incidents;
 
 
 namespace VicFireReader.CFA.Tests.PlugIns

@@ -1,4 +1,4 @@
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     partial class IncidentsGridView
     {
@@ -46,7 +46,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UpdateTime});
+                                                                                                 this.UpdateTime});
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);

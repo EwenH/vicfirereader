@@ -22,13 +22,12 @@ using NDependencyInjection.interfaces;
 using NoeticTools.DotNetWrappers.Windows.Forms;
 using NoeticTools.GoogleMaps;
 using NoeticTools.PlugIns.Menus;
-using VicFireReader.CFA.Incidents.View.Grid;
 using VicFireReader.CFA.Regions;
 using VicFireReader.CFA.Regions.View;
-using VicFireReader.CFA.UI;
+using VicFireReader.CFA.UI.Incidents.Grid;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents
 {
     public class IncidentsViewBuilder : ISubsystemBuilder
     {

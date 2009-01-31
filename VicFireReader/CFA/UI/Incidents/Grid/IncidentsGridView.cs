@@ -24,7 +24,7 @@ using NDependencyInjection;
 using VicFireReader.CFA.Data;
 
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public partial class IncidentsGridView : UserControl, IIncidentsGridView
     {

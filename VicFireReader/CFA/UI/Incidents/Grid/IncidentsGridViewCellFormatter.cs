@@ -26,7 +26,7 @@ using NoeticTools.Utilities;
 using VicFireReader.CFA.Regions;
 
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public class IncidentsGridViewCellFormatter : IIncidentGridViewCellFormatter, ICfaRegionsChangedListener,
                                                   IFormClosedListener
@@ -55,7 +55,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
 
         void IIncidentGridViewCellFormatter.Format(DataGridViewCellFormattingEventArgs e, DataGridViewRow viewRow)
         {
-            short regionNumber = (short)viewRow.Cells["Region"].Value;
+            short regionNumber = (short) viewRow.Cells["Region"].Value;
 
             bool isRegion = cfaRegions.IsSelectedRegion(regionNumber);
 

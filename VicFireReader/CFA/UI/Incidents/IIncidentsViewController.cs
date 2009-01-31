@@ -18,18 +18,14 @@
 
 #endregion
 
+using NoeticTools.PlugIns;
 
-namespace VicFireReader.CFA.Incidents.View
+
+namespace VicFireReader.CFA.UI.Incidents
 {
-    public class IncidentsViewPlugInConfig
+    public interface IIncidentsViewController
     {
-        private int viewCount;
-
-        public int ViewsCount
-        {
-            get { return viewCount; }
-
-            internal set { viewCount = value; }
-        }
+        void Show(IPluginHostServices services);
+        void Close();
     }
 }

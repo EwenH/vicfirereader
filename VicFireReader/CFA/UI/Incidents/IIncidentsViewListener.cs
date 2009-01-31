@@ -18,10 +18,9 @@
 
 #endregion
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents
 {
-    public interface IFormatterListener
+    public interface IIncidentsViewListener
     {
-        void OnFormattingChanged();
     }
 }

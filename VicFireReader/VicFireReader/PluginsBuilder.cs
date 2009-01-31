@@ -25,8 +25,8 @@ using NoeticTools.PlugIns.Persistence;
 using VicFireReader.CFA.Data;
 using VicFireReader.CFA.FireDangerIndex.RSS;
 using VicFireReader.CFA.FireDangerIndex.View;
-using VicFireReader.CFA.Incidents.View;
 using VicFireReader.CFA.RSSReaders.CurrentIncidents;
+using VicFireReader.CFA.UI.Incidents;
 using VicFireReader.CFA.UI.TotalFireBans;
 using VicFireReader.Interfaces;
 

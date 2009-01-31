@@ -18,10 +18,9 @@
 
 #endregion
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents
 {
-    public interface IIncidentsGridView
+    public interface IIncidentsView
     {
-        void Invalidate(bool force);
     }
 }

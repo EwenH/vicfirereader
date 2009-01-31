@@ -88,10 +88,10 @@
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItem.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItemFactory.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItemFactory.cs" />
-    <Compile Include="Incidents\View\Grid\IncidentsGridViewBuilder.cs" />
-    <Compile Include="Incidents\View\IIncidentsView.cs" />
-    <Compile Include="Incidents\View\IIncidentsViewController.cs" />
-    <Compile Include="Incidents\View\IncidentsViewController.cs" />
+    <Compile Include="UI\Incidents\Grid\IncidentsGridViewBuilder.cs" />
+    <Compile Include="UI\Incidents\IIncidentsView.cs" />
+    <Compile Include="UI\Incidents\IIncidentsViewController.cs" />
+    <Compile Include="UI\Incidents\IncidentsViewController.cs" />
     <Compile Include="Regions\CfaRegion.cs" />
     <Compile Include="Regions\CfaRegions.cs" />
     <Compile Include="Data\CFADataSet.cs">
@@ -116,33 +116,33 @@
     <Compile Include="RSSReaders\CurrentIncidents\IncidentsRssReaderBuilder.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IncidentsRSSReaderOptions.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IncidentsRSSReaderPlugIn.cs" />
-    <Compile Include="Incidents\View\IFormatterListener.cs" />
-    <Compile Include="Incidents\View\Grid\IIncidentGridViewCellFormatter.cs" />
-    <Compile Include="Incidents\View\Grid\IIncidentsGridView.cs" />
-    <Compile Include="Incidents\View\Grid\IIncidentsGridViewController.cs" />
-    <Compile Include="Incidents\View\Grid\IIncidentsGridViewListener.cs" />
-    <Compile Include="Incidents\View\IIncidentsViewFactory.cs" />
-    <Compile Include="Incidents\View\IIncidentsViewListener.cs" />
-    <Compile Include="Incidents\View\Grid\IncidentsGridViewCellFormatter.cs" />
-    <Compile Include="Incidents\View\Grid\IncidentsGridView.cs">
+    <Compile Include="UI\Incidents\IFormatterListener.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentGridViewCellFormatter.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridView.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewController.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewListener.cs" />
+    <Compile Include="UI\Incidents\IIncidentsViewFactory.cs" />
+    <Compile Include="UI\Incidents\IIncidentsViewListener.cs" />
+    <Compile Include="UI\Incidents\Grid\IncidentsGridViewCellFormatter.cs" />
+    <Compile Include="UI\Incidents\Grid\IncidentsGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Incidents\View\Grid\IncidentsGridView.Designer.cs">
+    <Compile Include="UI\Incidents\Grid\IncidentsGridView.Designer.cs">
       <DependentUpon>IncidentsGridView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Incidents\View\Grid\IncidentsGridViewController.cs" />
-    <Compile Include="Incidents\View\IncidentsView.cs">
+    <Compile Include="UI\Incidents\Grid\IncidentsGridViewController.cs" />
+    <Compile Include="UI\Incidents\IncidentsView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Incidents\View\IncidentsView.Designer.cs">
+    <Compile Include="UI\Incidents\IncidentsView.Designer.cs">
       <DependentUpon>IncidentsView.cs</DependentUpon>
     </Compile>
     <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItem.cs" />
-    <Compile Include="Incidents\View\IncidentsViewBuilder.cs" />
-    <Compile Include="Incidents\View\IncidentsViewFactory.cs" />
-    <Compile Include="Incidents\View\IncidentsViewPlugIn.cs" />
-    <Compile Include="Incidents\View\IncidentsViewPluginBuilder.cs" />
-    <Compile Include="Incidents\View\IncidentsViewPlugInConfig.cs" />
+    <Compile Include="UI\Incidents\IncidentsViewBuilder.cs" />
+    <Compile Include="UI\Incidents\IncidentsViewFactory.cs" />
+    <Compile Include="UI\Incidents\IncidentsViewPlugIn.cs" />
+    <Compile Include="UI\Incidents\IncidentsViewPluginBuilder.cs" />
+    <Compile Include="UI\Incidents\IncidentsViewPlugInConfig.cs" />
     <Compile Include="Options\OptionsViewPlugIn.cs" />
     <Compile Include="Regions\View\IRegionsComboBoxController.cs" />
     <Compile Include="Regions\View\RegionsComboBoxBuilder.cs" />
@@ -195,11 +195,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Incidents\View\Grid\IncidentsGridView.resx">
+    <EmbeddedResource Include="UI\Incidents\Grid\IncidentsGridView.resx">
       <SubType>Designer</SubType>
       <DependentUpon>IncidentsGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Incidents\View\IncidentsView.resx">
+    <EmbeddedResource Include="UI\Incidents\IncidentsView.resx">
       <DependentUpon>IncidentsView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

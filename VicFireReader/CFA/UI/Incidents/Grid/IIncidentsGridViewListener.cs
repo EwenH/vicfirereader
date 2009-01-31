@@ -18,9 +18,13 @@
 
 #endregion
 
-namespace VicFireReader.CFA.Incidents.View
+using VicFireReader.CFA.Data;
+
+
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
-    public interface IIncidentsViewListener
+    public interface IIncidentsGridViewListener
     {
+        void OnDoubleClick(CFADataSet.IncidentsRow row);
     }
 }

@@ -18,19 +18,20 @@
 
 #endregion
 
+using System;
+using NoeticTools.DotNetWrappers;
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Persistence;
-using NoeticTools.DotNetWrappers;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents
 {
     public class IncidentsViewPlugIn : IPlugin, IOnOpenListener
     {
         private readonly IIncidentsViewFactory factory;
         private IncidentsViewPlugInConfig config;
         private IPluginHostServices hostServices;
-        private int nextIncidentsViewID = 0;
+        private int nextIncidentsViewID;
 
         public IncidentsViewPlugIn(IIncidentsViewFactory factory)
         {
@@ -52,17 +53,6 @@ namespace VicFireReader.CFA.Incidents.View
             NewIncidentsView();
         }
 
-        private void addIncidentsViewMenuItem_Click(object sender, System.EventArgs e)
-        {
-            NewIncidentsView();
-        }
-
-        private void NewIncidentsView()
-        {
-            IIncidentsViewController controller = factory.Create(hostServices, ++nextIncidentsViewID);
-            controller.Show(hostServices);
-        }
-
         void IOnOpenListener.OnClosing()
         {
         }
@@ -71,6 +61,17 @@ namespace VicFireReader.CFA.Incidents.View
         {
             hostServices = services;
             hostServices.AddOnOpenListener(this);
+        }
+
+        private void addIncidentsViewMenuItem_Click(object sender, EventArgs e)
+        {
+            NewIncidentsView();
+        }
+
+        private void NewIncidentsView()
+        {
+            IIncidentsViewController controller = factory.Create(hostServices, ++nextIncidentsViewID);
+            controller.Show(hostServices);
         }
 
         private object UpdateConfig()

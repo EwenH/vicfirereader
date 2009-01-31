@@ -4,36 +4,36 @@ using NoeticTools.Windows.Forms;
 using CFADataSet=VicFireReader.CFA.Data.CFADataSet;
 
 
-namespace VicFireReader.CFA.Incidents.View
+namespace VicFireReader.CFA.UI.Incidents
 {
-	partial class IncidentsView : IIncidentsView
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class IncidentsView : IIncidentsView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncidentsView));
             this.cFADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -99,13 +99,13 @@ namespace VicFireReader.CFA.Incidents.View
             ((System.ComponentModel.ISupportInitialize)(this.cFADataSet)).EndInit();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.BindingSource cFADataSetBindingSource;
-		private CFADataSet cFADataSet;
-		private PlaceHolderControl incidentsGridViewPlaceHolder;
+        private System.Windows.Forms.BindingSource cFADataSetBindingSource;
+        private CFADataSet cFADataSet;
+        private PlaceHolderControl incidentsGridViewPlaceHolder;
         private PlaceHolderControl regionPlaceHolder;
-	}
+    }
 }

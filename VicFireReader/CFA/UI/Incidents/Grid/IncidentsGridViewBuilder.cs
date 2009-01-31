@@ -20,10 +20,11 @@
 
 using NDependencyInjection.interfaces;
 using NoeticTools.PlugIns.Menus;
+using VicFireReader.CFA.Incidents;
 using VicFireReader.CFA.Regions;
 
 
-namespace VicFireReader.CFA.Incidents.View.Grid
+namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public class IncidentsGridViewBuilder : ISubsystemBuilder
     {
