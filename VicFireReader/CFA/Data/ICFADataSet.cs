@@ -20,10 +20,12 @@
 
 using System.ComponentModel;
 using System.Diagnostics;
+using System;
 
 
 namespace VicFireReader.CFA.Data
 {
+    [Obsolete] // Being replaced by IIncidents
     public interface ICFADataSet
     {
         [DebuggerNonUserCode]
