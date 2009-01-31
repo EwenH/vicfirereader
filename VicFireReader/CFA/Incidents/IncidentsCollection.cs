@@ -19,7 +19,6 @@
 #endregion
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using NoeticTools.Utilities;
 
@@ -29,27 +28,28 @@ namespace VicFireReader.CFA.Incidents
     public class IncidentsCollection : IIncidents
     {
         private readonly IClock clock;
-        private readonly List<IIncident> incidents = new List<IIncident>();
+        private readonly SortedList<IIncident, IIncident> incidents = new SortedList<IIncident, IIncident>();
 
         public IncidentsCollection(IClock clock)
         {
             this.clock = clock;
         }
 
-        public void OnIncidentRead(string incidentID, int region, string location, DateTime time, string name, string type,
+        public void OnIncidentRead(string incidentID, int region, string location, DateTime time, string name,
+                                   string type,
                                    string status, string size, short appliances)
         {
-            IIncident readIncident = new Incident(clock, incidentID, region, location, time, name, type, status, size, appliances);
+            IIncident readIncident = new Incident(clock, incidentID, region, location, time, name, type, status, size,
+                                                  appliances);
 
-            int incidentIndex = incidents.IndexOf(readIncident);
-            if (incidentIndex >= 0)
+            if (incidents.ContainsKey(readIncident))
             {
-                IIncident existingIncident = incidents[incidentIndex];
+                IIncident existingIncident = incidents[readIncident];
                 existingIncident.Update(readIncident);
             }
             else
             {
-                incidents.Add(readIncident);
+                incidents.Add(readIncident, readIncident);
             }
         }
     }
