@@ -22,5 +22,7 @@ namespace VicFireReader.CFA.Incidents
 {
     public class IncidentsCollection : IIncidents
     {
+        public void OnIncidentRead()
+        {}
     }
 }

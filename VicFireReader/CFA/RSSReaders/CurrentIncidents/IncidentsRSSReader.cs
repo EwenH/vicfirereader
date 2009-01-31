@@ -23,25 +23,30 @@ using System.Data;
 using System.Xml;
 using NoeticTools.RSS;
 using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents;
+using System;
 
 
 namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
     public class IncidentsRSSReader : IIncidentsRSSReader, IRSSReaderListener, IRSSOptionsChangedListener
     {
+        [Obsolete] // replacing with 'incidents'
         private readonly ICFADataSet dataSet;
-        private readonly IRSSIncidentItemFactory irssIncidentItemFactory;
         private readonly List<IIncidentsRSSReaderListener> listeners = new List<IIncidentsRSSReaderListener>();
+        private readonly IRSSIncidentItemFactory rssIncidentItemFactory;
+        private readonly IIncidents incidents;
         private readonly IRSSReaderFactory rssReaderFactory;
         private IIncidentsRSSReaderOptions options;
         private IRSSReader rssReader;
 
         public IncidentsRSSReader(IRSSReaderFactory rssReaderFactory, ICFADataSet dataSet,
-                                  IRSSIncidentItemFactory irssIncidentItemFactory)
+                                  IRSSIncidentItemFactory rssIncidentItemFactory, IIncidents incidents)
         {
             this.rssReaderFactory = rssReaderFactory;
             this.dataSet = dataSet;
-            this.irssIncidentItemFactory = irssIncidentItemFactory;
+            this.rssIncidentItemFactory = rssIncidentItemFactory;
+            this.incidents = incidents;
         }
 
         void IIncidentsRSSReader.AddListener(IIncidentsRSSReaderListener rssReaderListener)
@@ -111,7 +116,7 @@ namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
             XmlNodeList incidentNodes = xmlNode.SelectNodes("/rss/channel/item");
             foreach (XmlNode incidentNode in incidentNodes)
             {
-                IRSSIncidentItem incident = irssIncidentItemFactory.Create(incidentNode);
+                IRSSIncidentItem incident = rssIncidentItemFactory.Create(incidentNode);
                 CFADataSet.IncidentsRow updatedRow = incident.Update(dataSet.Incidents);
 
                 if (incidentRows.Contains(updatedRow))
