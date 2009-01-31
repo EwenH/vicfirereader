@@ -25,7 +25,7 @@ namespace VicFireReader.CFA.Incidents
 {
     public interface IIncidents
     {
-        void OnIncidentRead(string guid, int region, string location, DateTime time, string name, string type,
+        void OnIncidentRead(string incidentID, int region, string location, DateTime time, string name, string type,
                             string status, string size, short appliances);
     }
 }
