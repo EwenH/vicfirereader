@@ -108,7 +108,7 @@
     <Compile Include="Regions\ICfaRegions.cs" />
     <Compile Include="Regions\ICfaRegionsChangedListener.cs" />
     <Compile Include="IncidentLocation.cs" />
-    <Compile Include="Incidents\RSS\IIncidentsReaderListener.cs" />
+    <Compile Include="Incidents\RSS\IIncidentsRSSReaderListener.cs" />
     <Compile Include="Incidents\RSS\IIncidentsRSSReader.cs" />
     <Compile Include="Incidents\RSS\IIncidentsRSSReaderOptions.cs" />
     <Compile Include="Incidents\RSS\IncidentsRSSReader.cs">

@@ -31,7 +31,7 @@ namespace VicFireReader.CFA.Incidents.RSS
     {
         private readonly ICFADataSet dataSet;
         private readonly IRSSIncidentItemFactory irssIncidentItemFactory;
-        private readonly List<IIncidentsReaderListener> listeners = new List<IIncidentsReaderListener>();
+        private readonly List<IIncidentsRSSReaderListener> listeners = new List<IIncidentsRSSReaderListener>();
         private readonly IRSSReaderFactory rssReaderFactory;
         private IIncidentsRSSReaderOptions options;
         private IRSSReader rssReader;
@@ -44,14 +44,14 @@ namespace VicFireReader.CFA.Incidents.RSS
             this.irssIncidentItemFactory = irssIncidentItemFactory;
         }
 
-        void IIncidentsRSSReader.AddListener(IIncidentsReaderListener readerListener)
+        void IIncidentsRSSReader.AddListener(IIncidentsRSSReaderListener rssReaderListener)
         {
-            listeners.Add(readerListener);
+            listeners.Add(rssReaderListener);
         }
 
-        void IIncidentsRSSReader.RemoveListener(IIncidentsReaderListener readerListener)
+        void IIncidentsRSSReader.RemoveListener(IIncidentsRSSReaderListener rssReaderListener)
         {
-            listeners.Remove(readerListener);
+            listeners.Remove(rssReaderListener);
         }
 
         void IIncidentsRSSReader.Start(IIncidentsRSSReaderOptions readerOptions)
@@ -87,7 +87,7 @@ namespace VicFireReader.CFA.Incidents.RSS
             RemoveUpdatedIncidents(document, incidentRows);
             RemoveIncidentsNotUpdated(incidentRows);
 
-            foreach (IIncidentsReaderListener listener in listeners)
+            foreach (IIncidentsRSSReaderListener listener in listeners)
             {
                 listener.OnSuccessfullUpdate();
             }
@@ -95,7 +95,7 @@ namespace VicFireReader.CFA.Incidents.RSS
 
         void IRSSReaderListener.OnFailure()
         {
-            foreach (IIncidentsReaderListener listener in listeners)
+            foreach (IIncidentsRSSReaderListener listener in listeners)
             {
                 listener.OnFailure();
             }
