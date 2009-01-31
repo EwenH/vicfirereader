@@ -48,11 +48,11 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
             mapView.Show(incidentLocation.ToString());
         }
 
-        void IIncidentsListener.OnIncidentChanged()
+        void IIncidentsListener.OnIncidentChanged(IIncident existingIncident)
         {
         }
 
-        void IIncidentsListener.OnIncidentAdded()
+        void IIncidentsListener.OnIncidentAdded(IIncident readIncident)
         {
         }
 

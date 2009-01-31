@@ -40,17 +40,14 @@ namespace VicFireReader.CFA.Data
 
         private void Incidents_TableNewRow(object sender, DataTableNewRowEventArgs e)
         {
-            incidentsReaderListener.OnIncidentAdded();
         }
 
         private void Incidents_RowDeleted(object sender, DataRowChangeEventArgs e)
         {
-            incidentsReaderListener.OnIncidentRemoved();
         }
 
         private void Incidents_RowChanged(object sender, DataRowChangeEventArgs e)
         {
-            incidentsReaderListener.OnIncidentChanged();
         }
     }
 }

@@ -28,11 +28,13 @@ namespace VicFireReader.CFA.Incidents
     public class IncidentsCollection : IIncidents
     {
         private readonly IClock clock;
+        private readonly IIncidentsListener listener;
         private readonly SortedList<IIncident, IIncident> incidents = new SortedList<IIncident, IIncident>();
 
-        public IncidentsCollection(IClock clock)
+        public IncidentsCollection(IClock clock, IIncidentsListener listener)
         {
             this.clock = clock;
+            this.listener = listener;
         }
 
         public void OnIncidentRead(string incidentID, int region, string location, DateTime time, string name,
@@ -45,11 +47,16 @@ namespace VicFireReader.CFA.Incidents
             if (incidents.ContainsKey(readIncident))
             {
                 IIncident existingIncident = incidents[readIncident];
-                existingIncident.Update(readIncident);
+                if (existingIncident.Update(readIncident) == IncidentUpdateResult.Changed)
+                {
+                    listener.OnIncidentChanged(existingIncident);
+                }
             }
             else
             {
                 incidents.Add(readIncident, readIncident);
+
+                listener.OnIncidentAdded(readIncident);
             }
         }
     }
