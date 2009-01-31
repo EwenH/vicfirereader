@@ -27,14 +27,14 @@ using VicFireReader.CFA.Data;
 
 namespace VicFireReader.CFA.Incidents.RSS
 {
-    public class Incident : IIncident
+    public class RSSIncidentItem : IRSSIncidentItem
     {
         private readonly IClock clock;
-        private readonly XmlNode incidentNode;
+        private readonly XmlNode incidentRSSNode;
 
-        public Incident(XmlNode incidentNode, IClock clock)
+        public RSSIncidentItem(XmlNode incidentRSSNode, IClock clock)
         {
-            this.incidentNode = incidentNode;
+            this.incidentRSSNode = incidentRSSNode;
             this.clock = clock;
         }
 
@@ -45,10 +45,10 @@ namespace VicFireReader.CFA.Incidents.RSS
 
         private CFADataSet.IncidentsRow GetNewIncidentsRow(CFADataSet.IncidentsDataTable incidents)
         {
-            string guid = incidentNode.SelectSingleNode("guid").InnerText;
+            string guid = incidentRSSNode.SelectSingleNode("guid").InnerText;
             CFADataSet.IncidentsRow incidentRow = incidents.FindByGUID(guid);
 
-            string description = incidentNode.SelectSingleNode("description").InnerText;
+            string description = incidentRSSNode.SelectSingleNode("description").InnerText;
 
             if (incidentRow == null)
             {
@@ -107,7 +107,6 @@ namespace VicFireReader.CFA.Incidents.RSS
         private static bool FilterRow(CFADataSet.IncidentsRow incidentRow)
         {
             return
-                //incidentRow.Region == 13 && 
                 incidentRow.Type != "INCIDENT" &&
                 incidentRow.Type != "HAZMAT INCIDENT" &&
                 incidentRow.Type != "OTHER" &&

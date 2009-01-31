@@ -25,6 +25,6 @@ namespace VicFireReader.CFA.Incidents.RSS
 {
     public interface IIncidentFactory
     {
-        IIncident Create(XmlNode incidentNode);
+        IRSSIncidentItem Create(XmlNode incidentNode);
     }
 }

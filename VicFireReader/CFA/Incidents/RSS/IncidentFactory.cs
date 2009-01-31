@@ -33,9 +33,9 @@ namespace VicFireReader.CFA.Incidents.RSS
             this.clock = clock;
         }
 
-        public IIncident Create(XmlNode incidentNode)
+        public IRSSIncidentItem Create(XmlNode incidentNode)
         {
-            return new Incident(incidentNode, clock);
+            return new RSSIncidentItem(incidentNode, clock);
         }
     }
 }

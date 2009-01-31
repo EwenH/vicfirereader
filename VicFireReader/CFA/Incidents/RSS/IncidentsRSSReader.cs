@@ -84,8 +84,7 @@ namespace VicFireReader.CFA.Incidents.RSS
             CFADataSet.IncidentsDataTable incidentsTable = dataSet.Incidents;
             List<CFADataSet.IncidentsRow> incidentRows = CopyIncidentRows(incidentsTable);
 
-            UpdateIncidents(document, incidentRows);
-
+            RemoveUpdatedIncidents(document, incidentRows);
             RemoveIncidentsNotUpdated(incidentRows);
 
             foreach (IIncidentsReaderListener listener in listeners)
@@ -107,12 +106,12 @@ namespace VicFireReader.CFA.Incidents.RSS
             rssReader = rssReaderFactory.Create(this);
         }
 
-        private void UpdateIncidents(XmlNode xmlNode, ICollection<CFADataSet.IncidentsRow> incidentRows)
+        private void RemoveUpdatedIncidents(XmlNode xmlNode, ICollection<CFADataSet.IncidentsRow> incidentRows)
         {
             XmlNodeList incidentNodes = xmlNode.SelectNodes("/rss/channel/item");
             foreach (XmlNode incidentNode in incidentNodes)
             {
-                IIncident incident = incidentFactory.Create(incidentNode);
+                IRSSIncidentItem incident = incidentFactory.Create(incidentNode);
                 CFADataSet.IncidentsRow updatedRow = incident.Update(dataSet.Incidents);
 
                 if (incidentRows.Contains(updatedRow))
