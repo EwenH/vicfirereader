@@ -25,7 +25,7 @@ using VicFireReader.CFA.Data;
 namespace VicFireReader.CFA.Incidents.View.Grid
 {
     public class IncidentsGridViewController : IIncidentsGridViewListener, IIncidentsGridViewController,
-                                               IFormatterListener
+                                               IFormatterListener, IIncidentsListener
     {
         private readonly IMapView mapView;
         private readonly IIncidentsGridView view;
@@ -45,6 +45,18 @@ namespace VicFireReader.CFA.Incidents.View.Grid
         {
             IncidentLocation incidentLocation = new IncidentLocation(incident.Location);
             mapView.Show(incidentLocation.ToString());
+        }
+
+        void IIncidentsListener.OnIncidentChanged()
+        {
+        }
+
+        void IIncidentsListener.OnIncidentAdded()
+        {
+        }
+
+        void IIncidentsListener.OnIncidentRemoved()
+        {
         }
     }
 }
