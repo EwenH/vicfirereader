@@ -20,6 +20,7 @@
 
 using System.Data;
 using NDependencyInjection;
+using VicFireReader.CFA.Incidents;
 
 
 namespace VicFireReader.CFA.Data
@@ -44,10 +45,5 @@ namespace VicFireReader.CFA.Data
         {
             incidentsReaderListener.OnIncidentChanged();
         }
-    }
-
-    public interface IIncidentsListener
-    {
-        void OnIncidentChanged();
     }
 }

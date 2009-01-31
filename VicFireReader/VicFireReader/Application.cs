@@ -32,6 +32,7 @@ using NoeticTools.PlugIns.ToolBar;
 using NoeticTools.Utilities;
 using VicFireReader.CFA;
 using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents;
 using VicFireReader.CFA.Incidents.RSS;
 using VicFireReader.CFA.Options;
 using VicFireReader.CFA.Regions;
@@ -63,9 +64,15 @@ namespace VicFireReader
             system.Broadcasts<IIncidentsListener>();
 
             system.HasInstance(new NoeticTools.DotNetWrappers.Timer(new Timer())).Provides<ITimer>();
-            system.HasSingleton<Scheduler>().Provides<IScheduler>();
-            system.HasSingleton<ScheduledEventFactory>().Provides<IScheduledEventFactory>();
-            system.HasSingleton<ImageResources>().Provides<IImageResources>();
+
+            system.HasSingleton<Scheduler>()
+                .Provides<IScheduler>();
+
+            system.HasSingleton<ScheduledEventFactory>()
+                .Provides<IScheduledEventFactory>();
+
+            system.HasSingleton<ImageResources>()
+                .Provides<IImageResources>();
 
             system.HasInstance(new List<IPluginBuilder>()).Provides<List<IPluginBuilder>>();
 

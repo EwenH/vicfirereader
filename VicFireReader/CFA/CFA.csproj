@@ -81,6 +81,7 @@
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CommandLineParser.cs" />
+    <Compile Include="Incidents\IIncidentsListener.cs" />
     <Compile Include="FireDangerIndex\RSS\FireDangerForecastRSSReaderPlugin.cs" />
     <Compile Include="FireDangerIndex\View\FireDangerForecastViewPlugin.cs" />
     <Compile Include="ICommandLineParser.cs" />
