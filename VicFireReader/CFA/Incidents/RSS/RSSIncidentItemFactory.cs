@@ -24,11 +24,11 @@ using NoeticTools.Utilities;
 
 namespace VicFireReader.CFA.Incidents.RSS
 {
-    public class IncidentFactory : IIncidentFactory
+    public class RSSIncidentItemFactory : IRSSIncidentItemFactory
     {
         private readonly IClock clock;
 
-        public IncidentFactory(IClock clock)
+        public RSSIncidentItemFactory(IClock clock)
         {
             this.clock = clock;
         }

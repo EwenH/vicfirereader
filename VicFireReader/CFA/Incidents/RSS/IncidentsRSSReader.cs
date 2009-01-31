@@ -30,18 +30,18 @@ namespace VicFireReader.CFA.Incidents.RSS
     public class IncidentsRSSReader : IIncidentsRSSReader, IRSSReaderListener, IRSSOptionsChangedListener
     {
         private readonly ICFADataSet dataSet;
-        private readonly IIncidentFactory incidentFactory;
+        private readonly IRSSIncidentItemFactory irssIncidentItemFactory;
         private readonly List<IIncidentsReaderListener> listeners = new List<IIncidentsReaderListener>();
         private readonly IRSSReaderFactory rssReaderFactory;
         private IIncidentsRSSReaderOptions options;
         private IRSSReader rssReader;
 
         public IncidentsRSSReader(IRSSReaderFactory rssReaderFactory, ICFADataSet dataSet,
-                                  IIncidentFactory incidentFactory)
+                                  IRSSIncidentItemFactory irssIncidentItemFactory)
         {
             this.rssReaderFactory = rssReaderFactory;
             this.dataSet = dataSet;
-            this.incidentFactory = incidentFactory;
+            this.irssIncidentItemFactory = irssIncidentItemFactory;
         }
 
         void IIncidentsRSSReader.AddListener(IIncidentsReaderListener readerListener)
@@ -111,7 +111,7 @@ namespace VicFireReader.CFA.Incidents.RSS
             XmlNodeList incidentNodes = xmlNode.SelectNodes("/rss/channel/item");
             foreach (XmlNode incidentNode in incidentNodes)
             {
-                IRSSIncidentItem incident = incidentFactory.Create(incidentNode);
+                IRSSIncidentItem incident = irssIncidentItemFactory.Create(incidentNode);
                 CFADataSet.IncidentsRow updatedRow = incident.Update(dataSet.Incidents);
 
                 if (incidentRows.Contains(updatedRow))

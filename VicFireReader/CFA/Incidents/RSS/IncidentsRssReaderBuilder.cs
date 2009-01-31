@@ -28,8 +28,8 @@ namespace VicFireReader.CFA.Incidents.RSS
     {
         public void Build(ISystemDefinition system)
         {
-            system.HasSingleton<IncidentFactory>()
-                .Provides<IIncidentFactory>();
+            system.HasSingleton<RSSIncidentItemFactory>()
+                .Provides<IRSSIncidentItemFactory>();
             system.HasSingleton<RSSReaderFactory>()
                 .Provides<IRSSReaderFactory>();
             system.HasSingleton<IncidentsRSSReaderOptions>()

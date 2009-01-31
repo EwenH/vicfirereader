@@ -32,4 +32,4 @@ using System.Runtime.InteropServices;
 [assembly : CLSCompliant(false)]
 [assembly : Guid("3ba34754-d15f-431f-42ce-89424b1b3591")]
 [assembly : AssemblyVersion("1.1.0.12")]
-[assembly : AssemblyFileVersion("1.1.0.12")]
+[assembly : AssemblyFileVersion("1.1.0.13")]
