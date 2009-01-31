@@ -23,9 +23,10 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using NoeticTools.Utilities;
 using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents.RSSReader;
 
 
-namespace VicFireReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSSReader
 {
     public class RSSIncidentItem : IRSSIncidentItem
     {

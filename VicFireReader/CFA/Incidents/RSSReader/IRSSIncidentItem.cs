@@ -18,13 +18,13 @@
 
 #endregion
 
-using System.Xml;
+using VicFireReader.CFA.Data;
 
 
-namespace VicFireReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSSReader
 {
-    public interface IRSSIncidentItemFactory
+    public interface IRSSIncidentItem
     {
-        IRSSIncidentItem Create(XmlNode incidentNode);
+        CFADataSet.IncidentsRow Update(CFADataSet.IncidentsDataTable incidents);
     }
 }

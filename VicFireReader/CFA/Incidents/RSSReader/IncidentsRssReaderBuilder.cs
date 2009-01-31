@@ -20,9 +20,10 @@
 
 using NDependencyInjection.interfaces;
 using NoeticTools.RSS;
+using VicFireReader.CFA.Incidents.RSSReader;
 
 
-namespace VicFireReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSSReader
 {
     public class IncidentsRssReaderBuilder : ISubsystemBuilder
     {

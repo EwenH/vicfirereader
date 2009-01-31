@@ -23,7 +23,7 @@ using System.Windows.Forms;
 using NDependencyInjection;
 using NoeticTools.DotNetWrappers.Windows.Forms;
 using NoeticTools.PlugIns.Menus;
-using VicFireReader.CFA.Incidents.RSS;
+using VicFireReader.CFA.Incidents.RSSReader;
 using VicFireReader.CFA.Incidents.View.Grid;
 using VicFireReader.CFA.UI;
 

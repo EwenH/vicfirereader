@@ -33,7 +33,6 @@ using NoeticTools.Utilities;
 using VicFireReader.CFA;
 using VicFireReader.CFA.Data;
 using VicFireReader.CFA.Incidents;
-using VicFireReader.CFA.Incidents.RSS;
 using VicFireReader.CFA.Options;
 using VicFireReader.CFA.Regions;
 using VicFireReader.Images;

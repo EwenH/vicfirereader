@@ -18,13 +18,11 @@
 
 #endregion
 
-using VicFireReader.CFA.Data;
-
-
-namespace VicFireReader.CFA.Incidents.RSS
+namespace VicFireReader.CFA.Incidents.RSSReader
 {
-    public interface IRSSIncidentItem
+    public interface IIncidentsRSSReaderListener
     {
-        CFADataSet.IncidentsRow Update(CFADataSet.IncidentsDataTable incidents);
+        void OnSuccessfullUpdate();
+        void OnFailure();
     }
 }
