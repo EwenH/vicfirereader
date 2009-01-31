@@ -81,10 +81,12 @@
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CommandLineParser.cs" />
+    <Compile Include="Incidents\IIncidents.cs" />
     <Compile Include="Incidents\IIncidentsListener.cs" />
     <Compile Include="FireDangerIndex\RSS\FireDangerForecastRSSReaderPlugin.cs" />
     <Compile Include="FireDangerIndex\View\FireDangerForecastViewPlugin.cs" />
     <Compile Include="ICommandLineParser.cs" />
+    <Compile Include="Incidents\IncidentsCollection.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItem.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItemFactory.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItemFactory.cs" />
