@@ -153,13 +153,13 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="TotalFireBans\ITotalFireBanOptions.cs" />
-    <Compile Include="TotalFireBans\ITotalFireBanRssOptions.cs" />
-    <Compile Include="TotalFireBans\TotalFireBanOptions.cs" />
-    <Compile Include="TotalFireBans\TotalFireBanRSSReaderOptions.cs" />
-    <Compile Include="TotalFireBans\TotalFireBanViewPlugIn.cs" />
-    <Compile Include="TotalFireBans\FireBanItem.cs" />
-    <Compile Include="TotalFireBans\TotalFireBanViewController.cs" />
-    <Compile Include="TotalFireBans\TotalFireBanViewPlugInBuilder.cs" />
+    <Compile Include="TotalFireBans\RSSReader\ITotalFireBanRssOptions.cs" />
+    <Compile Include="TotalFireBans\RSSReader\TotalFireBanRSSOptions.cs" />
+    <Compile Include="TotalFireBans\RSSReader\TotalFireBanRSSReaderOptions.cs" />
+    <Compile Include="TotalFireBans\View\TotalFireBanViewPlugIn.cs" />
+    <Compile Include="TotalFireBans\RSSReader\FireBanRSSItem.cs" />
+    <Compile Include="TotalFireBans\View\TotalFireBanViewController.cs" />
+    <Compile Include="TotalFireBans\View\TotalFireBanViewPlugInBuilder.cs" />
     <Compile Include="UI\ContentForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -22,13 +22,13 @@ using System.Text.RegularExpressions;
 using System.Xml;
 
 
-namespace VicFireReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans.RSSReader
 {
-    public class FireBanItem
+    public class FireBanRSSItem
     {
         private readonly XmlNode xmlNode;
 
-        public FireBanItem(XmlNode xmlNode)
+        public FireBanRSSItem(XmlNode xmlNode)
         {
             this.xmlNode = xmlNode;
         }

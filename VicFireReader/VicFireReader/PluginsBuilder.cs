@@ -27,7 +27,7 @@ using VicFireReader.CFA.FireDangerIndex.RSS;
 using VicFireReader.CFA.FireDangerIndex.View;
 using VicFireReader.CFA.Incidents.RSSReader;
 using VicFireReader.CFA.Incidents.View;
-using VicFireReader.CFA.TotalFireBans;
+using VicFireReader.CFA.TotalFireBans.View;
 using VicFireReader.Interfaces;
 
 

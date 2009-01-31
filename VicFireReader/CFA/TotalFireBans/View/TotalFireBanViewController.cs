@@ -21,9 +21,10 @@
 using System.Xml;
 using NoeticTools.Html.UI;
 using NoeticTools.RSS;
+using VicFireReader.CFA.TotalFireBans.RSSReader;
 
 
-namespace VicFireReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans.View
 {
     public class TotalFireBanViewController : IRSSReaderListener
     {
@@ -46,8 +47,8 @@ namespace VicFireReader.CFA.TotalFireBans
             }
             else
             {
-                FireBanItem fireBanItem = new FireBanItem(incidentNodes[incidentNodes.Count - 1]);
-                view.Refresh(fireBanItem.GetHtmlDocumentText());
+                FireBanRSSItem fireBanRSSItem = new FireBanRSSItem(incidentNodes[incidentNodes.Count - 1]);
+                view.Refresh(fireBanRSSItem.GetHtmlDocumentText());
             }
         }
 

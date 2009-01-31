@@ -18,17 +18,13 @@
 
 #endregion
 
-namespace VicFireReader.CFA.TotalFireBans
-{
-    public class TotalFireBanOptions : ITotalFireBanOptions
-    {
-        public const string defaultUrl = @"http://www.cfa.vic.gov.au/incidents/tfb_rss.xml";
-        private ITotalFireBanRssOptions options = new TotalFireBanRSSReaderOptions();
+using NoeticTools.PlugIns.Options;
+using NoeticTools.RSS;
 
-        ITotalFireBanRssOptions ITotalFireBanOptions.RssOptions
-        {
-            get { return options; }
-            set { options = value; }
-        }
+
+namespace VicFireReader.CFA.TotalFireBans.RSSReader
+{
+    public interface ITotalFireBanRssOptions : IRSSReaderOptions, IOptions
+    {
     }
 }

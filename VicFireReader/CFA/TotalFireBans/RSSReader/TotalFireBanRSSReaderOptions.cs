@@ -23,7 +23,7 @@ using System.ComponentModel;
 using NoeticTools.RSS;
 
 
-namespace VicFireReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.TotalFireBans.RSSReader
 {
     public class TotalFireBanRSSReaderOptions : ITotalFireBanRssOptions
     {
