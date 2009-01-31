@@ -18,14 +18,24 @@
 
 #endregion
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+using System.Xml;
+using NoeticTools.Utilities;
+
+
+namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
-    public interface IIncidentsRSSReader
+    public class RSSIncidentItemFactory : IRSSIncidentItemFactory
     {
-        void Start(IIncidentsRSSReaderOptions options);
-        void Refresh();
-        void Stop();
-        void AddListener(IIncidentsRSSReaderListener rssReaderListener);
-        void RemoveListener(IIncidentsRSSReaderListener rssReaderListener);
+        private readonly IClock clock;
+
+        public RSSIncidentItemFactory(IClock clock)
+        {
+            this.clock = clock;
+        }
+
+        public IRSSIncidentItem Create(XmlNode incidentNode)
+        {
+            return new RSSIncidentItem(incidentNode, clock);
+        }
     }
 }

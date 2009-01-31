@@ -18,14 +18,25 @@
 
 #endregion
 
-using System.Xml;
-using VicFireReader.CFA.Incidents.RSSReader;
+using NDependencyInjection.interfaces;
+using NoeticTools.PlugIns;
+using NoeticTools.RSS;
+using VicFireReader.CFA.RSSReaders.TotalFireBans;
+using VicFireReader.CFA.UI.TotalFireBans;
 
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+namespace VicFireReader.CFA.UI.TotalFireBans
 {
-    public interface IRSSIncidentItemFactory
+    public class TotalFireBanViewPluginBuilder : ISubsystemBuilder
     {
-        IRSSIncidentItem Create(XmlNode incidentNode);
+        public void Build(ISystemDefinition system)
+        {
+            system.HasSingleton<TotalFireBanRSSOptions>()
+                .Provides<ITotalFireBanOptions>();
+            system.HasSingleton<RSSReaderFactory>()
+                .Provides<IRSSReaderFactory>();
+            system.HasSingleton<TotalFireBanViewPlugin>()
+                .Provides<IPlugin>();
+        }
     }
 }

@@ -22,7 +22,7 @@ using NoeticTools.PlugIns.Options;
 using NoeticTools.RSS;
 
 
-namespace VicFireReader.CFA.TotalFireBans.RSSReader
+namespace VicFireReader.CFA.RSSReaders.TotalFireBans
 {
     public interface ITotalFireBanRssOptions : IRSSReaderOptions, IOptions
     {

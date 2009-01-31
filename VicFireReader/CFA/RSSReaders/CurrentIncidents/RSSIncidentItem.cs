@@ -25,7 +25,7 @@ using NoeticTools.Utilities;
 using VicFireReader.CFA.Data;
 
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
     public class RSSIncidentItem : IRSSIncidentItem
     {

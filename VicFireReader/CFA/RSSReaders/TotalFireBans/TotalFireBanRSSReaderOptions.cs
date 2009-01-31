@@ -21,19 +21,18 @@
 using System;
 using System.ComponentModel;
 using NoeticTools.RSS;
-using VicFireReader.CFA.Incidents.RSSReader;
 
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+namespace VicFireReader.CFA.RSSReaders.TotalFireBans
 {
-    public class IncidentsRSSReaderOptions : IIncidentsRSSReaderOptions
+    public class TotalFireBanRSSReaderOptions : ITotalFireBanRssOptions
     {
-        public const string defaultUrl = @"http://www.cfa.vic.gov.au/incidents/incident_summary_rss.xml";
+        public const string defaultUrl = @"http://www.cfa.vic.gov.au/incidents/tfb_rss.xml";
         private IRSSOptionsChangedListener listener;
         private string rssUrl = defaultUrl;
-        private TimeSpan updatePeriod = TimeSpan.FromMinutes(1);
+        private TimeSpan updatePeriod = TimeSpan.FromMinutes(15);
 
-        [Browsable(true), Category("RSS"), DisplayName("URL"), Description("Incidents RSS URL.")]
+        [Browsable(true), Category("RSS"), DisplayName("URL"), Description("Total Fire Ban RSS URL.")]
         [DefaultValue(defaultUrl)]
         public string Url
         {
@@ -45,8 +44,8 @@ namespace VicFireReader.CFA.Incidents.RSSReader
             }
         }
 
-        [Browsable(true), Category("RSS"), DisplayName("Update period"), Description("Incidents update period.")]
-        [DefaultValue("1:00")]
+        [Browsable(true), Category("RSS"), DisplayName("Update period"), Description("Total Fire Ban update period.")]
+        [DefaultValue("15:00")]
         public TimeSpan UpdatePeriod
         {
             get { return updatePeriod; }
@@ -63,7 +62,7 @@ namespace VicFireReader.CFA.Incidents.RSSReader
         [Browsable(false)]
         public string OptionsName
         {
-            get { return "Incidents"; }
+            get { return "Total Fire Ban"; }
         }
 
         void IRSSReaderOptions.SetListener(IRSSOptionsChangedListener changedListener)

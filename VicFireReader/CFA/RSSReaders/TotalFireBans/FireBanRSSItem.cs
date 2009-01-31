@@ -22,7 +22,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 
 
-namespace VicFireReader.CFA.TotalFireBans.RSSReader
+namespace VicFireReader.CFA.RSSReaders.TotalFireBans
 {
     public class FireBanRSSItem
     {

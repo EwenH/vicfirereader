@@ -18,7 +18,11 @@
 
 #endregion
 
-namespace VicFireReader.CFA.TotalFireBans.RSSReader
+using VicFireReader.CFA.RSSReaders.TotalFireBans;
+using VicFireReader.CFA.UI.TotalFireBans;
+
+
+namespace VicFireReader.CFA.RSSReaders.TotalFireBans
 {
     public class TotalFireBanRSSOptions : ITotalFireBanOptions
     {

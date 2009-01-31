@@ -85,9 +85,9 @@
     <Compile Include="FireDangerIndex\RSS\FireDangerForecastRSSReaderPlugin.cs" />
     <Compile Include="FireDangerIndex\View\FireDangerForecastViewPlugin.cs" />
     <Compile Include="ICommandLineParser.cs" />
-    <Compile Include="Incidents\RSSReader\IRSSIncidentItem.cs" />
-    <Compile Include="Incidents\RSSReader\IRSSIncidentItemFactory.cs" />
-    <Compile Include="Incidents\RSSReader\RSSIncidentItemFactory.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItem.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItemFactory.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItemFactory.cs" />
     <Compile Include="Incidents\View\Grid\IncidentsGridViewBuilder.cs" />
     <Compile Include="Incidents\View\IIncidentsView.cs" />
     <Compile Include="Incidents\View\IIncidentsViewController.cs" />
@@ -108,14 +108,14 @@
     <Compile Include="Regions\ICfaRegions.cs" />
     <Compile Include="Regions\ICfaRegionsChangedListener.cs" />
     <Compile Include="IncidentLocation.cs" />
-    <Compile Include="Incidents\RSSReader\IIncidentsRSSReaderListener.cs" />
-    <Compile Include="Incidents\RSSReader\IIncidentsRSSReader.cs" />
-    <Compile Include="Incidents\RSSReader\IIncidentsRSSReaderOptions.cs" />
-    <Compile Include="Incidents\RSSReader\IncidentsRSSReader.cs">
+    <Compile Include="RSSReaders\CurrentIncidents\IIncidentsRSSReaderListener.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IIncidentsRSSReader.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IIncidentsRSSReaderOptions.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IncidentsRSSReader.cs">
     </Compile>
-    <Compile Include="Incidents\RSSReader\IncidentsRssReaderBuilder.cs" />
-    <Compile Include="Incidents\RSSReader\IncidentsRSSReaderOptions.cs" />
-    <Compile Include="Incidents\RSSReader\IncidentsRSSReaderPlugIn.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IncidentsRssReaderBuilder.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IncidentsRSSReaderOptions.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\IncidentsRSSReaderPlugIn.cs" />
     <Compile Include="Incidents\View\IFormatterListener.cs" />
     <Compile Include="Incidents\View\Grid\IIncidentGridViewCellFormatter.cs" />
     <Compile Include="Incidents\View\Grid\IIncidentsGridView.cs" />
@@ -137,7 +137,7 @@
     <Compile Include="Incidents\View\IncidentsView.Designer.cs">
       <DependentUpon>IncidentsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Incidents\RSSReader\RSSIncidentItem.cs" />
+    <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItem.cs" />
     <Compile Include="Incidents\View\IncidentsViewBuilder.cs" />
     <Compile Include="Incidents\View\IncidentsViewFactory.cs" />
     <Compile Include="Incidents\View\IncidentsViewPlugIn.cs" />
@@ -152,14 +152,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="TotalFireBans\ITotalFireBanOptions.cs" />
-    <Compile Include="TotalFireBans\RSSReader\ITotalFireBanRssOptions.cs" />
-    <Compile Include="TotalFireBans\RSSReader\TotalFireBanRSSOptions.cs" />
-    <Compile Include="TotalFireBans\RSSReader\TotalFireBanRSSReaderOptions.cs" />
-    <Compile Include="TotalFireBans\View\TotalFireBanViewPlugIn.cs" />
-    <Compile Include="TotalFireBans\RSSReader\FireBanRSSItem.cs" />
-    <Compile Include="TotalFireBans\View\TotalFireBanViewController.cs" />
-    <Compile Include="TotalFireBans\View\TotalFireBanViewPlugInBuilder.cs" />
+    <Compile Include="UI\TotalFireBans\ITotalFireBanOptions.cs" />
+    <Compile Include="RSSReaders\TotalFireBans\ITotalFireBanRssOptions.cs" />
+    <Compile Include="RSSReaders\TotalFireBans\TotalFireBanRSSOptions.cs" />
+    <Compile Include="RSSReaders\TotalFireBans\TotalFireBanRSSReaderOptions.cs" />
+    <Compile Include="UI\TotalFireBans\TotalFireBanViewPlugIn.cs" />
+    <Compile Include="RSSReaders\TotalFireBans\FireBanRSSItem.cs" />
+    <Compile Include="UI\TotalFireBans\TotalFireBanViewController.cs" />
+    <Compile Include="UI\TotalFireBans\TotalFireBanViewPlugInBuilder.cs" />
     <Compile Include="UI\ContentForm.cs">
       <SubType>Form</SubType>
     </Compile>

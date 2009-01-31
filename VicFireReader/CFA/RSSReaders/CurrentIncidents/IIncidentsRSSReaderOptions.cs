@@ -18,13 +18,13 @@
 
 #endregion
 
-using VicFireReader.CFA.Data;
+using NoeticTools.PlugIns.Options;
+using NoeticTools.RSS;
 
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
-    public interface IRSSIncidentItem
+    public interface IIncidentsRSSReaderOptions : IRSSReaderOptions, IOptions
     {
-        CFADataSet.IncidentsRow Update(CFADataSet.IncidentsDataTable incidents);
     }
 }

@@ -21,11 +21,10 @@
 using System;
 using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Persistence;
-using VicFireReader.CFA.Incidents.RSSReader;
 using VicFireReader.Images;
 
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
     public class IncidentsRSSReaderPlugin : IPlugin, IOnOpenListener
     {

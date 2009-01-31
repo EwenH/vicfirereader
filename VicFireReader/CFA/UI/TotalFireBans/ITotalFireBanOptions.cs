@@ -18,11 +18,13 @@
 
 #endregion
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+using VicFireReader.CFA.RSSReaders.TotalFireBans;
+
+
+namespace VicFireReader.CFA.UI.TotalFireBans
 {
-    public interface IIncidentsRSSReaderListener
+    public interface ITotalFireBanOptions
     {
-        void OnSuccessfullUpdate();
-        void OnFailure();
+        ITotalFireBanRssOptions RssOptions { get; set; }
     }
 }

@@ -23,10 +23,9 @@ using System.Data;
 using System.Xml;
 using NoeticTools.RSS;
 using VicFireReader.CFA.Data;
-using VicFireReader.CFA.Incidents.RSSReader;
 
 
-namespace VicFireReader.CFA.Incidents.RSSReader
+namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
     public class IncidentsRSSReader : IIncidentsRSSReader, IRSSReaderListener, IRSSOptionsChangedListener
     {

@@ -18,13 +18,13 @@
 
 #endregion
 
-using VicFireReader.CFA.TotalFireBans.RSSReader;
+using System.Xml;
 
 
-namespace VicFireReader.CFA.TotalFireBans
+namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
 {
-    public interface ITotalFireBanOptions
+    public interface IRSSIncidentItemFactory
     {
-        ITotalFireBanRssOptions RssOptions { get; set; }
+        IRSSIncidentItem Create(XmlNode incidentNode);
     }
 }

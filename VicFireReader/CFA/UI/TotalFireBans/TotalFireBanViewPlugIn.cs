@@ -23,16 +23,16 @@ using NoeticTools.PlugIns;
 using NoeticTools.PlugIns.Menus;
 using NoeticTools.PlugIns.Persistence;
 using NoeticTools.RSS;
+using VicFireReader.CFA.UI.TotalFireBans;
 using WeifenLuo.WinFormsUI.Docking;
 
 
-namespace VicFireReader.CFA.TotalFireBans.View
+namespace VicFireReader.CFA.UI.TotalFireBans
 {
     public class TotalFireBanViewPlugin : IPlugin, IOnOpenListener, IViewController
     {
         private readonly ITotalFireBanOptions options;
         private readonly IRSSReaderFactory rssReaderFactory;
-        private IFormClosedListener formClosedListener;
         private IPluginHostServices hostServices;
         private HtmlView totalFireBansView;
 
@@ -67,7 +67,6 @@ namespace VicFireReader.CFA.TotalFireBans.View
 
         void IViewController.Show(IFormClosedListener listener)
         {
-            formClosedListener = listener;
             totalFireBansView = new HtmlView();
             totalFireBansView.Text = "Total Fire Bans";
             totalFireBansView.TabText = "Total Fire Bans";

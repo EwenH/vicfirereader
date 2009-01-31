@@ -21,10 +21,11 @@
 using System.Xml;
 using NoeticTools.Html.UI;
 using NoeticTools.RSS;
-using VicFireReader.CFA.TotalFireBans.RSSReader;
+using VicFireReader.CFA.RSSReaders.TotalFireBans;
+using VicFireReader.CFA.UI.TotalFireBans;
 
 
-namespace VicFireReader.CFA.TotalFireBans.View
+namespace VicFireReader.CFA.UI.TotalFireBans
 {
     public class TotalFireBanViewController : IRSSReaderListener
     {
