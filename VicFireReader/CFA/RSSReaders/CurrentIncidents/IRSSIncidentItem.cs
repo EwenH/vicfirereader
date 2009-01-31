@@ -19,6 +19,7 @@
 #endregion
 
 using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents;
 
 
 namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
@@ -26,5 +27,6 @@ namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
     public interface IRSSIncidentItem
     {
         CFADataSet.IncidentsRow Update(CFADataSet.IncidentsDataTable incidents);
+        void Update(IIncidents incidents);
     }
 }

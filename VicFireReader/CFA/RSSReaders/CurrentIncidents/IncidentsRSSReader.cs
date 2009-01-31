@@ -20,6 +20,7 @@
 
 using System.Collections.Generic;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Xml;
 using NoeticTools.RSS;
 using VicFireReader.CFA.Data;
@@ -117,6 +118,7 @@ namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
             foreach (XmlNode incidentNode in incidentNodes)
             {
                 IRSSIncidentItem incident = rssIncidentItemFactory.Create(incidentNode);
+                incident.Update(incidents);
                 CFADataSet.IncidentsRow updatedRow = incident.Update(dataSet.Incidents);
 
                 if (incidentRows.Contains(updatedRow))

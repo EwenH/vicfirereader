@@ -18,14 +18,9 @@
 
 #endregion
 
-using System;
-
-
 namespace VicFireReader.CFA.Incidents
 {
-    public interface IIncidents
+    public class Incident : IIncident
     {
-        void OnIncidentRead(string guid, int region, string location, DateTime time, string name, string type,
-                            string status, string size, short appliances);
     }
 }

@@ -23,6 +23,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using NoeticTools.Utilities;
 using VicFireReader.CFA.Data;
+using VicFireReader.CFA.Incidents;
 
 
 namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
@@ -41,6 +42,28 @@ namespace VicFireReader.CFA.RSSReaders.CurrentIncidents
         public CFADataSet.IncidentsRow Update(CFADataSet.IncidentsDataTable incidents)
         {
             return GetNewIncidentsRow(incidents);
+        }
+
+        public void Update(IIncidents incidents)
+        {
+            string guid = incidentRSSNode.SelectSingleNode("guid").InnerText;
+
+            string description = incidentRSSNode.SelectSingleNode("description").InnerText;
+            Regex regex =
+                new Regex(
+                    @".*Region:\</strong\> (?<region>..).*Location:\</strong\> (?<location>[^,\<]*),?(?<name>[^\<]*).*Date/Time:\</strong\> (?<timeStamp>[^\<]+).*Type\:\</strong\> (?<type>[^\<]*).*Status:</strong> (?<status>[^\<]*).*Size:</strong> (?<size>[^\<]*).*Vehicles:</strong> (?<appliances>[^\<]*).*");
+            Match match = regex.Match(description);
+
+            int region = GetInteger(match.Groups["region"].Value);
+            string location = match.Groups["location"].Value.Trim();
+            DateTime time = DateTime.Parse(match.Groups["timeStamp"].Value);
+            string name = match.Groups["name"].Value.Trim();
+            string incidentType = match.Groups["type"].Value;
+            string status = match.Groups["status"].Value;
+            string size = match.Groups["size"].Value;
+            short appliances = GetInteger(match.Groups["appliances"].Value);
+
+            incidents.OnIncidentRead(guid, region, location, time, name, incidentType, status, size, appliances);
         }
 
         private CFADataSet.IncidentsRow GetNewIncidentsRow(CFADataSet.IncidentsDataTable incidents)

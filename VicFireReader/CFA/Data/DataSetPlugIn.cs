@@ -18,11 +18,13 @@
 
 #endregion
 
+using System;
 using NoeticTools.PlugIns;
 
 
 namespace VicFireReader.CFA.Data
 {
+    [Obsolete] // Being replaced by Incidents
     public class DataSetPlugIn : IPlugin
     {
         private readonly ICFADataSet cfaDataSet;
