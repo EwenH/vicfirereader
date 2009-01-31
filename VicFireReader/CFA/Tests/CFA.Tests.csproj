@@ -63,6 +63,7 @@
     <Compile Include="CommandLineParserTests.cs" />
     <Compile Include="IncidentsViewTests.cs" />
     <Compile Include="Incidents\IncidentsCollectionTests.cs" />
+    <Compile Include="Incidents\IncidentTests.cs" />
     <Compile Include="PlugIns\IncidentsViewPlugInTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\RegionsPluginTests.cs" />

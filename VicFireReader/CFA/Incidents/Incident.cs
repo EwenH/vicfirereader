@@ -24,7 +24,7 @@ using NoeticTools.Utilities;
 
 namespace VicFireReader.CFA.Incidents
 {
-    public class Incident : IIncident
+    public class Incident : IIncident, IComparable
     {
         private short appliances;
         private readonly IClock clock;
@@ -34,18 +34,18 @@ namespace VicFireReader.CFA.Incidents
         private readonly int region;
         private string size;
         private string status;
-        private readonly DateTime time;
+        private readonly DateTime cfaIncidentTime;
         private string type;
         private DateTime lastUpdatedTime;
 
-        public Incident(IClock clock, string incidentID, int region, string location, DateTime time, string name,
+        public Incident(IClock clock, string incidentID, int region, string location, DateTime cfaIncidentTime, string name,
                         string type, string status, string size, short appliances)
         {
             this.clock = clock;
             this.incidentID = incidentID;
             this.region = region;
             this.location = location;
-            this.time = time;
+            this.cfaIncidentTime = cfaIncidentTime;
             this.name = name;
             this.type = type;
             this.status = status;
@@ -98,6 +98,16 @@ namespace VicFireReader.CFA.Incidents
             }
 
             return result;
+        }
+
+        public int CompareTo(object obj)
+        {
+            return Compare((Incident) obj);
+        }
+
+        private int Compare(Incident incident)
+        {
+            return incidentID.CompareTo(incident.incidentID);
         }
     }
 }
