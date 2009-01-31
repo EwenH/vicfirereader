@@ -69,7 +69,7 @@ namespace VicFireReader.CFA.Incidents
             if (region != incident.region)
             {
                 throw new InvalidOperationException(
-                    "Attempted to update an incident from an incident from a different region. Possible CFA operator error.");
+                    "Attempted to update an incident from an incident from a different region. Possible CFA error.");
             }
 
             IncidentUpdateResult result;
