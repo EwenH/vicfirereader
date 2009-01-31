@@ -30,7 +30,7 @@ using VicFireReader.CFA.UI;
 
 namespace VicFireReader.CFA.Incidents.View
 {
-    public partial class IncidentsView : ContentForm, IIncidentsListener, IIncidentsView
+    public partial class IncidentsView : ContentForm, IIncidentsReaderListener, IIncidentsView
     {
         private readonly IFormClosedListener formClosedListener;
         private readonly IIncidentsRSSReader incidentsReader;
@@ -51,12 +51,12 @@ namespace VicFireReader.CFA.Incidents.View
             regionPlaceHolder.AddControl(regionsComboBox);
         }
 
-        void IIncidentsListener.OnSuccessfullUpdate()
+        void IIncidentsReaderListener.OnSuccessfullUpdate()
         {
             ClearError();
         }
 
-        void IIncidentsListener.OnFailure()
+        void IIncidentsReaderListener.OnFailure()
         {
             SetError("Unable to read incidents.");
         }

@@ -18,9 +18,36 @@
 
 #endregion
 
+using System.Data;
+using NDependencyInjection;
+
+
 namespace VicFireReader.CFA.Data
 {
     partial class CFADataSet : ICFADataSet
     {
+        private readonly IIncidentsListener incidentsReaderListener;
+
+        [InjectionConstructor]
+        public CFADataSet(IIncidentsListener incidentsReaderListener) : this()
+        {
+            this.incidentsReaderListener = incidentsReaderListener;
+            Incidents.RowChanged += Incidents_RowChanged;
+            Incidents.RowDeleted += Incidents_RowDeleted;
+        }
+
+        private void Incidents_RowDeleted(object sender, DataRowChangeEventArgs e)
+        {
+        }
+
+        private void Incidents_RowChanged(object sender, DataRowChangeEventArgs e)
+        {
+            incidentsReaderListener.OnIncidentChanged();
+        }
+    }
+
+    public interface IIncidentsListener
+    {
+        void OnIncidentChanged();
     }
 }

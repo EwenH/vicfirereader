@@ -65,7 +65,7 @@ namespace VicFireReader.CFA.Incidents.View.Grid
 
             if (status == "SAFE")
             {
-                //e.CellStyle.BackColor = Color.LightGreen;
+                e.CellStyle.BackColor = Color.LightGreen;
             }
             else if (isRegion)
             {

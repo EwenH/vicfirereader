@@ -20,7 +20,7 @@
 
 namespace VicFireReader.CFA.Incidents.RSS
 {
-    public interface IIncidentsListener
+    public interface IIncidentsReaderListener
     {
         void OnSuccessfullUpdate();
         void OnFailure();

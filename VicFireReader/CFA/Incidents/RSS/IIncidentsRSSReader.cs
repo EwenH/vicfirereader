@@ -25,7 +25,7 @@ namespace VicFireReader.CFA.Incidents.RSS
         void Start(IIncidentsRSSReaderOptions options);
         void Refresh();
         void Stop();
-        void AddListener(IIncidentsListener listener);
-        void RemoveListener(IIncidentsListener listener);
+        void AddListener(IIncidentsReaderListener readerListener);
+        void RemoveListener(IIncidentsReaderListener readerListener);
     }
 }

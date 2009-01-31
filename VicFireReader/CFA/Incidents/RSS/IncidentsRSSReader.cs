@@ -31,7 +31,7 @@ namespace VicFireReader.CFA.Incidents.RSS
     {
         private readonly ICFADataSet dataSet;
         private readonly IIncidentFactory incidentFactory;
-        private readonly List<IIncidentsListener> listeners = new List<IIncidentsListener>();
+        private readonly List<IIncidentsReaderListener> listeners = new List<IIncidentsReaderListener>();
         private readonly IRSSReaderFactory rssReaderFactory;
         private IIncidentsRSSReaderOptions options;
         private IRSSReader rssReader;
@@ -44,14 +44,14 @@ namespace VicFireReader.CFA.Incidents.RSS
             this.incidentFactory = incidentFactory;
         }
 
-        void IIncidentsRSSReader.AddListener(IIncidentsListener listener)
+        void IIncidentsRSSReader.AddListener(IIncidentsReaderListener readerListener)
         {
-            listeners.Add(listener);
+            listeners.Add(readerListener);
         }
 
-        void IIncidentsRSSReader.RemoveListener(IIncidentsListener listener)
+        void IIncidentsRSSReader.RemoveListener(IIncidentsReaderListener readerListener)
         {
-            listeners.Remove(listener);
+            listeners.Remove(readerListener);
         }
 
         void IIncidentsRSSReader.Start(IIncidentsRSSReaderOptions readerOptions)
@@ -88,7 +88,7 @@ namespace VicFireReader.CFA.Incidents.RSS
 
             RemoveIncidentsNotUpdated(incidentRows);
 
-            foreach (IIncidentsListener listener in listeners)
+            foreach (IIncidentsReaderListener listener in listeners)
             {
                 listener.OnSuccessfullUpdate();
             }
@@ -96,7 +96,7 @@ namespace VicFireReader.CFA.Incidents.RSS
 
         void IRSSReaderListener.OnFailure()
         {
-            foreach (IIncidentsListener listener in listeners)
+            foreach (IIncidentsReaderListener listener in listeners)
             {
                 listener.OnFailure();
             }
