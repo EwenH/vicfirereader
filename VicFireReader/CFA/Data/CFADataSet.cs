@@ -35,10 +35,17 @@ namespace VicFireReader.CFA.Data
             this.incidentsReaderListener = incidentsReaderListener;
             Incidents.RowChanged += Incidents_RowChanged;
             Incidents.RowDeleted += Incidents_RowDeleted;
+            Incidents.TableNewRow += Incidents_TableNewRow;
+        }
+
+        private void Incidents_TableNewRow(object sender, DataTableNewRowEventArgs e)
+        {
+            incidentsReaderListener.OnIncidentAdded();
         }
 
         private void Incidents_RowDeleted(object sender, DataRowChangeEventArgs e)
         {
+            incidentsReaderListener.OnIncidentRemoved();
         }
 
         private void Incidents_RowChanged(object sender, DataRowChangeEventArgs e)

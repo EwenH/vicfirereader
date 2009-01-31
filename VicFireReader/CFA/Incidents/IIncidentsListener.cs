@@ -23,5 +23,7 @@ namespace VicFireReader.CFA.Incidents
     public interface IIncidentsListener
     {
         void OnIncidentChanged();
+        void OnIncidentAdded();
+        void OnIncidentRemoved();
     }
 }
