@@ -24,7 +24,7 @@ using NoeticTools.Utilities;
 
 namespace VicFireReader.CFA.Incidents
 {
-    public class Incident : IIncident, IComparable
+    public class Incident : IIncident
     {
         private int appliances;
         private readonly IClock clock;
@@ -34,7 +34,7 @@ namespace VicFireReader.CFA.Incidents
         private readonly int region;
         private string size;
         private string status;
-        private readonly DateTime cfaIncidentTime;
+        private DateTime cfaIncidentTime;
         private string type;
         private DateTime lastUpdatedTime;
 
@@ -68,7 +68,7 @@ namespace VicFireReader.CFA.Incidents
             return incidentID.GetHashCode();
         }
 
-        public void Update(int currentRegion, string currentLocation, DateTime currentTime, string currentName, string currentType, string currentStatus, string currentSize, int currentAppliances)
+        public void Update(int currentRegion, string currentLocation, DateTime currentcfaIncidentTime, string currentName, string currentType, string currentStatus, string currentSize, int currentAppliances)
         {
             if (region != currentRegion)
             {
@@ -81,16 +81,18 @@ namespace VicFireReader.CFA.Incidents
                 currentStatus != status ||
                 currentSize != size ||
                 currentAppliances != appliances ||
-                currentLocation != location)
+                currentLocation != location ||
+                currentcfaIncidentTime != cfaIncidentTime)
             {
-                lastUpdatedTime = clock.Now;
-
                 name = currentName;
                 type = currentType;
                 status = currentStatus;
                 size = currentSize;
                 appliances = currentAppliances;
                 location = currentLocation;
+                cfaIncidentTime = currentcfaIncidentTime;
+
+                lastUpdatedTime = clock.Now;
             }
         }
     }

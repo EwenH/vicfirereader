@@ -25,6 +25,6 @@ namespace VicFireReader.CFA.Incidents
 {
     public interface IIncident : IComparable
     {
-        void Update(int region, string location, DateTime time, string name, string type, string status, string size, int appliances);
+        void Update(int region, string location, DateTime currentcfaIncidentTime, string name, string type, string status, string size, int appliances);
     }
 }
