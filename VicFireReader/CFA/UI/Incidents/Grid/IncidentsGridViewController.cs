@@ -27,7 +27,7 @@ using VicFireReader.CFA.Incidents;
 namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public class IncidentsGridViewController : IIncidentsGridViewListener, IIncidentsGridViewController,
-                                               IFormatterListener, IIncidentsListener
+                                               IFormatterListener, IIncidentsListener, IIncidentChangeListener
     {
         private readonly IMapView mapView;
         private readonly IIncidentsGridView view;
@@ -56,6 +56,10 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         }
 
         void IIncidentsListener.OnIncidentRemoved(IIncident removedIncident)
+        {
+        }
+
+        void IIncidentChangeListener.OnIncidentChanged(IIncident changedIncident)
         {
         }
     }

@@ -27,16 +27,18 @@ namespace VicFireReader.CFA.Incidents
     public class IncidentFactory : IIncidentFactory
     {
         private readonly IClock clock;
+        private readonly IIncidentChangeListener incidentChangeListener;
 
-        public IncidentFactory(IClock clock)
+        public IncidentFactory(IClock clock, IIncidentChangeListener incidentChangeListener)
         {
             this.clock = clock;
+            this.incidentChangeListener = incidentChangeListener;
         }
 
         public IIncident Create(string incidentID, int region, string location, DateTime time, string name, string type,
                                 string status, string size, short appliances)
         {
-            return new Incident(clock, incidentID, region, location, time, name, type, status, size, appliances);
+            return new Incident(clock, incidentChangeListener, incidentID, region, location, time, name, type, status, size, appliances);
         }
     }
 }

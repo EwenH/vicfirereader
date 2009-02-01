@@ -94,7 +94,6 @@
     <Compile Include="Incidents\IncidentFactory.cs" />
     <Compile Include="Incidents\IncidentsBuilder.cs" />
     <Compile Include="Incidents\IncidentsCollection.cs" />
-    <Compile Include="Incidents\IncidentUpdateResult.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItem.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItemFactory.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItemFactory.cs" />

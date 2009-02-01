@@ -12,12 +12,14 @@ namespace VicFireReader.CFA.Tests.Incidents
     {
         private IClock clock;
         private Incident incident;
+        private IIncidentChangeListener incidentChangeListener;
 
         protected override void SetUp()
         {
             clock = NewMock<IClock>();
+            incidentChangeListener = NewMock<IIncidentChangeListener>();
 
-            incident = new Incident(clock, "ID 1", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
+            incident = new Incident(clock, incidentChangeListener, "ID 1", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
                                     "Status", "Size", 150);
         }
 
@@ -30,7 +32,7 @@ namespace VicFireReader.CFA.Tests.Incidents
         [Test]
         public void Compare()
         {
-            Incident incident2 = new Incident(clock, "ID 2", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
+            Incident incident2 = new Incident(clock, incidentChangeListener, "ID 2", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
                                     "Status", "Size", 150);
 
             Assert.IsTrue(incident.CompareTo(incident) == 0);
@@ -47,7 +49,7 @@ namespace VicFireReader.CFA.Tests.Incidents
         [Test]
         public void GetHashCode_IsDifferent_ForIncidentsWithDifferentIDs()
         {
-            Incident incident2 = new Incident(clock, "ID 2", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
+            Incident incident2 = new Incident(clock, incidentChangeListener, "ID 2", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
                                     "Status", "Size", 150);
 
             Assert.AreNotEqual(incident.GetHashCode(), incident2.GetHashCode());
@@ -56,7 +58,7 @@ namespace VicFireReader.CFA.Tests.Incidents
         [Test]
         public void GetHashCode_IsEqual_ForIncidentsWithSameID()
         {
-            Incident incident2 = new Incident(clock, "ID 1", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
+            Incident incident2 = new Incident(clock, incidentChangeListener, "ID 1", 13, "Location", new DateTime(2009, 2, 1, 9, 30, 0), "Name", "Type",
                                     "Status", "Size", 150);
 
             Assert.AreEqual(incident.GetHashCode(), incident2.GetHashCode());
@@ -65,7 +67,7 @@ namespace VicFireReader.CFA.Tests.Incidents
         [Test]
         public void GetHashCode_IsEqual_ForIncidentsWithSameIDButDifferentValues()
         {
-            Incident incident2 = new Incident(clock, "ID 1", 13, "Location2", new DateTime(2010, 2, 1, 9, 30, 0), "MyName", "AnotherType",
+            Incident incident2 = new Incident(clock, incidentChangeListener, "ID 1", 13, "Location2", new DateTime(2010, 2, 1, 9, 30, 0), "MyName", "AnotherType",
                                     "AnotherStatus", "Large", 7);
 
             Assert.AreEqual(incident.GetHashCode(), incident2.GetHashCode());

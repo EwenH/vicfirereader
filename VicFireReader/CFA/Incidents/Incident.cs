@@ -26,22 +26,25 @@ namespace VicFireReader.CFA.Incidents
 {
     public class Incident : IIncident
     {
-        private int appliances;
+        private readonly IIncidentChangeListener changeListener;
         private readonly IClock clock;
         private readonly string incidentID;
+        private readonly int region;
+        private int appliances;
+        private DateTime cfaIncidentTime;
+        private DateTime lastUpdatedTime;
         private string location;
         private string name;
-        private readonly int region;
         private string size;
         private string status;
-        private DateTime cfaIncidentTime;
         private string type;
-        private DateTime lastUpdatedTime;
 
-        public Incident(IClock clock, string incidentID, int region, string location, DateTime cfaIncidentTime, string name,
-                        string type, string status, string size, int appliances)
+        public Incident(IClock clock, IIncidentChangeListener changeListener, string incidentID, int region,
+                        string location, DateTime cfaIncidentTime, string name, string type, string status, string size,
+                        int appliances)
         {
             this.clock = clock;
+            this.changeListener = changeListener;
             this.incidentID = incidentID;
             this.region = region;
             this.location = location;
@@ -58,17 +61,9 @@ namespace VicFireReader.CFA.Incidents
             return Compare((Incident) obj);
         }
 
-        private int Compare(Incident incident)
-        {
-            return incidentID.CompareTo(incident.incidentID);
-        }
-
-        public override int GetHashCode()
-        {
-            return incidentID.GetHashCode();
-        }
-
-        public void Update(int currentRegion, string currentLocation, DateTime currentcfaIncidentTime, string currentName, string currentType, string currentStatus, string currentSize, int currentAppliances)
+        public void Update(int currentRegion, string currentLocation, DateTime currentcfaIncidentTime,
+                           string currentName, string currentType, string currentStatus, string currentSize,
+                           int currentAppliances)
         {
             if (region != currentRegion)
             {
@@ -93,7 +88,19 @@ namespace VicFireReader.CFA.Incidents
                 cfaIncidentTime = currentcfaIncidentTime;
 
                 lastUpdatedTime = clock.Now;
+
+                changeListener.OnIncidentChanged(this);
             }
+        }
+
+        private int Compare(Incident incident)
+        {
+            return incidentID.CompareTo(incident.incidentID);
+        }
+
+        public override int GetHashCode()
+        {
+            return incidentID.GetHashCode();
         }
     }
 }

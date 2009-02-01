@@ -60,6 +60,7 @@ namespace VicFireReader
             ISystemDefinition system = new SystemDefinition();
 
             system.Broadcasts<IIncidentsListener>();
+            system.Broadcasts<IIncidentChangeListener>();
 
             system.HasInstance(new NoeticTools.DotNetWrappers.Timer(new Timer())).Provides<ITimer>();
 

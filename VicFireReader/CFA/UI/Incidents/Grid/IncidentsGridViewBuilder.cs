@@ -40,6 +40,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
             system.HasSingleton<IncidentsGridViewController>()
                 .ListensTo<IIncidentsListener>()
+                .ListensTo<IIncidentChangeListener>()
                 .Provides<IFormatterListener>()
                 .Provides<IIncidentsGridViewListener>();
         }
