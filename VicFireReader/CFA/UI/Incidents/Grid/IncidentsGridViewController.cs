@@ -29,14 +29,17 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     public class IncidentsGridViewController : IIncidentsGridViewListener, IIncidentsGridViewController,
                                                IFormatterListener, IIncidentsListener, IIncidentChangeListener
     {
-        private readonly IMapView mapView;
-        private readonly IIncidentsGridView view;
         private readonly Dictionary<IIncident, IIncident> displayedIncidents = new Dictionary<IIncident, IIncident>();
+        private readonly IMapView mapViewer;
+        private readonly IIncidentsGridViewPresenter presenter;
+        private readonly IIncidentsGridView view;
 
-        public IncidentsGridViewController(IIncidentsGridView incidentsGirdView, IMapView mapViewer)
+        public IncidentsGridViewController(IIncidentsGridView view, IMapView mapViewer,
+                                           IIncidentsGridViewPresenter presenter)
         {
-            view = incidentsGirdView;
-            mapView = mapViewer;
+            this.view = view;
+            this.mapViewer = mapViewer;
+            this.presenter = presenter;
         }
 
         void IFormatterListener.OnFormattingChanged()
@@ -44,23 +47,35 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
             view.Invalidate(true);
         }
 
+        void IIncidentChangeListener.OnIncidentChanged(IIncident changedIncident)
+        {
+            if (displayedIncidents.ContainsKey(changedIncident))
+            {
+                // >>> TODO - Filter incidents
+                // >>> TODO - update view
+            }
+            else
+            {
+                ((IIncidentsListener) this).OnIncidentAdded(changedIncident);
+            }
+        }
+
         void IIncidentsGridViewListener.OnDoubleClick(CFADataSet.IncidentsRow incident)
         {
             IncidentLocation incidentLocation = new IncidentLocation(incident.Location);
-            mapView.Show(incidentLocation.ToString());
+            mapViewer.Show(incidentLocation.ToString());
         }
 
         void IIncidentsListener.OnIncidentAdded(IIncident newIncident)
         {
+            // >>> TODO - Filter incidents
             displayedIncidents.Add(newIncident, newIncident);
+            presenter.AddIncident(newIncident);
         }
 
         void IIncidentsListener.OnIncidentRemoved(IIncident removedIncident)
         {
-        }
-
-        void IIncidentChangeListener.OnIncidentChanged(IIncident changedIncident)
-        {
+            // >>> TODO
         }
     }
 }

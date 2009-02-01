@@ -38,6 +38,12 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
                 .Provides<ICfaRegionsChangedListener>()
                 .Provides<IFormClosedListener>();
 
+            system.HasSingleton<IncidentsGridViewRowPresenterFactory>()
+                .Provides<IIncidentsGridViewRowPresenterFactory>();
+
+            system.HasSingleton<IncidentsGridViewPresenter>()
+                .Provides<IIncidentsGridViewPresenter>();
+
             system.HasSingleton<IncidentsGridViewController>()
                 .ListensTo<IIncidentsListener>()
                 .ListensTo<IIncidentChangeListener>()

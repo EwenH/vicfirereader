@@ -97,7 +97,13 @@
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItem.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\IRSSIncidentItemFactory.cs" />
     <Compile Include="RSSReaders\CurrentIncidents\RSSIncidentItemFactory.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewPresenter.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewRowPresenter.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewRowPresenterFactory.cs" />
     <Compile Include="UI\Incidents\Grid\IncidentsGridViewBuilder.cs" />
+    <Compile Include="UI\Incidents\Grid\IncidentsGridViewPresenter.cs" />
+    <Compile Include="UI\Incidents\Grid\IncidentsGridViewRowPresenter.cs" />
+    <Compile Include="UI\Incidents\Grid\IncidentsGridViewRowPresenterFactory.cs" />
     <Compile Include="UI\Incidents\IIncidentsView.cs" />
     <Compile Include="UI\Incidents\IIncidentsViewController.cs" />
     <Compile Include="UI\Incidents\IncidentsViewController.cs" />

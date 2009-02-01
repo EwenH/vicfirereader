@@ -73,7 +73,8 @@ namespace VicFireReader
             system.HasSingleton<ImageResources>()
                 .Provides<IImageResources>();
 
-            system.HasInstance(new List<IPluginBuilder>()).Provides<List<IPluginBuilder>>();
+            system.HasInstance(new List<IPluginBuilder>())
+                .Provides<List<IPluginBuilder>>();
 
             system.HasSubsystem(new IncidentsBuilder())
                 .Provides<IIncidents>();
