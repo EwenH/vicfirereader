@@ -18,6 +18,7 @@
 
 #endregion
 
+using System.Collections.Generic;
 using NoeticTools.GoogleMaps;
 using VicFireReader.CFA.Data;
 using VicFireReader.CFA.Incidents;
@@ -30,6 +31,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     {
         private readonly IMapView mapView;
         private readonly IIncidentsGridView view;
+        private readonly Dictionary<IIncident, IIncident> displayedIncidents = new Dictionary<IIncident, IIncident>();
 
         public IncidentsGridViewController(IIncidentsGridView incidentsGirdView, IMapView mapViewer)
         {
@@ -48,15 +50,12 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
             mapView.Show(incidentLocation.ToString());
         }
 
-        void IIncidentsListener.OnIncidentChanged(IIncident existingIncident)
+        void IIncidentsListener.OnIncidentAdded(IIncident newIncident)
         {
+            displayedIncidents.Add(newIncident, newIncident);
         }
 
-        void IIncidentsListener.OnIncidentAdded(IIncident readIncident)
-        {
-        }
-
-        void IIncidentsListener.OnIncidentRemoved()
+        void IIncidentsListener.OnIncidentRemoved(IIncident removedIncident)
         {
         }
     }

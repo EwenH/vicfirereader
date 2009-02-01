@@ -27,6 +27,9 @@ namespace VicFireReader.CFA.Incidents
     {
         public void Build(ISystemDefinition system)
         {
+            system.HasSingleton<IncidentFactory>()
+                .Provides<IIncidentFactory>();
+
             system.HasSingleton<IncidentsCollection>()
                 .Provides<IIncidents>();
         }

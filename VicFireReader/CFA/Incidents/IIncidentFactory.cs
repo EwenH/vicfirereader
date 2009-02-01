@@ -18,11 +18,14 @@
 
 #endregion
 
+using System;
+
+
 namespace VicFireReader.CFA.Incidents
 {
-    public interface IIncidentsListener
+    public interface IIncidentFactory
     {
-        void OnIncidentAdded(IIncident newIncident);
-        void OnIncidentRemoved(IIncident removedIncident);
+        IIncident Create(string incidentID, int region, string location, DateTime time, string name, string type,
+                         string status, string size, short appliances);
     }
 }

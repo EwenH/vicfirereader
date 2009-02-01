@@ -20,7 +20,6 @@
 
 using System;
 using NMock2;
-using NoeticTools.Utilities;
 using NUnit.Extensions;
 using NUnit.Framework;
 using VicFireReader.CFA.Incidents;
@@ -31,16 +30,21 @@ namespace VicFireReader.CFA.Tests.Incidents
     [TestFixture]
     public class IncidentsCollectionTests : MockingTestFixture
     {
-        private IClock clock;
+        private IIncident incident1;
+        private IIncident incident2;
+        private IIncidentFactory incidentFactory;
         private IncidentsCollection incidents;
         private IIncidentsListener listener;
 
         protected override void SetUp()
         {
-            clock = NewMock<IClock>();
             listener = NewMock<IIncidentsListener>();
+            incidentFactory = NewMock<IIncidentFactory>();
 
-            incidents = new IncidentsCollection(clock, listener);
+            incidents = new IncidentsCollection(listener, incidentFactory);
+
+            incident1 = NewMock<IIncident>();
+            incident2 = NewMock<IIncident>();
         }
 
         [Test]
@@ -50,35 +54,43 @@ namespace VicFireReader.CFA.Tests.Incidents
         }
 
         [Test]
-        public void OnIncidentRead_NotifiesIncidentChanged_WhenIncidentIDAlreadyAddedAndIncidentHasChanged()
+        public void OnIncidentRead_UpdatesIncident_WhenIncidentIDAlreadyAddedAndIncidentHasChanged()
         {
             AddTwoIncidents();
 
-            Stub.On(clock).GetProperty("Now").Will(Return.Value(new DateTime(2008, 3, 1, 10, 30, 17)));
-            Expect.Once.On(listener).Method("OnIncidentChanged").WithAnyArguments();
-
-            incidents.OnIncidentRead("ID 1", 13, "location", new DateTime(2008, 3, 1), "name2", "type", "status", "size",
+            DateTime time = new DateTime(2008, 3, 1);
+            Expect.Once.On(incident1).Method("Update").With(13, "location", time, "name2", "type",
+                                                            "status", "size", 33);
+            incidents.OnIncidentRead("ID 1", 13, "location", time, "name2", "type", "status", "size",
                                      33);
         }
 
         [Test]
-        public void OnIncidentRead_DoesNotNotifyListener_WhenIncidentIsUnchanged()
+        public void OnIncidentRead_UpdatesIncident_WhenIncidentIsUnchanged()
         {
             AddTwoIncidents();
 
+            Expect.Once.On(incident2).Method("Update").With(13, "location", new DateTime(2008, 3, 1), "name", "type", "status", "size",
+                                     33);
             incidents.OnIncidentRead("ID 2", 13, "location", new DateTime(2008, 3, 1), "name", "type", "status", "size",
                                      33);
 
+            Expect.Once.On(incident1).Method("Update").With(13, "location", new DateTime(2008, 3, 1), "name", "type", "status", "size",
+                                     33);
             incidents.OnIncidentRead("ID 1", 13, "location", new DateTime(2008, 3, 1), "name", "type", "status", "size",
                                      33);
         }
 
         private void AddTwoIncidents()
         {
+            Expect.Once.On(incidentFactory).Method("Create").WithAnyArguments().Will(Return.Value(incident1));
             Expect.Once.On(listener).Method("OnIncidentAdded").WithAnyArguments();
             incidents.OnIncidentRead("ID 1", 13, "location", new DateTime(2008, 3, 1), "name", "type", "status", "size",
                                      33);
 
+            Stub.On(incident1).Method("CompareTo").WithAnyArguments().Will(Return.Value(-1));
+            Stub.On(incident2).Method("CompareTo").WithAnyArguments().Will(Return.Value(-1));
+            Expect.Once.On(incidentFactory).Method("Create").WithAnyArguments().Will(Return.Value(incident2));
             Expect.Once.On(listener).Method("OnIncidentAdded").WithAnyArguments();
             incidents.OnIncidentRead("ID 2", 13, "location", new DateTime(2008, 3, 1), "name", "type", "status", "size",
                                      33);

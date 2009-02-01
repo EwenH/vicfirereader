@@ -34,6 +34,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\NMock2.dll</HintPath>
     </Reference>
+    <Reference Include="NMockExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\NMockExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="NoeticTools.NUnit.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\NoeticTools.NUnit.Extensions.dll</HintPath>

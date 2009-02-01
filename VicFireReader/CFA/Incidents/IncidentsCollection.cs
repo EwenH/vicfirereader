@@ -27,36 +27,29 @@ namespace VicFireReader.CFA.Incidents
 {
     public class IncidentsCollection : IIncidents
     {
-        private readonly IClock clock;
         private readonly IIncidentsListener listener;
-        private readonly SortedList<IIncident, IIncident> incidents = new SortedList<IIncident, IIncident>();
+        private readonly IIncidentFactory incidentFactory;
+        private readonly SortedList<string, IIncident> incidents = new SortedList<string, IIncident>();
 
-        public IncidentsCollection(IClock clock, IIncidentsListener listener)
+        public IncidentsCollection(IIncidentsListener listener, IIncidentFactory incidentFactory)
         {
-            this.clock = clock;
             this.listener = listener;
+            this.incidentFactory = incidentFactory;
         }
 
         public void OnIncidentRead(string incidentID, int region, string location, DateTime time, string name,
-                                   string type,
-                                   string status, string size, short appliances)
+                                   string type, string status, string size, short appliances)
         {
-            IIncident readIncident = new Incident(clock, incidentID, region, location, time, name, type, status, size,
-                                                  appliances);
-
-            if (incidents.ContainsKey(readIncident))
+            if (incidents.ContainsKey(incidentID))
             {
-                IIncident existingIncident = incidents[readIncident];
-                if (existingIncident.Update(readIncident) == IncidentUpdateResult.Changed)
-                {
-                    listener.OnIncidentChanged(existingIncident);
-                }
+                incidents[incidentID].Update(region, location, time, name,type, status, size, appliances);
             }
             else
             {
-                incidents.Add(readIncident, readIncident);
-
-                listener.OnIncidentAdded(readIncident);
+                IIncident newIncident = incidentFactory.Create(incidentID, region, location, time, name, type, status, size,
+                                                      appliances);
+                incidents.Add(incidentID, newIncident);
+                listener.OnIncidentAdded(newIncident);
             }
         }
     }

@@ -18,10 +18,13 @@
 
 #endregion
 
+using System;
+
+
 namespace VicFireReader.CFA.Incidents
 {
-    public interface IIncident
+    public interface IIncident : IComparable
     {
-        IncidentUpdateResult Update(IIncident incident);
+        void Update(int region, string location, DateTime time, string name, string type, string status, string size, int appliances);
     }
 }

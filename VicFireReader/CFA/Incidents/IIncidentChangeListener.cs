@@ -18,11 +18,11 @@
 
 #endregion
 
+
 namespace VicFireReader.CFA.Incidents
 {
-    public interface IIncidentsListener
+    public interface IIncidentChangeListener
     {
-        void OnIncidentAdded(IIncident newIncident);
-        void OnIncidentRemoved(IIncident removedIncident);
+        void OnIncidentChanged(IIncident changedIncident);
     }
 }

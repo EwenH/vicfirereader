@@ -83,12 +83,15 @@
     </Compile>
     <Compile Include="CommandLineParser.cs" />
     <Compile Include="Incidents\IIncident.cs" />
+    <Compile Include="Incidents\IIncidentChangeListener.cs" />
+    <Compile Include="Incidents\IIncidentFactory.cs" />
     <Compile Include="Incidents\IIncidents.cs" />
     <Compile Include="Incidents\IIncidentsListener.cs" />
     <Compile Include="FireDangerIndex\RSS\FireDangerForecastRSSReaderPlugin.cs" />
     <Compile Include="FireDangerIndex\View\FireDangerForecastViewPlugin.cs" />
     <Compile Include="ICommandLineParser.cs" />
     <Compile Include="Incidents\Incident.cs" />
+    <Compile Include="Incidents\IncidentFactory.cs" />
     <Compile Include="Incidents\IncidentsBuilder.cs" />
     <Compile Include="Incidents\IncidentsCollection.cs" />
     <Compile Include="Incidents\IncidentUpdateResult.cs" />

@@ -26,7 +26,7 @@ namespace VicFireReader.CFA.Incidents
 {
     public class Incident : IIncident, IComparable
     {
-        private short appliances;
+        private int appliances;
         private readonly IClock clock;
         private readonly string incidentID;
         private string location;
@@ -39,7 +39,7 @@ namespace VicFireReader.CFA.Incidents
         private DateTime lastUpdatedTime;
 
         public Incident(IClock clock, string incidentID, int region, string location, DateTime cfaIncidentTime, string name,
-                        string type, string status, string size, short appliances)
+                        string type, string status, string size, int appliances)
         {
             this.clock = clock;
             this.incidentID = incidentID;
@@ -53,53 +53,6 @@ namespace VicFireReader.CFA.Incidents
             this.appliances = appliances;
         }
 
-        public IncidentUpdateResult Update(IIncident incident)
-        {
-            return Update((Incident) incident);
-        }
-
-        private IncidentUpdateResult Update(Incident incident)
-        {
-            if (incidentID != incident.incidentID)
-            {
-                throw new InvalidOperationException(
-                    "Attempted to update an incident from an incident with a different incident ID.");
-            }
-
-            if (region != incident.region)
-            {
-                throw new InvalidOperationException(
-                    "Attempted to update an incident from an incident from a different region. Possible CFA error.");
-            }
-
-            IncidentUpdateResult result;
-
-            if (incident.name != name ||
-                incident.type != type ||
-                incident.status != status ||
-                incident.size != size ||
-                incident.appliances != appliances ||
-                incident.location != location)
-            {
-                lastUpdatedTime = incident.lastUpdatedTime = clock.Now;
-
-                name = incident.name;
-                type = incident.type;
-                status = incident.status;
-                size = incident.size;
-                appliances = incident.appliances;
-                location = incident.location;
-
-                result = IncidentUpdateResult.Changed;
-            }
-            else
-            {
-                result = IncidentUpdateResult.NoChanges;
-            }
-
-            return result;
-        }
-
         public int CompareTo(object obj)
         {
             return Compare((Incident) obj);
@@ -108,6 +61,37 @@ namespace VicFireReader.CFA.Incidents
         private int Compare(Incident incident)
         {
             return incidentID.CompareTo(incident.incidentID);
+        }
+
+        public override int GetHashCode()
+        {
+            return incidentID.GetHashCode();
+        }
+
+        public void Update(int currentRegion, string currentLocation, DateTime currentTime, string currentName, string currentType, string currentStatus, string currentSize, int currentAppliances)
+        {
+            if (region != currentRegion)
+            {
+                throw new InvalidOperationException(
+                    "Attempted to update an incident from an incident from a different region. Possible CFA error.");
+            }
+
+            if (currentName != name ||
+                currentType != type ||
+                currentStatus != status ||
+                currentSize != size ||
+                currentAppliances != appliances ||
+                currentLocation != location)
+            {
+                lastUpdatedTime = clock.Now;
+
+                name = currentName;
+                type = currentType;
+                status = currentStatus;
+                size = currentSize;
+                appliances = currentAppliances;
+                location = currentLocation;
+            }
         }
     }
 }

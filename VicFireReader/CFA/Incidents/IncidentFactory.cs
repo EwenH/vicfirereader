@@ -18,11 +18,25 @@
 
 #endregion
 
+using System;
+using NoeticTools.Utilities;
+
+
 namespace VicFireReader.CFA.Incidents
 {
-    public interface IIncidentsListener
+    public class IncidentFactory : IIncidentFactory
     {
-        void OnIncidentAdded(IIncident newIncident);
-        void OnIncidentRemoved(IIncident removedIncident);
+        private readonly IClock clock;
+
+        public IncidentFactory(IClock clock)
+        {
+            this.clock = clock;
+        }
+
+        public IIncident Create(string incidentID, int region, string location, DateTime time, string name, string type,
+                                string status, string size, short appliances)
+        {
+            return new Incident(clock, incidentID, region, location, time, name, type, status, size, appliances);
+        }
     }
 }
