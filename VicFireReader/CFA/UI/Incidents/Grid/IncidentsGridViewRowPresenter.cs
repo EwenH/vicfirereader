@@ -36,6 +36,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         public void Show()
         {
+            view.AddIncident(this);
         }
     }
 }

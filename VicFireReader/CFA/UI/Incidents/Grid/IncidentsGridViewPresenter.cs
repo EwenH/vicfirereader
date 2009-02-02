@@ -57,5 +57,9 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         {
             view.Invalidate(true);
         }
+
+        public void OnIncidentChanged(IIncident incident)
+        {
+        }
     }
 }

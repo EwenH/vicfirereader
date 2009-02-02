@@ -49,7 +49,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
             if (displayedIncidents.ContainsKey(changedIncident))
             {
                 // >>> TODO - Filter incidents
-                // >>> TODO - update view
+                presenter.OnIncidentChanged(changedIncident);
             }
             else
             {

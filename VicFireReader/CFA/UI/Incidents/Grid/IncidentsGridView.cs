@@ -65,5 +65,10 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
                 }
             }
         }
+
+        public void AddIncident(IIncidentsGridViewRowPresenter rowPresenter)
+        {
+            
+        }
     }
 }

@@ -23,5 +23,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     public interface IIncidentsGridView
     {
         void Invalidate(bool force);
+        void AddIncident(IIncidentsGridViewRowPresenter rowPresenter);
     }
 }
