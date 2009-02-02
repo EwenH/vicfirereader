@@ -30,10 +30,8 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         private readonly IIncidentsGridViewPresenterListener controller;
         private readonly IIncidentsGridView view;
         private readonly IIncidentsGridViewRowPresenterFactory rowPresenterFactory;
-
         private readonly Dictionary<IIncident, IIncidentsGridViewRowPresenter> rowPresenters =
             new Dictionary<IIncident, IIncidentsGridViewRowPresenter>();
-
         public IncidentsGridViewPresenter(IIncidentsGridViewRowPresenterFactory rowPresenterFactory,
                                           IIncidentsGridViewPresenterListener controller, IIncidentsGridView view)
         {
@@ -45,6 +43,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         public void ShowIncident(IIncident incident)
         {
             IIncidentsGridViewRowPresenter rowPresenter = rowPresenterFactory.Create(incident);
+            rowPresenters.Add(incident, rowPresenter);
             rowPresenter.Show();
         }
 
@@ -60,6 +59,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         public void OnIncidentChanged(IIncident incident)
         {
+            rowPresenters[incident].OnChanged();
         }
     }
 }
