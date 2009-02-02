@@ -32,6 +32,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         private readonly IIncidentsGridViewRowPresenterFactory rowPresenterFactory;
         private readonly Dictionary<IIncident, IIncidentsGridViewRowPresenter> rowPresenters =
             new Dictionary<IIncident, IIncidentsGridViewRowPresenter>();
+
         public IncidentsGridViewPresenter(IIncidentsGridViewRowPresenterFactory rowPresenterFactory,
                                           IIncidentsGridViewPresenterListener controller, IIncidentsGridView view)
         {

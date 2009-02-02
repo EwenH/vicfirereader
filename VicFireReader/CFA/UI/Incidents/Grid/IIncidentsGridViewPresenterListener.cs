@@ -18,8 +18,6 @@
 
 #endregion
 
-using VicFireReader.CFA.Data;
-
 
 namespace VicFireReader.CFA.UI.Incidents.Grid
 {
