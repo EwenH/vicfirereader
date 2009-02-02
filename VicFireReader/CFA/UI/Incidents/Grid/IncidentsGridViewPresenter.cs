@@ -49,7 +49,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         public void OnDoubleClick(CFADataSet.IncidentsRow row)
         {
-            controller.OnShowOnMap(row);
+            controller.OnShowOnMap(row, row.Location);
         }
 
         public void OnFormattingChanged()

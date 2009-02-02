@@ -25,6 +25,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public interface IIncidentsGridViewPresenterListener
     {
-        void OnShowOnMap(CFADataSet.IncidentsRow row);
+        void OnShowOnMap(CFADataSet.IncidentsRow row, string location);
     }
 }
