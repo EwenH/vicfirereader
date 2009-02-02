@@ -48,7 +48,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
                 .ListensTo<IIncidentsListener>()
                 .ListensTo<IIncidentChangeListener>()
                 .Provides<IFormatterListener>()
-                .Provides<IIncidentsGridViewListener>();
+                .Provides<IIncidentsGridViewPresenterListener>();
         }
     }
 }

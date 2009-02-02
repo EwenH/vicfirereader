@@ -23,7 +23,7 @@ using VicFireReader.CFA.Data;
 
 namespace VicFireReader.CFA.UI.Incidents.Grid
 {
-    public interface IIncidentsGridViewListener
+    public interface IIncidentsGridViewPresenterListener
     {
         void OnDoubleClick(CFADataSet.IncidentsRow row);
     }

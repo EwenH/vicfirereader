@@ -28,13 +28,15 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     public class IncidentsGridViewPresenter : IIncidentsGridViewPresenter
     {
         private readonly IIncidentsGridViewRowPresenterFactory rowPresenterFactory;
+        private readonly IIncidentsGridViewPresenterListener controller;
 
         private readonly Dictionary<IIncident, IIncidentsGridViewRowPresenter> rowPresenters =
             new Dictionary<IIncident, IIncidentsGridViewRowPresenter>();
 
-        public IncidentsGridViewPresenter(IIncidentsGridViewRowPresenterFactory rowPresenterFactory)
+        public IncidentsGridViewPresenter(IIncidentsGridViewRowPresenterFactory rowPresenterFactory, IIncidentsGridViewPresenterListener controller)
         {
             this.rowPresenterFactory = rowPresenterFactory;
+            this.controller = controller;
         }
 
         public void ShowIncident(IIncident incident)
@@ -44,6 +46,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         public void OnDoubleClick(CFADataSet.IncidentsRow row)
         {
+            controller.OnDoubleClick(row);
         }
     }
 }

@@ -135,7 +135,7 @@
     <Compile Include="UI\Incidents\Grid\IIncidentGridViewCellFormatter.cs" />
     <Compile Include="UI\Incidents\Grid\IIncidentsGridView.cs" />
     <Compile Include="UI\Incidents\Grid\IIncidentsGridViewController.cs" />
-    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewListener.cs" />
+    <Compile Include="UI\Incidents\Grid\IIncidentsGridViewPresenterListener.cs" />
     <Compile Include="UI\Incidents\IIncidentsViewFactory.cs" />
     <Compile Include="UI\Incidents\IIncidentsViewListener.cs" />
     <Compile Include="UI\Incidents\Grid\IncidentsGridViewCellFormatter.cs" />

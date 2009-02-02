@@ -30,7 +30,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     {
         private readonly IIncidentGridViewCellFormatter cellFormatter;
         private readonly IIncidentsGridViewPresenter presenter;
-        private readonly IIncidentsGridViewListener controller;
+        private readonly IIncidentsGridViewPresenterListener controller;
 
         public IncidentsGridView()
         {
@@ -38,7 +38,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         }
 
         [InjectionConstructor]
-        public IncidentsGridView(ICFADataSet dataSet, IIncidentsGridViewListener controller,
+        public IncidentsGridView(ICFADataSet dataSet, IIncidentsGridViewPresenterListener controller,
                                  IIncidentGridViewCellFormatter cellFormatter, IIncidentsGridViewPresenter presenter)
             : this()
         {
@@ -65,7 +65,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
                     CFADataSet.IncidentsRow incidentRow = (CFADataSet.IncidentsRow) rowView.Row;
 
                     presenter.OnDoubleClick(incidentRow);
-                    controller.OnDoubleClick(incidentRow);
                 }
             }
         }
