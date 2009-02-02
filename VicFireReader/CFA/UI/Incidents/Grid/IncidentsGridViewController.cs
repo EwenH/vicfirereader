@@ -32,12 +32,9 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         private readonly Dictionary<IIncident, IIncident> displayedIncidents = new Dictionary<IIncident, IIncident>();
         private readonly IMapView mapViewer;
         private readonly IIncidentsGridViewPresenter presenter;
-        private readonly IIncidentsGridView view;
 
-        public IncidentsGridViewController(IIncidentsGridView view, IMapView mapViewer,
-                                           IIncidentsGridViewPresenter presenter)
+        public IncidentsGridViewController(IMapView mapViewer, IIncidentsGridViewPresenter presenter)
         {
-            this.view = view;
             this.mapViewer = mapViewer;
             this.presenter = presenter;
         }
