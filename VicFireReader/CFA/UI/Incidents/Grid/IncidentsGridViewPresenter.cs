@@ -45,6 +45,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         public void ShowIncident(IIncident incident)
         {
             IIncidentsGridViewRowPresenter rowPresenter = rowPresenterFactory.Create(incident);
+            rowPresenter.Show();
         }
 
         public void OnDoubleClick(CFADataSet.IncidentsRow row)

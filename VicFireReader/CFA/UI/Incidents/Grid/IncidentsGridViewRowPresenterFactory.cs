@@ -25,9 +25,16 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public class IncidentsGridViewRowPresenterFactory : IIncidentsGridViewRowPresenterFactory
     {
+        private readonly IIncidentsGridView view;
+
+        public IncidentsGridViewRowPresenterFactory(IIncidentsGridView view)
+        {
+            this.view = view;
+        }
+
         public IIncidentsGridViewRowPresenter Create(IIncident incident)
         {
-            return new IncidentsGridViewRowPresenter(incident);
+            return new IncidentsGridViewRowPresenter(incident, view);
         }
     }
 }
