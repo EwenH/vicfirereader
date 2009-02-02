@@ -29,6 +29,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     public partial class IncidentsGridView : UserControl, IIncidentsGridView
     {
         private readonly IIncidentGridViewCellFormatter cellFormatter;
+        private readonly IIncidentsGridViewPresenter presenter;
         private readonly IIncidentsGridViewListener controller;
 
         public IncidentsGridView()
@@ -38,11 +39,12 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         [InjectionConstructor]
         public IncidentsGridView(ICFADataSet dataSet, IIncidentsGridViewListener controller,
-                                 IIncidentGridViewCellFormatter cellFormatter)
+                                 IIncidentGridViewCellFormatter cellFormatter, IIncidentsGridViewPresenter presenter)
             : this()
         {
             this.controller = controller;
             this.cellFormatter = cellFormatter;
+            this.presenter = presenter;
             dataGridView.DataSource = dataSet.Incidents;
         }
 
