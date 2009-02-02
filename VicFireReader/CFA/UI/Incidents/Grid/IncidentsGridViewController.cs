@@ -70,7 +70,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         {
             // >>> TODO - Filter incidents
             displayedIncidents.Add(newIncident, newIncident);
-            presenter.AddIncident(newIncident);
+            presenter.ShowIncident(newIncident);
         }
 
         void IIncidentsListener.OnIncidentRemoved(IIncident removedIncident)

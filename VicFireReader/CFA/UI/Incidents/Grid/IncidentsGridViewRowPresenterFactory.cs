@@ -18,9 +18,16 @@
 
 #endregion
 
+using VicFireReader.CFA.Incidents;
+
+
 namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public class IncidentsGridViewRowPresenterFactory : IIncidentsGridViewRowPresenterFactory
     {
+        public IIncidentsGridViewRowPresenter Create(IIncident incident)
+        {
+            return new IncidentsGridViewRowPresenter(incident);
+        }
     }
 }

@@ -25,6 +25,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 {
     public interface IIncidentsGridViewPresenter
     {
-        void AddIncident(IIncident incident);
+        void ShowIncident(IIncident incident);
     }
 }
