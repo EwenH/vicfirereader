@@ -28,5 +28,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     {
         void ShowIncident(IIncident incident);
         void OnDoubleClick(CFADataSet.IncidentsRow row);
+        void OnFormattingChanged();
     }
 }

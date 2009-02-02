@@ -44,7 +44,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         void IFormatterListener.OnFormattingChanged()
         {
-            view.Invalidate(true);
+            presenter.OnFormattingChanged();
         }
 
         void IIncidentChangeListener.OnIncidentChanged(IIncident changedIncident)
