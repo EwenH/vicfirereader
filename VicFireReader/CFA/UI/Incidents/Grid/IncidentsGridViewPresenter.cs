@@ -46,7 +46,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
 
         public void OnDoubleClick(CFADataSet.IncidentsRow row)
         {
-            controller.OnDoubleClick(row);
+            controller.OnShowOnMap(row);
         }
     }
 }

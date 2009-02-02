@@ -60,7 +60,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
             }
         }
 
-        void IIncidentsGridViewPresenterListener.OnDoubleClick(CFADataSet.IncidentsRow incident)
+        void IIncidentsGridViewPresenterListener.OnShowOnMap(CFADataSet.IncidentsRow incident)
         {
             IncidentLocation incidentLocation = new IncidentLocation(incident.Location);
             mapViewer.Show(incidentLocation.ToString());
