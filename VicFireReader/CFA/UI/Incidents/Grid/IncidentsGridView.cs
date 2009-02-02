@@ -30,7 +30,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     {
         private readonly IIncidentGridViewCellFormatter cellFormatter;
         private readonly IIncidentsGridViewPresenter presenter;
-        private readonly IIncidentsGridViewPresenterListener controller;
 
         public IncidentsGridView()
         {
@@ -38,11 +37,9 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
         }
 
         [InjectionConstructor]
-        public IncidentsGridView(ICFADataSet dataSet, IIncidentsGridViewPresenterListener controller,
-                                 IIncidentGridViewCellFormatter cellFormatter, IIncidentsGridViewPresenter presenter)
+        public IncidentsGridView(ICFADataSet dataSet, IIncidentGridViewCellFormatter cellFormatter, IIncidentsGridViewPresenter presenter)
             : this()
         {
-            this.controller = controller;
             this.cellFormatter = cellFormatter;
             this.presenter = presenter;
             dataGridView.DataSource = dataSet.Incidents;
