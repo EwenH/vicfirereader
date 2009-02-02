@@ -64,6 +64,7 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
                     DataRowView rowView = (DataRowView) viewRow.DataBoundItem;
                     CFADataSet.IncidentsRow incidentRow = (CFADataSet.IncidentsRow) rowView.Row;
 
+                    presenter.OnDoubleClick(incidentRow);
                     controller.OnDoubleClick(incidentRow);
                 }
             }

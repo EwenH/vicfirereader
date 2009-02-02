@@ -18,6 +18,7 @@
 
 #endregion
 
+using VicFireReader.CFA.Data;
 using VicFireReader.CFA.Incidents;
 
 
@@ -26,5 +27,6 @@ namespace VicFireReader.CFA.UI.Incidents.Grid
     public interface IIncidentsGridViewPresenter
     {
         void ShowIncident(IIncident incident);
+        void OnDoubleClick(CFADataSet.IncidentsRow row);
     }
 }
